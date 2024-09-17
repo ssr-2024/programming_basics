@@ -4,13 +4,13 @@
 
 Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
-## PPT-Slides
+## PPT-Folien
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
 
-## Code Examples
+## Code Beispiele
 
-### Week 1
+### Woche 1
 
 * [Hello World](code/hello_world.py)
 * [Hexagon](code/hexagon.py)
