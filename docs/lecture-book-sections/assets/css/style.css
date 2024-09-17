@@ -1,0 +1,103 @@
+body * {
+  box-sizing: border-box;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  justify-items: stretch;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+header {
+  grid-area: header;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  max-height: 82px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 -10px 1em 0 rgb(19, 47, 107);
+  margin: 0 -15px;
+  color: aliceblue;
+  background-color: rgb(3, 21, 61);
+}
+
+main {
+  margin: 0px 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+nav {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+nav>a {
+  color: aliceblue;
+  border: 1px solid rgba(19, 101, 173, 0.63);
+  border-radius: 4px;
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+nav>a:hover, nav>div.active {
+  background-color: rgb(3, 40, 114);
+}
+
+nav>a.active {
+  border-left: 5px solid aliceblue;
+}
+
+footer {
+  padding: 0px 8px;
+}
+
+footer * {
+  float: right;
+}
+
+.navigation {
+  background-color: rgb(3, 21, 61);
+  color: rgb(138, 147, 185);
+}
+
+@supports (grid-area: auto) {
+  body {
+    display: grid;
+    grid-template-rows: min-content min-content auto min-content;
+    grid-template-areas:
+      "header"
+      "navigation"
+      "content"
+      "footer";
+  }
+  main {
+    grid-area: content;
+  }
+  nav {
+    grid-area: navigation;
+  }
+  footer {  
+    grid-area: footer;
+  }
+  @media only screen and (min-width: 720px) {
+    body {
+      grid-template-columns: 22rem auto;
+      grid-template-rows: min-content auto min-content;
+      grid-template-areas:
+        "header header"
+        "navigation content"
+        "footer footer";
+    }
+  
+  }
+}
+

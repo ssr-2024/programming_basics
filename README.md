@@ -1,1 +1,44 @@
-# programming_basics
+![A course logo](logo.png)
+
+# Programming Basics
+
+Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
+
+## PPT-Slides
+
+* [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
+
+## Code Examples
+
+### Week 1
+
+* [Hello World](code/hello_world.py)
+* [Hexagon](code/hexagon.py)
+* [Star](code/star.py)
+* [Circle](code/circle.py)
+* [Square](code/square.py)
+* [Rectangle](code/rectangle.py)
+
+## Wiki
+
+1. [Datentypen](wiki/001_datatypes.md)
+2. [Variablen](wiki/002_variables.md)
+3. [Operatoren](wiki/003_operators.md)
+4. [Fehler](wiki/004_errors.md)
+5. [Funktionen](wiki/101_functions.md)
+6. [Bedingungen](wiki/102_conditions.md)
+7. [Schleifen](wiki/103_loops.md)
+8. [Sammel-Datentypen](wiki/104_collection-datatypes.md)
+9. [Strings](wiki/105_strings.md)
+10. [NumPy](wiki/201_numpy.md)
+11. [Pandas](wiki/301_pandas.md)
+12. [Plots](wiki/401_plots.md)
+13. [Plotten: Beispiele und Variationen](wiki/402_plot_examples.md)
+
+## Literature / References
+
+* [Link to the formatted text book](docs/lecture-book-sections/index.html)
+
+## Bewertung
+
+[Infos zu den bewerteten Arbeitsaufträgen](docs/bewertung.md)
