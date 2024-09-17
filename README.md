@@ -35,10 +35,10 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 12. [Plots](wiki/401_plots.md)
 13. [Plotten: Beispiele und Variationen](wiki/402_plot_examples.md)
 
-## Literature / References
+## Literatur / Referenzen
 
 * [Link to the formatted text book](docs/lecture-book-sections/index.html)
 
 ## Bewertung
 
-[Infos zu den bewerteten Arbeitsaufträgen](docs/bewertung.md)
+[Infos zur Bewertung](docs/bewertung.md)
