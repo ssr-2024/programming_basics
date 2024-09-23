@@ -1,0 +1,6 @@
+
+def triangle():
+    print('')
+
+
+triangle()
