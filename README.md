@@ -7,6 +7,7 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 ## PPT-Folien
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
+* [Lecture 2 Markdown and Git](docs/slides/002_Markdown_Git.pptx)
 
 ## Code Beispiele
 
