@@ -1,13 +1,16 @@
-from turtle import forward, left, right, exitonclick
+import turtle as t
 
-def jump(angle, height):
-    left(angle)
-    forward(height)
-    right(2*angle)
-    forward(height)
-    left(angle)
+def jump(angle = 60, height = 50):
+    t.left(angle)
+    t.forward(height)
+    t.right(2*angle)
+    t.forward(height)
+    t.left(angle)
 
-forward(100)
-jump(60,50)
-forward(100)
-exitonclick()
+
+for i in range(10):  
+    t.forward(50)
+    jump(60,50+5*i)
+    t.forward(50)
+
+t.exitonclick()
