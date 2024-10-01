@@ -27,8 +27,8 @@ print(f'{a} times 3 = {a_times_3}')
 # @exercise_3a
 
 something = input("Enter something:")
-print(len(something) + ' Letters')
+print(f'{len(something)} Letters')
 
 # @exercise_3b
 something = input("Enter something:")
-print(something + ": " + len(something) + ' Letters')
+print(f'{something}: {len(something)} Letters')
