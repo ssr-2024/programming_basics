@@ -16,8 +16,15 @@ print('My BMI is ' + str(bmi) + '.')
 
 # @exercise_2c
 text = input('Text to repeat: ')
-repeat_n = input('How often should "' + text + '" be repeated? ')
+repeat_n = int(input('How often should "' + text + '" be repeated? '))
 print(text * repeat_n)
+
+# Anstelle von repeat_n kann man auch eine for-Schleife verwenden.
+# Dabei nimmt die Schleife den Input für die Wiederholungen als Argument.
+# Es könnte so aussehen:
+# for n in range(int(input('How often should "' + text + '" be repeated? '))):
+#     print(text)
+
 
 # @exercise_2d
 a = input('Enter a number: ')
