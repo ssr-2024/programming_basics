@@ -8,6 +8,7 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
 * [Lecture 2 Markdown and Git](docs/slides/002_Markdown_Git.pptx)
+* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)
 
 ## Code Beispiele
 
