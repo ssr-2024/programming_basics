@@ -6,7 +6,7 @@ exercise1_d = '12 * 3 = 36'
 
 # @exercise_2a
 goals = 3
-print('I have scored ' + goals + ' goals.')
+print('I have scored ' + str(goals) + ' goals.')
 
 # @exercise_2b
 size = input('my size [m]: ')
