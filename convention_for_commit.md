@@ -1,0 +1,2 @@
+### Notizen für die Commit nachricht
+"this commit will" immer zu Beginn denken und anschliessend die Nachricht schreiben. Zusätzlich für unsere Konvention ist, dass wir die Nachrichten auf englisch schreiben. 
