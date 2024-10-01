@@ -8,7 +8,7 @@ def jump():
     t.left(60)
 
 t.teleport(-300,0)
-t.forward(100)
-jump()
-t.forward(100)
+t.forward(50)
+for jumps in range (5):
+    jump()
 exitonclick()
