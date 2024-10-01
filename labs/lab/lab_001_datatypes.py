@@ -24,7 +24,7 @@ print(text * repeat_n)
 # Es könnte so aussehen:
 # for n in range(int(input('How often should "' + text + '" be repeated? '))):
 #     print(text)
-
+#von den Datentypen kann man Float oder Int brauchen, spielt keinen Unterschied
 
 # @exercise_2d
 a = input('Enter a number: ')
