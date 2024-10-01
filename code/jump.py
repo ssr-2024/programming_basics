@@ -1,14 +1,16 @@
 import turtle as t
 
-def jump():
+def jump(jump_height=50):
     t.left(60)
-    t.forward(100)
+    t.forward(jump_height)
     t.right(120)
-    t.forward(100)
+    t.forward(jump_height)
     t.left(60)
 
-t.forward(100)
-jump()
-t.forward(100)
+
+for height in range(20,70,5):
+    t.forward(10)
+    jump(height)
+    t.forward(10)
 
 t.exitonclick()
