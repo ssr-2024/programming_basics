@@ -6,29 +6,30 @@ exercise1_d = '12 * 3 = 36'
 
 # @exercise_2a
 goals = 3
-print('I have scored ' + goals + ' goals.')
+print('I have scored ' + str(goals) + ' goals.')
 
 # @exercise_2b
-size = input('my size [m]: ')
-weight = input('my weight [kg]: ')
+size = float(input('my size [m]: '))
+weight = float(input('my weight [kg]: '))
 bmi = weight / (size**2)
-print('My BMI is ' + bmi + '.')
+print('My BMI is ' + str(bmi) + '.')
 
 # @exercise_2c
-text = input('Text to repeat: ')
-repeat_n = input('How often should "' + text + '" be repeated? ')
+text = input('Text to repeat: ') 
+repeat_n = int(input('How often should "' + text + '" be repeated? '))
 print(text * repeat_n)
+# int is the only possible data type as python does not allow a str multiplication with float
 
 # @exercise_2d
-a = input('Enter a number: ')
+a=int(input('Enter a number: '))
 a_times_3 = a * 3
-print(a + ' times 3 = ' + a_times_3)
+print(str(a)+' times 3 = ' + str(a_times_3))
 
 # @exercise_3a
 
 something = input("Enter something:")
-print(len(something) + ' Letters')
+print(str(len(something)) + ' Letters')
 
 # @exercise_3b
 something = input("Enter something:")
-print(something + ": " + len(something) + ' Letters')
+print(something + ": " + str(len(something)) + ' Letters')
