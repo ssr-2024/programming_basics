@@ -9,10 +9,10 @@ goals = 3
 print('I have scored ' + str(goals) + ' goals.')
 
 # @exercise_2b
-size = input('my size [m]: ')
-weight = input('my weight [kg]: ')
+size = float(input('my size [m]: '))
+weight = float(input('my weight [kg]: '))
 bmi = weight / (size**2)
-print('My BMI is ' + bmi + '.')
+print('My BMI is ' + str(bmi) + '.')
 
 # @exercise_2c
 text = input('Text to repeat: ')
