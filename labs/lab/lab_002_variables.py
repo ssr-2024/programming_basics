@@ -1,7 +1,8 @@
 from math import pi
 
 # @exercise_1
-
+name = Iseli
+vorname= Nicolas
 
 # @exercise_2a
 tore = None
