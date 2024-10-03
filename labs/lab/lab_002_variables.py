@@ -13,10 +13,12 @@ tore + 1
 # wäre, dass es den Wert nur ausrechnet. Dieser Wert wird 
 # jedoch nicht gespeichert. Dieses Ereignis wird nicht gespeichert oder der 
 # der Variablen zugewiesen. Der Wert tore=2 bleibt erhalten. 
+
 # @exercise_2b
 
 tore = 2
-tore + 1
+tore += 1
+print(tore)
 
 # @exercise_3_kreisflaeche
 
