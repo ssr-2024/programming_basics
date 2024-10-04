@@ -32,7 +32,7 @@ print(str(a) + ' times 3 = ' + str(a_times_3)) #convert a and a_times_3 to a str
 # @exercise_3a
 
 something = input("Enter something:")
-print(len(something) + ' Letters')
+print(str(len(something)) + ' Letters')
 
 # @exercise_3b
 something = input("Enter something:")
