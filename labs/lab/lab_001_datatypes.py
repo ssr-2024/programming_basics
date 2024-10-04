@@ -25,9 +25,9 @@ print(text * repeat_n)
 #Multiplying a string with another string is not possible, as the concept of ‘replication’ for strings is only defined with integers.
 
 # @exercise_2d
-a = input('Enter a number: ')
+a = int(input('Enter a number: ')) #convert a to an integer
 a_times_3 = a * 3
-print(a + ' times 3 = ' + a_times_3)
+print(str(a) + ' times 3 = ' + str(a_times_3)) #convert a and a_times_3 to a string
 
 # @exercise_3a
 
