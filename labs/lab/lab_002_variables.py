@@ -2,6 +2,8 @@ from math import pi
 
 # @exercise_1
 
+name = "Hintermann"
+vorname = "Eliane"
 
 # @exercise_2a
 tore = None
