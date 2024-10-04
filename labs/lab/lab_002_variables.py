@@ -21,7 +21,9 @@ print(tore)
 # @exercise_2b
 
 tore = 2
-tore + 1
+tore = tore + 1 
+
+print(tore)
 
 # @exercise_3_kreisflaeche
 
