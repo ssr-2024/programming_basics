@@ -36,4 +36,4 @@ print(str(len(something)) + ' Letters')
 
 # @exercise_3b
 something = input("Enter something:")
-print(something + ": " + len(something) + ' Letters')
+print(something + ": " + str(len(something)) + ' Letters')
