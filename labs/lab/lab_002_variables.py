@@ -28,3 +28,6 @@ print(tore)
 # @exercise_3_kreisflaeche
 
 radius = 5
+area = pi * (radius**2) #formula for the area of a circle
+
+print("The area of the circle is:", area)
