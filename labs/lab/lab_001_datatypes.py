@@ -16,8 +16,13 @@ print('My BMI is ' + str(bmi) + '.') #The variable bmi is a number and it must b
 
 # @exercise_2c
 text = input('Text to repeat: ')
-repeat_n = input('How often should "' + text + '" be repeated? ')
+repeat_n = int(input('How often should "' + text + '" be repeated? ')) #convert repeat_n to int()
 print(text * repeat_n)
+
+#Only the data type integer (int) can be used for the variable repeat_n. 
+#The * operator can be used with only two numeric values (for multiplication) or one string value and one integer value (for string replication).
+#Multiplying a string by a float leads to an error because it is not clear how many times a string should be repeated if the number is not an integer.
+#Multiplying a string with another string is not possible, as the concept of ‘replication’ for strings is only defined with integers.
 
 # @exercise_2d
 a = input('Enter a number: ')
