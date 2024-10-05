@@ -14,7 +14,7 @@ Python (Anaconda) auch für Machine Learning und Data Science interessant!
 Die Funktion ``` type(var) ``` gibt Typ der Variable aus. 
 
 Definieren verschiedener Variablentypen:
-```
+```py
 x = 1     #integer definieren
 
 y = 1.0   #float definieren
@@ -34,18 +34,18 @@ Beachte: Falls in String ```" "``` enthalten sein sollen, verwende ```' ' ``` zu
 
 ## Einlesen von Tastatureingaben
 
-```
+```py
 name = input('Enter your name:') #fragt nach Namen mit anschliessender Eingabe(bestätigen mit Enter), welche "name" zugewiesen wird
 ```
 Die Funktion ```input()``` kann auch ohne Text verwendet werden
 
-```
+```py
 x = int(input('Enter a number: ')) #fragt nach Nummer und wandelt String in Integer um 
 ```
 Funktioniert auch mit Funktionen ```float(var)``` und ```str(var)```. Achtung: Bei nicht umwandelbarem Variablentyp, kann Laufzeitfehler auftreten!
 
 **Rechner erstellen:**
-```
+```py
 first_number = int(input('Type the first number: ')) ;\ #fragt zuerst nach erster Nummer
 second_number = int(input('Type the second number: ')) ;\ #danach nach zweiter
 print("The sum is: ", first_number + second_number) #Ausgabe der Summe
@@ -56,7 +56,7 @@ print("The sum is: ", first_number + second_number) #Ausgabe der Summe
 ## Operatoren
 
 Zur Verwendung von Operatoren braucht es folgende Stuktur: 
-```
+```py
 <left side> <operator> <right side>
 ```
 
@@ -92,12 +92,12 @@ Zur Verwendung von Operatoren braucht es folgende Stuktur:
 ## Datumsangaben
 
 Importieren zuerst Modul ```date``` folgendermassen: 
-```
+```py
 from datetime import date
 ```
 
 Heutiges Datum abrufen: 
-```
+```py
 Datum = date.today() #abrufen und zuweisen
 print(Datum) #ausgeben
 ```
@@ -106,7 +106,7 @@ Wichtig: Falls ```Datum``` mit String ausgegegen werden soll, muss Variable mit 
 ## if, elif und else
 Anders als gewohnt von Java und C++ ist ```:``` entscheidend, keine Klammern ```{```, ```}```
 
-```
+```py
 a = 27
 b = 93
 if a < b:
@@ -126,7 +126,7 @@ Falls String mehrzeiliger Text sein sollen, verwende ```""" """ ``` und Absätze
 
 **Splitten von Strings**
 Verschiedene Möglichkeiten:
-```
+```py
 print("temperatures and facts about the moon".title()) #.title() gibt mit grossem Anfangsbuchstaben zurück
 
 temperatures = "Daylight: 260 F Nighttime: -280 F"
@@ -139,7 +139,7 @@ print(temperatures_list)
 ```
 
 **Suche nach Zeilenfolge in String**
-```
+```py
 print("Moon" in "This text will describe facts about the Moon") #Ausgabe entweder True oder False
 
 #Ausgabe der Position mit .find(" ") (-1 falls nicht gefunden)
@@ -154,7 +154,7 @@ print(temperatures.count("Moon"))
 
 **Gross-/Kleinschreibung**
 
-```
+```py
 print("The Moon And The Earth".lower()) # ganzen String in Kleinbuchstaben
 
 print("The Moon And The Earth".upper()) # ganzen String in Grossbuchstaben
@@ -169,7 +169,7 @@ Möglichkeiten
 - ```.endswith(" ")```
 
 Beispiel: 
-```
+```py
 mars_temperature = "The highest temperature on Mars is about 30 C"
 for item in mars_temperature.split(): #überprüfe für jedes item in aufgesplitem String(-Array), ob numerisch
     if item.isnumeric():
@@ -184,7 +184,7 @@ Achtung: -30 wird allerdings nicht als numerisch erkannt!
 - ```.join()``` zum Zusammensetzen
 
 Beispiele: 
-```
+```py
 print("Saturn has a daytime temperature of -170 degrees Celsius, while Mars has -28 Celsius.".replace("Celsius", "C")) #Celsius wird mit C ersetzt
 
 moon_facts = ["The Moon is drifting away from the Earth.", "On average, the Moon is moving about 4cm every year."]
@@ -194,7 +194,7 @@ print(' '.join(moon_facts)) #gibt Sätze mit Leerzeichen dazwischen zurück
 **Formatierung mit Prozentzeichen**
 
 Mittels Platzhalter:
-```
+```py
 # möglich(aber mit mehreren Variablen eher fehleranfällig):
 mass_percentage = "1/6"
 print("On the Moon, you would weigh about %s of your weight on Earth." % mass_percentage)
@@ -202,7 +202,7 @@ print("On the Moon, you would weigh about %s of your weight on Earth." % mass_pe
 print("""Both sides of the %s get the same amount of sunlight, but only one side is seen from %s because the %s rotates around its own axis when it orbits %s.""" % ("Moon", "Earth", "Moon", "Earth"))
 ```
 Mittels ```format()```-Methode:
-```
+```py
 mass_percentage = "1/6"
 print("On the Moon, you would weigh about {} of your weight on Earth.".format(mass_percentage))
 
@@ -216,7 +216,7 @@ print("""You are lighter on the {moon}, because on the {moon} you would weigh ab
 ```
 
 f-Zeichenfolgen: (am elegantesten)
-```
+```py
 print(f"On the Moon, you would weigh about {mass_percentage} of your weight on Earth.")
 ```
 
@@ -228,7 +228,7 @@ print(f"On the Moon, you would weigh about {mass_percentage} of your weight on E
 - ```floor(x)``` Abrunden
 
 Beachte: ```ceil``` und ```floor``` müssen zuerst importiert werden!
-```
+```py
 from math import ceil, floor
 
 round_up = ceil(12.5)
@@ -241,7 +241,7 @@ print(round_down)
 ## Listen 
 
 **Erstellen von Listen:**
-```
+```py
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 ```
 **Zugriff auf Element** 
@@ -249,7 +249,7 @@ mittels ```planet[index]```, wobei erstes Element mit Index ```0``` und auch neg
 
 **Länge von Liste bestimmen**
 
-```
+```py
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 number_of_planets = len(planets)
 print("There are", number_of_planets, "planets in the solar system.")
@@ -257,7 +257,7 @@ print("There are", number_of_planets, "planets in the solar system.")
 
 **Hinzufügen eines Elements**
 
-```
+```py
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 planets.append("Pluto")
 number_of_planets = len(planets)
@@ -266,7 +266,7 @@ print("There are actually", number_of_planets, "planets in the solar system.")
 
 **Entfernen des letzten Elements**
 
-```
+```py
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
 planets.pop()  # Goodbye, Pluto
 number_of_planets = len(planets)
@@ -275,7 +275,7 @@ print("No, there are definitely", number_of_planets, "planets in the solar syste
 
 **Finden des Index eines Elements**
 
-```
+```py
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 jupiter_index = planets.index("Jupiter")
 print("Jupiter is the", jupiter_index + 1, "planet from the sun")
@@ -283,7 +283,7 @@ print("Jupiter is the", jupiter_index + 1, "planet from the sun")
 
 **min und max in Listen**
 Falls Liste aus Zahlen besteht möglich: 
-```
+```py
 gravity_on_planets = [0.378, 0.907, 1, 0.377, 2.36, 0.916, 0.889, 1.12]
 bus_weight = 124054 # in Newtons, on Earth
 
@@ -295,13 +295,13 @@ print("The heaviest a bus would be in the solar system is", bus_weight * max(gra
 **Bearbeiten von Listendaten**
 
 Aufteilen:
-```
+```py
 planets_after_earth = planets[3:8] # neue Liste mit Elementen 4 bis 9 aus alter liste planets
 print(planets_after_earth)
 ```
 
 Verknüpfen:
-```
+```py
 amalthea_group = ["Metis", "Adrastea", "Amalthea", "Thebe"]
 galilean_moons = ["Io", "Europa", "Ganymede", "Callisto"]
 
@@ -311,7 +311,7 @@ print("The regular satellite moons of Jupiter are", regular_satellite_moons)
 
 Sortieren: 
 
-```
+```py
 amalthea_group = ["Metis", "Adrastea", "Amalthea", "Thebe"]
 galilean_moons = ["Io", "Europa", "Ganymede", "Callisto"]
 
@@ -325,13 +325,13 @@ Achtung: ```.sort()``` ändert die aktuelle Liste!
 ## Schleifen
 
 while-Schleifen:
-```
+```py
 while <condition>:
     # code here
 ```
 
 cooles Beispiel mit Listen: 
-```
+```py
 # Create the variable for user input
 user_input = ''
 # Create the list to store the values
@@ -350,11 +350,11 @@ while user_input.lower() != 'done':
 
 for-Schleifen: 
 
-```
+```py
 for i in range(k): #für i von 0 bis k
     #code
 ```
-```
+```py
 countdown = [4, 3, 2, 1, 0]
 for number in countdown: #Variante mit Liste
     print(number)
@@ -366,14 +366,14 @@ Es können ```continue``` und ```break``` verwendet werden, um an Anfang zu spri
 ## Wörterbücher
 
 **Erstellen von Wörterbuch**
-```
+```py
 planet = {
     'name': 'Earth',
     'moons': 1
 }
 ```
 **Zugriff auf Wörterbuchwerte**
-```
+```py
 # planet['name'] is identical to using planet.get('name')
 print(planet['name'])
 ```
@@ -381,7 +381,7 @@ Vorteil von ```.get(' ')``` ist, dass falls Wert nicht vorhanden ist, ein None a
 
 **Ändern von Wörterbuchwerten**
 
-```
+```py
 planet['name'] = 'Makemake'
 
 # No output: name is now set to Makemake.
@@ -389,7 +389,7 @@ planet['name'] = 'Makemake'
 
 **Hinzufügen von Schlüsseln**
 
-```
+```py
 planet['orbital period'] = 4333
 
 # planet dictionary now contains: {
@@ -401,7 +401,7 @@ planet['orbital period'] = 4333
 
 **Entfernen von Schlüsseln**
 
-```
+```py
 planet.pop('orbital period')
 
 # planet dictionary now contains: {
@@ -412,7 +412,7 @@ planet.pop('orbital period')
 
 **Komplexe Datentypen**
 Es ist möglich ein Wörterbuch im Wörterbuch zu erstellen:
-```
+```py
 # Add address
 planet['diameter (km)'] = {
     'polar': 133709,
@@ -435,21 +435,21 @@ print(f'{planet["name"]} polar diameter: {planet["diameter (km)"]["polar"]}')
 **Abrufen aller Schlüssel und Werte**
 mittels ```keys``` alle Schlüssel
 
-```
+```py
 for key in rainfall.keys():
     print(f'{key}: {rainfall[key]}cm')
 ```
 
 **Überprüfen, ob Schlüssel vorhanden**
 
-```
+```py
 if 'december' in rainfall:
     #code
 ```
 
 **Zugriff auf alle Werte**
 mittels ```values```, ohne Ausgabe der Schlüssel, z.B.:
-```
+```py
 total_rainfall = 0
 for value in rainfall.values():
     total_rainfall = total_rainfall + value
@@ -460,13 +460,13 @@ print(f'There was {total_rainfall}cm in the last quarter.')
 ## Funktionen
 
 **Definieren von Funktionen ohne expliziten Rückgabewert**
-```
+```py
 def rocket_parts():
     print("payload, propellant, structure")
 ```
 
 **Definieren von Funktionen mit expliziten Rückgabewert**
-```
+```py
 def rocket_parts():
     return "payload, propellant, structure" #mit return
 output = rocket_parts()
@@ -475,18 +475,18 @@ output
 
 **Funktionen mit erforderlichen Argumenten**
 z.B. ```any()```, benötigt Argumente, sonst wird Error ausgegeben:
-```
+```py
 any([True, False, False])
 ```
 
 **Funktionnen mit optionalen Argumenten**
 z.B. ```str()```, benötigt nicht unbedingt Argument: 
-```
+```py
 print(str()) #gibt einfach " " aus
 ```
 
 **Erfordern von Argumenten**
-```
+```py
 def days_to_complete(distance, speed): #hier mit mehreren Argumenten
     hours = distance/speed
     return hours/24
@@ -494,7 +494,7 @@ def days_to_complete(distance, speed): #hier mit mehreren Argumenten
 
 **Schlüsselwortargumente**
 Bei Schlüsselwortargumenten kann ein "Standardwert vordefiniert werden. Dieser kann bei der Ausführung, muss aber nicht mehr (um-)definiert werden. 
-```
+```py
 from datetime import timedelta, datetime
 
 def arrival_time(hours=51):
@@ -510,14 +510,14 @@ Kombinieren von Argumenten ist natürlich problemlos möglich! Allerdings müsse
 
 **Variable Argumente**
 Es besteht die Möglichkeit, Argumente zu verwenden, ohne diese und deren Anzahl im Vorhinein weiter zu definieren(auch 0 möglich): 
-```
+```py
 def variable_length(*args):
     print(args)
 ```
 Argumente werden hierbei als Tupel gespeichert 
 
 **Variable Schlüsselwortargumente**
-```
+```py
 def variable_length(**kwargs):
     print(kwargs)
 ```
@@ -530,7 +530,7 @@ Frage, die sich mir stellt: Wie kann ich überprüfen, dass Variable in dem Form
 
 **Try- und Except-Blöcke**
 
-```
+```py
 try: #ausnahmeblock
      open('config.txt')
 except FileNotFoundError: #falls Datei nicht gefunden wird, gebe Nachricht aus
@@ -538,7 +538,7 @@ except FileNotFoundError: #falls Datei nicht gefunden wird, gebe Nachricht aus
 ```
 
 Die Blöcke können auch gruppiert werden: 
-```
+```py
 def main():
     try:
         configuration = open('config.txt')
@@ -551,7 +551,7 @@ def main():
 ```
 
 Ausserdem kann man nach Fehlermeldungsnummer unterscheiden: 
-```
+```py
 try:
     open("config.txt")
 except OSError as err:
@@ -565,7 +565,7 @@ except OSError as err:
 
 mittels ```raise```: 
 
-```
+```py
 def water_left(astronauts, water_left, days_left):
     daily_usage = astronauts * 11
     total_usage = daily_usage * days_left
@@ -576,7 +576,7 @@ def water_left(astronauts, water_left, days_left):
 ```
 
 Beispiel für TypeError:
-```
+```py
 def water_left(astronauts, water_left, days_left):
     for argument in [astronauts, water_left, days_left]:
         try:
@@ -593,3 +593,38 @@ def water_left(astronauts, water_left, days_left):
         raise RuntimeError(f"There is not enough water for {astronauts} astronauts after {days_left} days!")
     return f"Total water left after {days_left} days is: {total_water_left} liters"
 ```
+
+## Module
+- in Python ganzes Programm als Modul interpretiert(d.h. bei Import wird auch Code ausgeführt, der nicht in Funktion enthalten ist)
+- kann auf unterschiedliche Arten importiert (und danach abgerufen) werden:
+
+```py
+#importieren spezifischer funktionen
+from ispw_functions import forward, right, found
+#abrufen der funktionen
+forward(200)
+```
+```py
+#importieren aller funktionen
+from ispw_functions import *
+#abrufen der funktionen
+forward(200)
+```
+```py
+#importieren der Modulreferenz, as optional, dann Zugriff mit vollem Namen 
+import ispw_functions as ispw
+#abrufen der funktionen
+ispw.forward(200)
+```
+
+Falls in Package (Ordner mit Modulen):
+
+```py 
+#importiere sqrt aus Modul algebra, welche in Package math_helpers liegt
+from math_helpers.algebra import sqrt
+#aufrufen der funktion
+sqrt(100)
+
+```
+
+- Package installieren: via Terminal mit `pip install package_name`

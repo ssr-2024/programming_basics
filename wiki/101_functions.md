@@ -1,5 +1,6 @@
 # Funktionen
-Erkläre das Prinzip der Modularität.
+Prinzip der Modularität: 
+eifache Wiederverwendbarkeit, z.B. auch um Funktionen zu teilen
 
 ## Funktionen aufrufen
 
