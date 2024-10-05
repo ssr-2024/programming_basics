@@ -1,6 +1,6 @@
 def collatz(a):
     if a % 2 == 0:
-        a = a//2
+        a = a//2 
     else:
         a = a*3+1
     return a

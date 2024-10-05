@@ -100,14 +100,29 @@ In [lab_103_collections.py](./lab_103_collections.py) ist eine 2d-Liste `smiley`
 
 Füge ein Foto des UMLs oder das Mermaid-Diagramm hier ein.
 
+```mermaid
+flowchart TD
+    A((Start))--> B[ n > 0, arb.
+    i = 0 ]
+    B-->C{n even}
+    C -->|Yes| D[n=n//2]
+    C -->|No| E[n=3*n+1]
+    E --> F[i=i+1]
+    D --> F
+    F --> G{i<=i_max}
+    G --> |No| H((Stop))
+    G --> |Yes| C
+```
+
 **b.)** Schreibe eine Funktion `collatz`, welche als Eingabe eine Zahl erhält und die nächste _Collatzzahl_ zurückgibt:
 
 - Zahl ungerade: `3n + 1`
 - Sonst: `n / 2`
 
-**Beachte**: Der Typ einer Division ist stets Eine Gleitkommazahl (`float`), die zurückgegebene Collatzzahl soll aber eine natürliche Zahl (`int`) sein.
+**Beachte**: Der Typ einer Division ist stets Eine Gleitkommazahl (`float`), die zurückgegebene Collatzzahl soll aber eine natürliche Zahl (`int`) sein. 
 
 Welcher Teil des UML's deckt diese Funktion ab?
+--> `//`
 
 **c.)** Schreibe eine zweite Funktion `run`, welche den Benutzer nach einer ganzzahligen Eingabe fragt und eine Liste mit den Collatz-Zahlen zurückgibt.
 Starte anschliessend mit dieser Zahl den unter _a.)_ beschriebenen Algorihmus, brich aber nach dem ersten Auftreten der Zahl `1` ab.
