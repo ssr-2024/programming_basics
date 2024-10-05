@@ -16,15 +16,21 @@ def fahrenheit_to_celsius(temperatur):
     temperatur = 5/9 * (temperatur - 32)
     return temperatur
 
-int = input('''(1) Umrechnung von Celsius nach Kelvin
+int = input("""(1) Umrechnung von Celsius nach Kelvin
         (2) Umrechnung von Celsius nach Fahrenheit
         (3) Umrechnung von Kelvin nach Celsius
         (4) Umrechnung von Kelvin nach Fahrenheit
         (5) Umrechnung von Fahrenheit nach Celsius
-        (6) Umrechnung von Fahrenheit nach Kelvin''')
+        (6) Umrechnung von Fahrenheit nach Kelvin""")
 
 def unit_input(selection):
-    return ''
+    if int == 1:
+        a = 'Celsius'
+    elif int == 2 or 3:
+        a = 'Kelvin'
+    elif int == 5 or 6:
+        a = 'Fahrenheit'
+    return 'a'
 
 def unit_output(selection):
     return ''
