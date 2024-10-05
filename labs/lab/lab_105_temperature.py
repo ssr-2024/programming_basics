@@ -24,19 +24,45 @@ int = input("""(1) Umrechnung von Celsius nach Kelvin
         (6) Umrechnung von Fahrenheit nach Kelvin""")
 
 def unit_input(selection):
-    if int == 1 or 2:
-        a = 'Celsius'
-    elif int == 3 or 4:
-        a = 'Kelvin'
-    elif int == 5 or 6:
-        a = 'Fahrenheit'
-    return 'a'
+    """
+    gibt einzugebendes Temperaturformat zurück
+    """
+    if selection == 1 or 2:
+        return 'Celsius'
+    elif selection == 3 or 4:
+        return 'Kelvin'
+    elif selection == 5 or 6:
+        return 'Fahrenheit'
 
-#temp = float(input(f'Temperatur in {unit_input(int)}:'))
-#print(f'Temperatur in ')
+temp = float(input(f'Gib eine Temperatur in °{unit_input(int)} ein:'))
 
 def unit_output(selection):
-    return ''
+    """
+    gibt auszugebendes Temperaturformat zurück
+    """
+    if selection == 3 or 5:
+        return 'Celsius'
+    elif selection == 1 or 6:
+        return 'Kelvin'
+    elif selection == 2 or 4:
+        return 'Fahrenheit'
+
+def new_temperature(temp):
+    if int == 1:
+        new_temp = celsius_to_kelvin(temp)
+    elif int == 2:
+        new_temp = celsius_to_fahrenheit(temp)
+    elif int == 3:
+        new_temp = kelvin_to_celsius(temp)
+    elif int == 4:
+        new_temp = celsius_to_fahrenheit(kelvin_to_celsius(temp))
+    elif int == 5:
+        new_temp = fahrenheit_to_celsius(temp)
+    elif int == 6:
+        new_temp = celsius_to_kelvin(fahrenheit_to_celsius(temp))
+    return new_temp
+
+print(f'User hat `{int}` für `{temp}`° {unit_input(int)} gewählt: "{temp}"° {unit_input(int)} ≅ {new_temperature(temp)}° {unit_output(temp)}')
 
 ## Skript
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
