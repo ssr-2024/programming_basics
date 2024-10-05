@@ -24,13 +24,16 @@ int = input("""(1) Umrechnung von Celsius nach Kelvin
         (6) Umrechnung von Fahrenheit nach Kelvin""")
 
 def unit_input(selection):
-    if int == 1:
+    if int == 1 or 2:
         a = 'Celsius'
-    elif int == 2 or 3:
+    elif int == 3 or 4:
         a = 'Kelvin'
     elif int == 5 or 6:
         a = 'Fahrenheit'
     return 'a'
+
+#temp = float(input(f'Temperatur in {unit_input(int)}:'))
+#print(f'Temperatur in ')
 
 def unit_output(selection):
     return ''
