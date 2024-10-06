@@ -9,6 +9,8 @@ Python (Anaconda) auch für Machine Learning und Data Science interessant!
 ## Datentypen
 
 
+
+
 ## Variablen
 
 Die Funktion ``` type(var) ``` gibt Typ der Variable aus. 
@@ -88,6 +90,7 @@ Zur Verwendung von Operatoren braucht es folgende Stuktur:
 **Boolsche Operatoren**
 - ```and``` und
 - ```or```  oder
+- ```not``` nicht
 
 ## Datumsangaben
 
