@@ -22,4 +22,9 @@ print(tore)
 
 # @exercise_3_kreisflaeche
 
+def kreisflaeche (radius):
+    flaeche=pi*(radius)**2
+    return flaeche
+
 radius = 5
+print(kreisflaeche(radius))
