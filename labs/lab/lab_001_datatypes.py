@@ -17,18 +17,19 @@ print('My BMI is ' + str(bmi) + '.')
 # @exercise_2c
 text = input('Text to repeat: ')
 repeat_n = input('How often should "' + str(text) + '" be repeated? ')
-print(f'{text * int(repeat_n)}')
+print(f'{text * int(repeat_n)}') #weitere Möglichkeit mit str() nach Multiplitation
 
 # @exercise_2d
+#Wo liegt hier der Fehler? Ehrlichgesagt komme ich nicht drauf
 a = input('Enter a number: ')
 a_times_3 = float(a) * 3
-print(str(a) + ' times 3 = ' + str(a_times_3))
+print(a + ' times 3 = ' + str(a_times_3)) 
 
 # @exercise_3a
 
 something = input("Enter something:")
-print(len(something) + ' Letters')
+print(str(len(something)) + ' Letters')
 
 # @exercise_3b
 something = input("Enter something:")
-print(something + ": " + len(something) + ' Letters')
+print(str(something) + ": " + str(len(something)) + ' Letters')
