@@ -20,10 +20,9 @@ repeat_n = input('How often should "' + str(text) + '" be repeated? ')
 print(f'{text * int(repeat_n)}') #weitere Möglichkeit mit str() nach Multiplitation
 
 # @exercise_2d
-#Wo liegt hier der Fehler? Ehrlichgesagt komme ich nicht drauf
-a = input('Enter a number: ')
-a_times_3 = float(a) * 3
-print(a + ' times 3 = ' + str(a_times_3)) 
+a = int(input('Enter a number: '))
+a_times_3 = a * 3
+print(str(a) + ' times 3 = ' + str(a_times_3)) 
 
 # @exercise_3a
 
