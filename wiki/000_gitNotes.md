@@ -34,3 +34,26 @@ git pull
 ## Eigene Branch erstellen
 Unten links kann man auf die aktuelle Branch klicken und dann create new Branch. 
 
+## Updates von der Main Branch Mergen
+Wenn etwas neues auf der Main branch hochgeladen wird, muss man das mergen mit der eigenen branch.
+<br>
+Auf die eigene Branch wechseln:
+```cmd
+git checkout Jonathan
+```
+Dann von der main Branch pullen
+```cmd
+git checkout main
+git pull origin main
+```
+Main branch mit der eigenen merchen:
+```cmd
+git checkout Jonathan
+git merge main
+```
+Den Merge comitten:
+```cmd
+git commit -m "Merges main into my branch"
+git push origin Jonatha
+```
+
