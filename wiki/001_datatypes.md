@@ -38,3 +38,25 @@ Wichtig: `None` wird nicht als True oder False betrachtet, ist aber selbst als F
  - `list("abc")`gibt `['a', 'b', 'c']` aus.
  - `str(10)` gibt `"10"` aus
  - `dict('name', ''Max')` gibt ein dictionary aus, bei welchem 'Name' mit 'Max' verbunden ist
+
+
+# Sammeldatentypen
+
+## Listen
+Listen können mehrere Objekte eines Datentyps speichern. Es müssen aber alle dem gleichen Datentyp angehören.
+<br>
+Beispiel:
+```Python
+list = [1, 2, 3, 4]
+```
+
+## Dictionaries
+Dictionaries knüpfen Werte an einen Key an. Dabei müssen nicht alle Daten den gleichen Typ aufweisen. Es können auch mehrere Daten zu einem Key zugeordnet werden.
+<br>
+Beispiel:
+```Python
+dictionary = {
+    "key1" = 10,
+    "key2" = 20
+}
+```
