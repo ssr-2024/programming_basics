@@ -1,4 +1,19 @@
 def print_results(name, percentage):
+    """ prints name and corresponding percentage as number of '*'.
+
+    Parameters
+    -----
+    name: str, char 
+        name of a individual or test case you want to be displayed
+    percentage: int, float
+        percentage score to be visualized as astrisks
+
+    Returns
+    -----
+    
+        none
+
+    """
     print(f"{name}: {'* ' * (int(percentage)//10)}")
 
 # Dictionary that stores number successfull tests for different people (important: keys must be unique)
