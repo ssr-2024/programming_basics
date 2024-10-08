@@ -1,5 +1,5 @@
 def print_results(name, percentage):
-    print(f"{name}: {'*' * (percentage//10)}")
+    print(f"{name}: {'* ' * (percentage//10)}")
 
 # Dictionary that stores number successfull tests for different people (important: keys must be unique)
 successfull_tests = {
