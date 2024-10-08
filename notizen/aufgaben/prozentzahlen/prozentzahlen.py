@@ -1,4 +1,7 @@
 #programm, um namen und prozentzahlen aus dictionary auszugeben
+from typing import Union
+
+
 successful_tests = {
     'marc': 100,
     'remo': 61,
@@ -7,11 +10,22 @@ successful_tests = {
     'elio': 70,
     'andi': 90
 }
-def print_result(name:str, percentage:float):
-    """funktion, um name und prozentzahl auf einer separaten Zeile auszugeben
-    wobei prozentzahl durch 10 geteilt wird und dann durch entsprechende Anzahl * ausgegeben wird
+def print_result(name:str, percentage: Union[int,float])-> None:
+    """prints name and percentage in line
+    therefore percentage is displayed with one * per 10%
+
+    Parameters 
+    ----------
+    name: str
+        name of individual
+    percentage: int, float
+        percentage of corresponding individual
+
+    Returns
+    -------
+        none
     """
-    print(f'{name}: {'*' * (percentage // 10)}')
+    print(f'{name}: {'*' * (int(percentage) // 10)}')
 
 #gebe alle namen und prozentzahlen aus
 print('Successful tests: [name, percentage]')
