@@ -1,4 +1,18 @@
 def print_result(name, percentage):
+    """prints the name and correspondending percentage value in a nicely formatted format
+    
+    Parameters
+    -----------
+    name: str, char
+        name of the individual or test case to be displayed
+    percentage: int, float
+        percentage score to be visualized as asteriks
+
+    Returns
+    --------
+        none
+        
+    """
     print (f"{name}: {'* ' * (int(percentage)//10)}") 
 
 successful_tests = {
