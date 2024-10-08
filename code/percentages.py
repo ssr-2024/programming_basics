@@ -5,11 +5,8 @@ For every 10 it gets one more '*'
 def visualize(percentage):
     print(f"{percentage}%: {'* ' * (percentage//10)}")
 
-test_variable = "im a test variable"
+percentages = [10, 29, 33, 92, 72, 73, 37]
 
-visualize(10)
-visualize(74)
-visualize(99)
-visualize(82)
-visualize(12)
-visualize(55)
+for percentage in percentages:
+    visualize(percentage)
+
