@@ -1,4 +1,6 @@
-def print_result(name, percentage):
+from typing import *
+
+def print_result(name: str, percentage: Union [int, float]) -> None:
     """prints the name and correspondending percentage value in a nicely formatted format
     
     Parameters
