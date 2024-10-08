@@ -627,7 +627,7 @@ Falls in Package (Ordner mit Modulen):
 from math_helpers.algebra import sqrt
 #aufrufen der funktion
 sqrt(100)
-
 ```
+Beachte dabei, dass der Standort des Ordners wichtig ist!
 
 - Package installieren: via Terminal mit `pip install package_name`
