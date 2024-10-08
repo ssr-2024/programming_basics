@@ -27,7 +27,7 @@ print(text * repeat_n)
 #von den Datentypen kann man Float oder Int brauchen, spielt keinen Unterschied
 
 # @exercise_2d
-a = float(input('Enter a number: '))
+a = int(input('Enter a number: '))
 a_times_3 = a * 3
 print(str(a) + ' times 3 = ' + str(a_times_3))
 
