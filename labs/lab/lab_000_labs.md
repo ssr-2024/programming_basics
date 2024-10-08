@@ -95,6 +95,6 @@ ZeroDivisionError: division by zero
 'some ' + 'text' = a
 ```
 - [ ] `NameError: name 'a' is not defined`
-- [ ] `SyntaxError: can't assign to operator`
+- [x] `SyntaxError: can't assign to operator`
 - [ ] `TypeError: unsupported operand type(s) for |: 'str' and 'str'`
 - [ ] `TypeError: Can't convert 'str' object to int implicitly`
