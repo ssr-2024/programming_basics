@@ -1,4 +1,7 @@
-def print_results(name, percentage):
+from typing import *
+
+
+def print_results(name: str, percentage: Union[int, float]) -> None: # we tell the function what types the parameters have to be
     """ prints name and corresponding percentage as number of '*'.
 
     Parameters
@@ -27,3 +30,4 @@ successfull_tests = {
 
 for name, percentage in successfull_tests.items():
     print_results(name, percentage)
+
