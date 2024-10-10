@@ -296,3 +296,114 @@ In for Schleifen mit range stehen in Klammern immer der Startpunkt, Endpunkt (de
 
 Der Befehl range(0, 10, 2) fängt also bei 0 an und geht in 2er Schritten bis 10, wobei 10 aber eben nicht inklusive ist. Die Ausgabe wäre also:
 0, 2, 4, 6, 8
+
+## Kapitel 3: Funktionen
+
+In Python gibt es neben den Basic Funktionen wie print(),input() oder len(). In Python sind Funktionen wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Funktionen helfen, den Code übersichtlicher zu gestalten und wiederholte Abläufe zu vermeiden.
+Funktionen werden in Python immer mit dem Schlüsselwort ***def** definiert. 
+
+Es folgt wieder ein einfaches Beispiel einer Funktion:
+
+```py
+def addiere(a, b):
+    return a + b
+
+ergebnis = addiere(3, 5)
+print(ergebnis)
+
+Output: 8
+```
+### Scope
+
+
+In Python bezieht sich der Scope (Gültigkeitsbereich) auf den Bereich des Codes, in dem eine Variable zugänglich ist. Es gibt zwei Hauptarten von Scope:
+
+1. Local Scope:
+- Variablen, die innerhalb einer Funktion definiert werden, befinden sich im local scope.
+- Sie sind nur innerhalb der Funktion verfügbar und können außerhalb der Funktion nicht verwendet werden.
+
+```py
+def meine_funktion():
+    x = 10  # lokale Variable
+    print(x)
+
+meine_funktion()
+# print(x) würde hier einen Fehler auslösen, weil x außerhalb der Funktion nicht existiert
+```
+
+2. Global Scope:
+- Variablen, die außerhalb aller Funktionen definiert werden, befinden sich im global scope.
+- Sie sind überall im Programm zugänglich, auch innerhalb von Funktionen (außer wenn sie dort überschrieben werden).
+
+```py
+x = 10  # globale Variable
+
+def meine_funktion():
+    print(x)  # kann auf die globale Variable zugreifen
+
+meine_funktion()  # Ausgabe: 10
+print(x)  # Ausgabe: 10
+```
+
+**Unterschied:**
+
+- Lokale Variablen existieren nur innerhalb der Funktion, in der sie definiert wurden.
+- Globale Variablen können überall im Code verwendet werden, es sei denn, sie werden innerhalb einer Funktion überschrieben.
+
+
+### Exception Handling
+
+Im Text-Book wird in einem kurzen Abschnitt ein wichtiger Aspekt aufgegriffen: Exception Handling, zu Deutsch: Behandlung von Ausnahmen. Das Beispiel und die Erklärungen in Text-Book sind so gut, dass ich sie hier übernehmen werde.
+
+Im folgenden Python Programm wird an einer Stelle durch 0 dividiert, was zu einem Error führt:
+
+```py
+def spam(divideBy):
+    return 42 / divideBy
+# hier wird eine Funktion "spam" definiert und ihr der Parameter "divideBy" zugeschrieben. Mit den print Befehlen unten wird für divideBy eine Zahl eingesetzt.
+
+print(spam(2))
+print(spam(12))
+print(spam(0))
+print(spam(1))
+
+```
+
+Folgender Ouput wird erzeugt in Python:
+
+```py 
+21.0
+3.5
+Traceback (most recent call last):
+  File "C:/zeroDivide.py", line 6, in <module>
+    print(spam(0))
+  File "C:/zeroDivide.py", line 2, in spam
+    return 42 / divideBy
+ZeroDivisionError: division by zero
+# das return statmement in spam(0) verursacht einen Error. 
+```
+
+Solche Fehlermeldungen kann man mit **try** und **except** statements in den Griff bekommen. Man schreibt dazu den Code um, wie folgt:
+
+```py
+def spam(divideBy):
+    try:
+        return 42 / divideBy
+    except ZeroDivisionError:
+        print('Error: Invalid argument.') # damit wird eine 'costum' fehlermeldung herausgegeben, ohne dass das programm crashed und nicht weiterläuft.
+
+print(spam(2))
+print(spam(12))
+print(spam(0))
+print(spam(1))
+```
+
+Damit sieht der Ouput so aus:
+
+```py
+21.0
+3.5
+Error: Invalid argument.
+None
+42.0
+```
