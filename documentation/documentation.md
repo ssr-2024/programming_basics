@@ -407,3 +407,241 @@ Error: Invalid argument.
 None
 42.0
 ```
+
+## Kapitel 4: Listen
+
+Eine Liste in Python ist eine geordnete Sammlung von Elementen, die unter einem gemeinsamen Namen gespeichert werden. Diese Elemente können verschiedene Datentypen haben, wie Zahlen, Zeichenketten oder sogar andere Listen. Listen sind veränderbar, das heisst wir können sie nachträglich ändern, beispielsweise Elemente hinzufügen, entfernen oder ändern.
+
+### Merkmale von Listen in Python:
+
+- Listen werden mit eckigen Klammern erstellt: []
+- Die Werte innerhalb einer Liste werden Items oder Elemente genannt
+- Sie können beliebige Datentypen enthalten: [1, "Hallo", True]
+- Elemente in einer Liste sind indiziert. Der erste Index ist 0.
+- Listen sind veränderbar, d. h. du kannst Elemente ändern, hinzufügen oder entfernen.
+
+Dazu wieder ein Beispiel:
+
+```py
+# Eine einfache Liste
+meine_liste = [1, 2, 3, "Hallo", True]
+
+# mit dem Befehl print(Name der Liste[Nummer des Elements]) kann dieses Element ausgegeben werden.
+print(meine_liste[3])  
+Output: Hallo
+
+# Mit dem Befehl .append können Items/Elemente hinzugefügt werden
+meine_liste.append("Welt")
+```
+
+Um individuelle Werte aus der Liste zu erhalten, werden eckige Klammern verwendet nach folgendem Schema:
+
+```py
+NameDerListe[Wert] #Werte beginnen immer bei 0!
+```
+Eine Liste kann auch mehrere kleinere Listen enthalten. Der Umgang damit geschieht wie folgt:
+
+```py
+spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]
+# Der erste Index spricht die entsprechende Liste an und der Zweite Index das darin enthaltene Element. Wenn ich also 30 als Ausgabe erhalten will muss ich folgende Eingabe tätigen:
+spam[0,2]
+```
+### Negative Indexe
+
+Mit negativen Indexen können ebenfalls Elemente aus einer Liste abgerufen werden. Mit dem Wert -1 wird das letzte Element der Liste abgerufen, mit -2 das zweitletzte usw.
+
+### Slices
+
+Mit Slices (zu Deutsch Scheiben) können mehrere Elemente aus einer Liste gleichzeitig abgerufen werden. Dazu wird zwischen den Elementen ein Doppelpunkt gesetzt:
+
+```py
+meine_liste = ['Hund', 'Katze', 'Maus', 'Fuchs', 'Hirsch']
+
+print(meine_liste[1:3])
+
+Output: ['Katze', 'Maus']
+# Mit der Ausgabe werden die Elemente 1 (also 'Katze') und 2 (also 'Maus')
+```
+
+### Elemente hinzufügen
+
+In einer Liste können Elemente auch hinzugefügt werden. Einerseits wie angesprochen mit dem Befehl '.append', dann wird das Element am Ende der Liste hinzugefügt. Alternativ gibt es auch diese Variante:
+
+```py
+meine_liste = ['Hund', 'Katze', 'Maus', 'Fuchs', 'Hirsch']
+
+meine_liste[1]='Hamster'
+#Mit diesem Befehl wird das erste Element in der Liste ersetzt durch 'Hamster'.
+print(meine_liste)
+
+Output: ['Hund', 'Hamster', 'Maus', 'Fuchs', 'Hirsch']
+```
+
+### Elemente löschen
+
+So wie Elemente hinzugefügt werden können, können auch Elemente aus einer Liste gelöscht werden. Dies geschieht mit dem Befehl 'del'.
+
+```py
+meine_liste = ['Hund', 'Katze', 'Maus', 'Fuchs', 'Hirsch']
+
+del meine_liste[3]
+
+print(meine_liste)
+
+Output: ['Hund', 'Katze', 'Maus', 'Hirsch']
+```
+
+### in und not Operatoren für Listen
+
+Mit den Befehlen 'in' und 'not' kann geprüft werden, ob sich ein Element in der Liste befindet:
+
+```py 
+'howdy' in ['hello', 'hi', 'howdy', 'heyas']
+True
+
+spam = ['hello', 'hi', 'howdy', 'heyas']
+'cat' in spam
+False
+```
+### Einige nützliche Tricks beim Arbeiten mit Listen
+
+Im Text-Book wir eine Reihe an nützlichen Tricks aufgeführt beim Arbeiten mit Listen. Diese möchte ich hier zum Nachschlagen festhalten:
+
+#### Der multiple Assignment Trick
+
+Mit diesem Trick können mehrere Variablen gleichzeitig den Werten in einer Liste hinzugefügt werden:
+
+Anstatt diese Zeilen zu schreiben: 
+```py
+cat = ['fat', 'orange', 'loud']
+size = cat[0]
+color = cat[1]
+disposition = cat[2]
+```
+Kann direkt folgende Variante gewählt werden:
+
+```py
+cat = ['fat', 'orange', 'loud']
+size, color, disposition = cat
+```
+Dazu müssen jedoch die Anzahl Variablen und Werte in der Liste übereinstimmen, ansonsten entsteht ein Fehlercode in Python. 
+
+#### Augmented Assignment Operators
+
+Augmented Assignment Operators in Python sind spezielle Operatoren, die eine Kombination aus einer mathematischen Operation und einer Zuweisung darstellen. Sie werden verwendet, um den Wert einer Variablen zu ändern und gleichzeitig das Ergebnis der Operation zurück in die gleiche Variable zu speichern. Dies ist eine kompakte Schreibweise, die sowohl den Code kürzer als auch lesbarer macht.
+
+Hier sind einige gängige Beispiele für solche Operatoren:
+
+- `+=` (Addition und Zuweisung): `x += 5` ist gleichbedeutend mit `x = x + 5`
+- `-=` (Subtraktion und Zuweisung): `x -= 3` ist gleichbedeutend mit `x = x - 3`
+- `*=` (Multiplikation und Zuweisung): `x *= 2` ist gleichbedeutend mit `x = x * 2`
+- `/=` (Division und Zuweisung): `x /= 4` ist gleichbedeutend mit `x = x / 4`
+- `%=` (Modulo und Zuweisung): `x %= 7` ist gleichbedeutend mit `x = x % 7`
+
+
+### Die `index()`-Methode
+
+Die `index()`-Methode wird verwendet, um den Index des ersten Vorkommens eines bestimmten Elements in einer Liste zu finden. Wenn das Element nicht gefunden wird, löst sie einen `ValueError` aus.
+
+Ein Beispiel in Python: 
+
+```py
+fruits = ['Apfel', 'Banane', 'Kirsche', 'Banane']
+index_banane = fruits.index('Banane')
+
+print(index_banane)  
+Output: 1
+```
+
+### Die `append()`- und `insert()`-Methode
+
+Mit den Befehlen `append()` und `insert()` können Elemente einer Liste hinzugefügt werden. 
+
+Mit `append()` wird das Element am Ende der Liste angehängt:
+
+```py
+fruits = ['Apfel', 'Banane', 'Kirsche']
+fruits.append('Orange')
+
+print(fruits)
+Output: ['Apfel', 'Banane', 'Kirsche', 'Orange']
+```
+
+Mit `insert()` kann das Elemenent an einer bestimmten Position eingefügt werden:
+
+```py
+fruits = ['Apfel', 'Banane', 'Kirsche']
+fruits.insert(1, 'Orange')
+
+print(fruits)  
+Output: ['Apfel', 'Orange', 'Banane', 'Kirsche']
+```
+
+### Der `remove()`-Methode
+
+Mit dem `remove()`-Befehl können Elemente aus einer Liste gelöscht werden:
+
+```py
+fruits = ['Apfel', 'Banane', 'Kirsche', 'Banane']
+fruits.remove('Banane')
+
+print(fruits) 
+Output: ['Apfel', 'Kirsche', 'Banane']
+```
+
+### Listen-ähnliche Typen: Strings und Tupel
+
+Listen sind nicht die einzigen Datentypen, die geordnete Sequenzen von Werten darstellen. Zum Beispiel sind Strings und Listen ähnlich, wenn man einen String als "Liste" einzelner Textzeichen betrachtet. Viele Dinge, die man mit Listen machen kann, funktionieren auch mit Strings: Indexierung, Slicing, for-Schleifen, `len()`, sowie die Operatoren `in` und `not in`.
+
+Beispiele:
+
+```python
+name = 'Zophie'
+print(name[0])      # Ausgabe: 'Z'
+print(name[-2])     # Ausgabe: 'i'
+print(name[0:4])    # Ausgabe: 'Zoph'
+print('Zo' in name) # Ausgabe: True
+```
+
+### Veränderbare und unveränderbare Datentypen
+
+Listen sind veränderbar (mutable), das heisst, wir können ihre Werte verändern, Werte hinzugefügen oder entfernen. Im Gegensatz dazu sind Strings unveränderbar (immutable), das bedeutet, man kann ihren Inhalt nicht ändern.
+
+```py
+name = 'Zophie a cat'
+name[7] = 'the'  
+Output ist ein Fehler: TypeError
+```
+Um einen String zu verändern, erstellt man einen neuen String durch Verkettung und Slicing. Dies gezeigt an einem Beispiel:
+
+```py
+name = 'Zophie a cat'
+new_name = name[0:7] + 'the' + name[8:12]
+
+print(new_name)
+Ouput: 'Zophie the cat'
+```
+
+### Tupel
+Tupel funktionieren nach dem gleichen Prinzip wie Listen, sie sind jedoch unveränderbar. Sie werden mit runden Klammern () statt eckigen Klammern [] definiert:
+
+```py 
+eggs = ('hello', 42, 0.5)
+
+print(eggs[0])
+Output: 'hello'
+
+print(eggs[1:3])   
+Output: (42, 0.5)
+```
+
+## Übungen während den Lektionen
+
+### 08.10.2024 Pypi
+
+Versionskontrolle = 0.0.1 allererste Version
+Höhere Version "6.4.5" = weiterentwickelt
+
+#### Art Python
+
+Auf der Seite von Art Python kann direkt. 
