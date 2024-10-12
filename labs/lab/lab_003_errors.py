@@ -7,3 +7,4 @@ a = "string"
 a_squared = a**2
 # @exercise_1c 'ZeroDivisionError: division by zero'
 divide_by_zero = 10/0
+

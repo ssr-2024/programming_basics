@@ -95,6 +95,8 @@ ZeroDivisionError: division by zero
 'some ' + 'text' = a
 ```
 - [ ] `NameError: name 'a' is not defined`
-- [ ] `SyntaxError: can't assign to operator`
+- [X] `SyntaxError: can't assign to operator`
 - [ ] `TypeError: unsupported operand type(s) for |: 'str' and 'str'`
 - [ ] `TypeError: Can't convert 'str' object to int implicitly`
+
+Explanation: Es wird Versucht die Variable `a` unter dem Namen `'some'` + `'text'` zu speichern. Jedoch ist das kein Spiecherort, weshalb es zu einem Fehler kommt.
