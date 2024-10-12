@@ -635,7 +635,227 @@ print(eggs[1:3])
 Output: (42, 0.5)
 ```
 
-## Übungen während den Lektionen
+## Kapitel 5: Dictionaries und Datenstrukturierung
+
+## Dictionaries in Python
+
+`Dictionaries` sind ähnlich wie Listen eine Samllung von Werten. Im Gegensatz zu den Indizes für Listen können die indizes für Dictionaries viele verschiedene Datentypen verwenden, nicht nur ganze Zahlen. In Dictionaries werden dafür sogennannte **Schlüssel** / **keys** verwendet, diesme Schlüssel wird ein Wert zugeordnet. Dadurch ensteht ein Schlüssel-Wert-Paar.
+
+### Eigenschaften von Dictionaries:
+- **Unveränderliche Schlüssel**: Die Schlüssel in einem Dictionary müssen unveränderlich sein (z.B. Strings, Zahlen, Tupel). Listen können nicht als Schlüssel verwendet werden.
+- **Veränderliche Werte**: Die Werte eines Dictionaries können beliebig veränderlich sein, d.h. sie können Listen, andere Dictionaries, Strings oder beliebige Objekte sein.
+- **Ungeordnete Struktur**: Dictionaries sind ungeordnet, was bedeutet, dass die Reihenfolge der Einträge nicht garantiert ist.
+
+### Erstellung eines Dictionaries:
+Ein Dictionary wird mit geschweiften Klammern `{}` erstellt, wobei die Schlüssel und Werte durch Doppelpunkte getrennt und die Paare durch Kommata getrennt werden:
+
+```python
+person = {
+    "Name": "Robert",
+    "Alter": 32,
+    "Beruf": "Architekt"
+}
+```
+
+Im Text-Book wird ein sehr anschauliches Beispiel beschrieben, mit dem man sich das Geburtsdatum von Freunden merken kann. Dieses möchte ich hier gerne festhalten:
+
+```py
+birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
+# Dies ist ein Dictionary, welches den jeweiligen Namen (Schlüssel) mit Geburtstagen (Werten) verknüpft.
+
+while True:
+    print('Enter a name: (blank to quit)')
+    name = input()
+    if name == '':
+        break
+    # Es wird eine Endlosschleife kreiert, die den Benutzer nach einem Namen fragt.
+    # Wenn der Benutzer einen leeren String eingibt, wird die Schleife beendet.
+
+    if name in birthdays:
+        # Überprüft, ob der eingegebene Name bereits im Dictionary `birthdays` vorhanden ist.
+
+        print(birthdays[name] + ' is the birthday of ' + name)
+        # Wenn der Name gefunden wird, wird der entsprechende Geburtstag aus dem Dictionary abgerufen und ausgegeben.
+    else:
+        print('I do not have birthday information for ' + name)
+        print('What is their birthday?')
+        bday = input()
+        # Wenn der Name nicht im Dictionary ist, wird der Benutzer nach dem Geburtstag der Person gefragt.
+    
+        birthdays[name] = bday
+        # Der neue Name und der zugehörige Geburtstag werden dem Dictionary hinzugefügt.
+
+        print('Birthday database updated.')
+        # Eine Bestätigungs-Nachricht, dass der Dictionary aktualisiert wurde.
+```
+
+### Die Methoden keys(), values() und items()
+
+Es gibt die Möglichkeit sich die Schlüssel, Werte und Schlüssel und Werte eines Dictionaries ausgeben zu lassen. Dazu werden die Befehle `keys()`, `values()` und `items()`verwendet. Die von diesen Methoden zurückgegebenen Werte werden in einer Art Liste aufgeführt, es handelt sich dabei jedoch um keine echten Listen: Sie können nicht verändert werden und besitzen keine `append()`-Methode. Diese Datentypen (**dict_keys**, **dict_values** und **dict_items**) können jedoch in `for`-Schleifen verwendet werden. Dies zeigt sich am Besten an Beispielen:
+
+```python
+spam = {'color': 'red', 'age': 42}
+
+for v in spam.values():
+        print(v)
+Output: 
+red
+42
+
+
+for k in spam.keys():
+        print(k)
+Output:
+color
+age
+
+for i in spam.items():
+        print(i)
+Output:
+('color', 'red')
+('age', 42)
+```
+
+Um eine richtige Liste zu erhalten, müssen die Werte in eine Liste umgewandelt werden:
+
+```py
+spam = {'color': 'red', 'age': 42}
+spam.keys()
+# Die Methode 'keys()' gibt alle Schlüssel des Dictionaries 'spam' zurück.Allerdings gibt sie kein echtes Listenobjekt zurück, sondern ein 'dict_keys'-Objekt, das ähnlich wie eine Liste verwendet werden kann, z.B. in Schleifen.
+
+# Zwischenzeitliche Ausgabe wäre:
+# dict_keys(['color', 'age'])
+# Dies zeigt, dass das 'dict_keys'-Objekt die beiden Schlüssel 'color' und 'age' enthält.
+
+>>> list(spam.keys())
+# Der Befehl 'list()' wird verwendet, um das 'dict_keys'-Objekt in eine echte Liste umzuwandeln.
+
+Output:
+['color', 'age']
+# Das Ergebnis ist eine echte Liste, die nur die Schlüssel des Dictionaries enthält.
+```
+
+### Überprüfung der Inhalte eines Dictionaries
+
+Mit den `in`und `not`Operatoren kann überprüft werden, ob ein Key oder ein Wert in einem Dictionary existiert. Dazu können beispielsweise folgende Abfragen in der interaktiven Shell in Visual Studio Code gemacht werden:
+
+```py
+>>> test = {'Ort': 'Bern', 'Quartier': 'Breitenrain'}
+>>> 'Quartier' in test.keys()
+True
+
+>>> 'Bern' in test.values()
+True
+
+>>> 'Land' in test.keys()
+False
+```
+
+### Die `get()`-Methode
+
+Mit der `get()`-Methode können direkt der Schlüssel und der Wert aus einem Dictionary gezogen werden. Ausserdem kann ein Ausweichswert angegeben werden, falls der Key nicht existiert.
+
+```py
+>>> officeSupplies = {'pens': 10, 'notebooks': 3}
+>>> 'I have ' + str(officeSupplies.get('notebooks', 0)) + ' notebooks.'
+# 0 ist der Ausweichswert, der ausgegeben wird, wenn der Key 'notebooks' nicht im Dictionary sein sollte.
+'I have 3 notebooks.'
+
+>>> 'I have ' + str(officeSupplies.get('markers', 0)) + ' markers.'
+# Hier wird der Ausweichswert 0 ausgegeben, weil 'markers' nicht im Dictionary vorkommt.
+'I have 0 markers.'
+```
+
+### Die `setdefault()`-Methode 
+
+Mit der `setdefault()`-Methode kann einem Key einen Wert zugewiesen werden, aber nur wenn dieser nicht schon einen Wert besitzt. Dies ist wiederum am besten an einem Beispiel erklärt:
+
+```py
+>>> person = {'name': 'Anna', 'age': 30}
+>>> person.setdefault('city', 'Bern')
+# Weil der Key 'city' im Dictionary noch nicht exisiert, wird er hinzugefügt und ihm der Wert 'Bern' zugewiesen.
+>>> person
+
+{'city': 'Bern', 'age': 30, 'name': 'Anna'}
+# Dem Dictionary wurde der Key 'city' mit dem Wert 'Bern hinzugefügt.
+
+>>> person.setdefault('city', 'Zurich')
+# Wird jetzt versucht auf die gleiche Art dem Dictionary nochmals 'city' hinzuzufügen und der Wert 'Zurich', passiert aber nichts. Der Wert von 'city' wird auch nicht geändert. Wenn der Key schon exisitiert, hat die setdefault-Methode keinen Effekt. 
+
+>>> person
+{'city': 'Bern', 'age': 30, 'name': 'Anna'}
+```
+
+Im Text-Book wird wieder ein sehr anschauliches Beispiel beschrieben, welches ich hier gerne zum Nachschlagen festhalten möchte:
+
+Die `setdefault()`-Methode ist eine praktische Abkürzung, um sicherzustellen, dass ein Schlüssel existiert. Hier ist ein kurzes Programm, das die Anzahl der Vorkommen jedes Buchstabens in einem String zählt:
+
+```python
+message = 'Es war ein heller kalter Tag im April, und die Uhren schlugen dreizehn.'
+# Nachricht, deren Buchstaben gezählt werden sollen
+
+count = {}
+# Dictionary, das die Zählungen der Buchstaben speichert
+
+for character in message:
+    # Diese Schelife speichert die Zählung der Buchstaben und stellt sicher, dass der Buchstabe im Dictionary existiert, mit einem Standardwert von 0
+    count.setdefault(character, 0)
+    
+    count[character] = count[character] + 1
+    # Erhöht den Zähler für diesen Buchstaben um 1
+
+print(count)
+# Gibt die Zählungen aller Buchstaben aus
+
+Output:
+{' ': 13, ',': 1, '.': 1, 'A': 1, 'I': 1, 'a': 4, 'c': 3, 'b': 1, 'e': 5, 'd': 3, 'g': 2, 'i': 6, 'h': 3, 'k': 2, 'l': 3, 'o': 2, 'n': 4, 'p': 1, 's': 3, 'r': 5, 't': 6, 'w': 2, 'y': 1}
+```
+
+Der Output zeigt an, wie viel mal jeder Buchstabe in der Nachricht vorkommt: Leerschlag 13 Mal, 'A' 1 Mal usw.
+
+Im Text-Book wurde ausserdem ein Beispiel gemacht für ein Tic-Tac-Toe Board, anhand von dem Datenstrukturen zur Repräsentation von Dingen im echten Leben erklärt wurden. Dieses Beispiel wird im Rahmen der Dokumentatin ausgelassen.
+
+### Verschachtelte Dictionaries und Listen
+
+Das Beispield es Tic-Tac-Toe Boards geht in die Richtung von verschachtelten Dictionaries und Listen. Um für kompliziertere Dinge ein Modell zu erstellen, wird es nötig sein Listen und Dictionaries innerhalb von anderen Listen und Dictionaries zu erstellen.Listen sind nützlich, um eine geordnete Reihe von Werten zu enthalten, und Wörterbücher sind nützlich, um Schlüssel mit Werten zu verknüpfen. Dieses Thema wird im Text-Book wieder anhand eines Beispiels erklärt. Im Beispiel geht es um ein Picknick und wer was dazu mitbringt. 
+
+Die Funtkion `totalBrought()`kann diese Datenstruktur lesen und die Gesamtzahl der von allen Gästen mitgebrachten Gegenstände berechnen:
+
+```py
+allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
+             'Bob': {'ham sandwiches': 3, 'apples': 2},
+             'Carol': {'cups': 3, 'apple pies': 1}}
+# Hier sind Dictionaries innerhalb von anderen Dictionaries, die die jeweiligen Dinge beinhalten, die die Personen zum Picknick bringen.              
+
+# Funktion, die die Gesamtanzahl eines bestimmten Items über alle Gäste hinweg berechnet
+def totalBrought(guests, item):
+    numBrought = 0
+    # Schleife durch jeden Gast (k) und ihre mitgebrachten Items (v)
+    for k, v in guests.items():
+        # Addiere die Anzahl des gesuchten Items, falls es existiert, andernfalls 0
+        numBrought = numBrought + v.get(item, 0)
+    return numBrought
+
+# Ausgabe der Gesamtanzahl der mitgebrachten Items für jedes Item
+print('Number of things being brought:')
+print(' - Apples         ' + str(totalBrought(allGuests, 'apples')))
+print(' - Cups           ' + str(totalBrought(allGuests, 'cups')))
+print(' - Cakes          ' + str(totalBrought(allGuests, 'cakes')))
+print(' - Ham Sandwiches ' + str(totalBrought(allGuests, 'ham sandwiches')))
+print(' - Apple Pies     ' + str(totalBrought(allGuests, 'apple pies')))
+
+Output:
+Number of things being brought:
+- Apples 7
+- Cups 3
+- Cakes 0
+- Ham Sandwiches 3
+- Apple Pies 1
+```
+
+
+
+## Übungen während den Lektionen (needs to be udpated)
 
 ### 08.10.2024 Pypi
 
@@ -644,4 +864,4 @@ Höhere Version "6.4.5" = weiterentwickelt
 
 #### Art Python
 
-Auf der Seite von Art Python kann direkt. 
+Auf der Seite von Art Python kann direkt der Link kopiert werden, der zur Installation verwendet wird. 
