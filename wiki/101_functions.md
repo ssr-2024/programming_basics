@@ -1,5 +1,5 @@
 # Funktionen
-Erkläre das Prinzip der Modularität.
+Das Prinzip der Modularität beschreibt die Wiederverwendbarkeit von Funktionen in verschiedenen Kontexten.
 
 ## Funktionen aufrufen
 
