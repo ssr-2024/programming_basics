@@ -1,11 +1,40 @@
-# Errors
 
-List of common errors:
+**List of common errors:**
 
-- [NameError](#NameError)
-- [EOL, while scanning string literal](#SyntaxError)
-- [can only concatenate str (not "int") to str](#TypeError)
-- [can't multiply sequence by non-int of type 'str'/'float'](#TypeError)
+- [NameError](#nameerror)
+  - [Cause](#cause)
+  - [Potential Solutions](#potential-solutions)
+  - [Example](#example)
+- [EOL, while scanning string literal](#eol-while-scanning-string-literal)
+  - [Cause](#cause-1)
+  - [Solution](#solution)
+  - [Example](#example-1)
+- [can only concatenate str (not "int") to str](#can-only-concatenate-str-not-int-to-str)
+  - [Cause](#cause-2)
+  - [Solution](#solution-1)
+  - [Example](#example-2)
+- [can't multiply sequence by non-int of type 'str'/'float'](#cant-multiply-sequence-by-non-int-of-type-strfloat)
+  - [Cause](#cause-3)
+  - [Example](#example-3)
+- [Can't convert 'int' object to str implicitly](#cant-convert-int-object-to-str-implicitly)
+  - [Cause](#cause-4)
+  - [Solution](#solution-2)
+  - [Example](#example-4)
+- [Infinity Loop](#infinity-loop)
+  - [Cause](#cause-5)
+  - [Solution](#solution-3)
+- [](#)
+  - [Cause](#cause-6)
+  - [Solution](#solution-4)
+  - [Example](#example-5)
+- [](#-1)
+  - [Cause](#cause-7)
+  - [Solution](#solution-5)
+  - [Example](#example-6)
+- [](#-2)
+  - [Cause](#cause-8)
+  - [Solution](#solution-6)
+  - [Example](#example-7)
 
 
 ## NameError
@@ -72,6 +101,31 @@ Traceback (most recent call last):
 TypeError: can't multiply sequence by non-int of type 'float'
 ```
 
+## Can't convert 'int' object to str implicitly
+### Cause
+Python gives an error because you can use the + operator only to add two integers together or concatenate two strings. You can’t add an integer to a string because this is ungrammatical in Python
+### Solution
+You can fix this by using a string version of the integer instead
+### Example
+```py
+>>> print('I am ' + 29 + ' years old.')
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    print('I am ' + 29 + ' years old.')
+TypeError: Can't convert 'int' object to str implicitly
+
+# solution
+>>> print('I am ' + str(29) + ' years old.')
+I am 29 years old.
+```
+
+## Infinity Loop
+### Cause
+Bug in a program causing to get stuck in a Infinity Loop
+### Solution
+Press CTRL-C. This will send a *KeyboardInterrrupt* error to your program and cause it to stop immediately.
+
+
 ## 
 ### Cause
 
@@ -92,11 +146,3 @@ TypeError: can't multiply sequence by non-int of type 'float'
 ### Solution
 
 ### Example
-
-## 
-### Cause
-
-### Solution
-
-### Example
-
