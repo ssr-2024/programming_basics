@@ -637,7 +637,6 @@ Output: (42, 0.5)
 
 ## Kapitel 5: Dictionaries und Datenstrukturierung
 
-## Dictionaries in Python
 
 `Dictionaries` sind ähnlich wie Listen eine Samllung von Werten. Im Gegensatz zu den Indizes für Listen können die indizes für Dictionaries viele verschiedene Datentypen verwenden, nicht nur ganze Zahlen. In Dictionaries werden dafür sogennannte **Schlüssel** / **keys** verwendet, diesme Schlüssel wird ein Wert zugeordnet. Dadurch ensteht ein Schlüssel-Wert-Paar.
 
@@ -853,6 +852,316 @@ Number of things being brought:
 - Apple Pies 1
 ```
 
+## Kapitel 6: Arbeiten mit Strings
+
+Text (und damit Strings) ist einer der am häufigsten verwendeten Datentypen in Python. Deshalb ist der korrekte Umgang damit essenziell. 
+
+Strings können grundsätzlich mit einfachen Anführungszeichen `'Beispieltext'` geschrieben werden. Dadurch können aber einige Probleme auftreten. Tritt in einem Textabschnitt nämlich ein solches Anführungszeichen auf, dann führt das zu Problemen in Python.
+
+```py
+print('Das ist Tim's Hut')
+#Hier wird nur der Text "Das ist Tim" ausgegeben, die 3 einfachen Anführungszeichen verursachen ein Problem in Python.
+```
+
+Zum Glück gibt es mehrere Varianten wie Strings geschrieben werden können:
+- mit einem Anführungszeichen `'Beispieltext1'`
+- mit doppelten Anführungszeichen `"Beispieltext2"`
+- Mehrezeilige Strings mit dreifachen Anführungszeichen `'''Beispieltext3'''/"""Beispieltext3"""`
+
+### Escape characters
+
+Ausserdem können mit sogenannten Escape characters Zeichen verwendet werden, die sonst nicht in Strings verwendet werden können. Dazu wird ein Backslash `\` benutzt.
+Das Beispiel von vorhin kann also so gelöst werden:
+
+```py
+print('Das ist Tim\'s Hut')
+# Dadurch stimmt der Ouput: Das ist Tim's Hut.
+```
+Escape-Sequenzen wie \' und \" ermöglichen es, Anführungszeichen innerhalb von Strings zu verwenden, ohne die String-Begrenzung zu stören.
+Dazu gibt es eine Reihe von verschiedenen Escape characters, die nützlich sind:
+
+| Escape-Sequenz   | Wird dargestellt als |
+|------------------|----------------------|
+| \'               | Einfaches Anführungszeichen |
+| \"               | Doppelte Anführungszeichen |
+| \t               | Tabulator             |
+| \n               | Neue Zeile (Zeilenumbruch) |
+| \\               | Rückwärtsschrägstrich |
+
+### Rohstrings
+
+Rohstrings (in Python mit r gekennzeichnet) interpretieren Escape-Sequenzen wie \n oder \t nicht, sondern behandeln sie als normale Zeichen.
+Wie in diesem Beispiel dargestellt:
+
+```py
+text = r"Dies ist ein Rohstring, \n wird nicht als Zeilenumbruch behandelt"
+```
+
+### Mehrzeilige Kommentare
+
+Mit 3 doppelten Anführungszeichen `"""` können mehrzeilige Kommentare in Python eingefügt werden.
+
+```py
+text = r"Dies ist ein Rohstring, \n wird nicht als Zeilenumbruch behandelt"
+
+"""Dies ist ein mehrzeiliger Kommentar,
+der nicht ausgegeben wird."""
+```
+
+### Indexierung und Slicing von Strings
+
+Strings verwenden Indizes und Slices genauso wie Listen. 
+Wir können uns den String `'Hello world!'` als Liste vorstellen, bei der jedes Zeichen im String einen entsprechenden Index hat:
+
+Hier ein Beispiel, das absichtlich als Bild aus dem Text-Book eingefügt wurde:
+<img src='imgs/hello_world.PNG'>
+
+Der Leerschlag und das Ausrufezeichen werden mitgezählt. Insgesamt sind es also 12 Zeichen, von Index 0 bis Index 11.
+
+### Die `upper()`, `lower()`, `isupper()` und `islower()`-Methoden
+
+Mit den Befehlen `upper()` und `lower()` kann ein String in Grossbuchstaben, bzw. Kleinbuchstaben umgewandelt werden.
+Dazu wird der Variablenname verwendet und dann die entsprechende Variante dahinter gesetzt:
+
+```py
+test1 = 'mein name ist ben'
+test1 = test1.upper()
+
+print(test1)
+Ausgabe:
+MEIN NAME IST BEN
+
+test2 = 'Mein Name ist Gwen'
+test2 = test2.lower()
+
+print(test2)
+Ausgabe:
+'mein name ist gwen'
+```
+**Beispiel: Verwendung von `upper()` und `lower()`**
+
+Die Methoden `upper()` und `lower()` sind nützlich, wenn wir mit Benutzereingaben arbeiten, bei denen die Gross- und Kleinschreibung keine Rolle spielen soll.
+Angenommen, wir möchten überprüfen, ob ein Benutzer "ja" eingibt, unabhängig davon, wie er es schreibt (z. B. "Ja", "JA", "jA", etc.). 
+
+```py
+antwort = input("Möchten Sie fortfahren? (ja/nein): ")
+
+#Durch das konvertieren von antwort in Kleinbuchstaben mit .lower() können wir es leicht mit "ja" vergleichen.
+if antwort.lower() == "ja":
+    print("Fortfahren...")
+else:
+    print("Abbrechen...")
+```
+
+Die Methoden `islower()` und `isupper()` werden verwendet, um zu überprüfen,
+ob alle Buchstaben in einem String entweder in Klein- oder Grossbuchstaben vorliegen.
+
+**`islower()`**
+`islower()` gibt `True` zurück, wenn alle alphabetischen Zeichen im String klein geschrieben sind.
+Wenn es keine Buchstaben gibt oder der String gemischte Groß- und Kleinbuchstaben enthält, gibt es `False` zurück.
+
+Beispiel:
+```python
+text = "hallo welt"
+print(text.islower()) 
+
+Output: True
+```
+**`isupper()`**
+`isupper()` gibt `True` zurück, wenn alle alphabetischen Zeichen im String groß geschrieben sind.
+Andernfalls gibt es `False` zurück.
+
+Beispiel:
+```py
+text = "HALLO WELT"
+print(text.isupper())
+
+Output: True
+```
+
+### Die isX-String-Methoden
+
+Neben `islower()` und `isupper()` gibt es mehrere String-Methoden, die mit "is" beginnen und einen booleschen Wert zurückgeben, der die Natur des Strings beschreibt. Hier sind einige gängige isX-Methoden:
+
+- **`isalpha()`**: Gibt `True` zurück, wenn der String nur aus Buchstaben besteht und nicht leer ist.
+- **`isalnum()`**: Gibt `True` zurück, wenn der String nur aus Buchstaben und Zahlen besteht und nicht leer ist.
+- **`isdecimal()`**: Gibt `True` zurück, wenn der String nur aus Dezimalziffern besteht und nicht leer ist.
+- **`isspace()`**: Gibt `True` zurück, wenn der String nur aus Leerzeichen, Tabs oder Zeilenumbrüchen besteht und nicht leer ist.
+- **`istitle()`**: Gibt `True` zurück, wenn jedes Wort im String mit einem Großbuchstaben beginnt und nur aus Kleinbuchstaben besteht.
+
+Beispiele:
+```py
+print('hallo'.isalpha())       # True
+print('hallo123'.isalnum())    # True
+print('123'.isdecimal())       # True
+print('   '.isspace())         # True
+print('Das Ist Ein Titel'.istitle())  # True
+```
+
+Anwendung zur Eingabevalidierung:
+
+Die isX-Methoden sind hilfreich, um Benutzereingaben zu validieren. Hier ein Beispiel, 
+das den Benutzer wiederholt nach seinem Alter und einem neuen Passwort fragt, 
+bis eine gültige Eingabe erfolgt:
+
+```py
+while True:
+    print('Geben Sie Ihr Alter ein:')
+    alter = input()
+    if alter.isdecimal():
+        break
+    print('Bitte geben Sie eine Ganzzahl für Ihr Alter ein.')
+
+while True:
+    print('Wählen Sie ein neues Passwort (nur Buchstaben und Zahlen):')
+    passwort = input()
+    if passwort.isalnum():
+        break
+    print('Passwörter dürfen nur Buchstaben und Zahlen enthalten.')
+```
+
+### Die Methoden `startswith()` und `endswith()` für Strings
+
+Die Methoden `startswith()` und `endswith()` geben `True` zurück, wenn der String, auf dem sie aufgerufen werden,
+mit dem angegebenen String beginnt bzw. endet. Andernfalls geben sie `False` zurück.
+
+Beispiele:
+
+```python
+print("supercode.py".endswith(".py"))                 # True
+print("supercode.txt".endswith(".py"))                # False
+print("12345".endswith("45"))      # True
+print("12345".endswith("5"))       # True
+print("12345".endswith("123"))     # False
+```
+
+### Die `join()` und `split()`-Methoden
+
+Mit `join()` können Strings miteinander kombiniert werden, mit `split()` können  sie getrennt werden.
+
+```python
+# Verbindet eine Liste von Wörtern zu einem String mit Leerzeichen. Die einzelnen Elemente werden zusammengeführt.
+woerter = ['Das', 'ist', 'ein', 'Test']
+satz = ' '.join(woerter)
+
+print(satz)
+Output: "Das ist ein Test"
+```
+
+Am Platz des Leerzeichens vor `.join(woerter)` kann beliebig etwas eingefügt werden. Im Beispiel wurde ein Leerzeichen verwendet,
+es kann aber auch ein Buchstabe sein, dieser wird aber zwischen jedem einzelnen Element ausgegeben. 
+Wird also beispielsweise `'s'` eingefügt, sieht der Output so aus:
+
+```python
+# Verbindet eine Liste von Wörtern zu einem String mit Leerzeichen. Die einzelnen Elemente werden zusammengeführt.
+woerter = ['Das', 'ist', 'ein', 'Test']
+satz = 's'.join(woerter)
+
+print(satz)
+Output: "DassistseinsTest"
+```
+
+Die `split()`-Methode macht genau das umgekehrte:
+
+```py
+satz = "Das ist ein Test"
+woerter = satz.split()
+
+print(woerter)  
+Output: ['Das', 'ist', 'ein', 'Test']
+
+# Zerlegt einen String anhand eines Kommas
+daten = "Apfel,Banane,Kirsche"
+fruechte = daten.split(',')
+
+print(fruechte)  
+Output: ['Apfel', 'Banane', 'Kirsche']
+```
+
+### `rjust()`, `ljust()`, `center()`
+
+**`rjust(width, fillchar)`**: Rechtsbündelt den String. In Klammern kann angegeben werden, mit wie vielen Zeichen und welchem der Abstand gefüllt wird,
+sodass der String die angegebene Breite erreicht.
+
+Beispiel:
+```py
+text = "Hallo"
+print(text.rjust(10, '-'))
+
+Output: 
+-----Hallo
+```
+
+**`ljust(width, fillchar)`**: Linksbündelt den String. In Klammern kann angegeben werden, mit wie vielen Zeichen und welchem der Abstand gefüllt wird,
+sodass der String die angegebene Breite erreicht.
+
+Beispiel:
+```py
+text = "Hallo"
+print(text.ljust(10, '-'))
+
+Output: 
+Hallo-----
+```
+
+**`center(width, fillchar)`**: Zentriert den String und füllt beide Seiten mit einem angegebenen Zeichen, sodass der String die angegebene Breite erreicht.
+
+Beispiel:
+```py
+text = "Hallo"
+print(text.center(10, '-'))
+
+Output: 
+--Hallo---
+```
+
+### `strip()`,`rstrip()` und `lstrip()`
+
+Die drei Befehle `strip()`,`rstrip()` und `lstrip()` machen genau das umgekehrte von `rjust()`, `ljust()`, `center()` und löschen angegebene Zeichen oder Leerschläge. 
+
+Beispiele:
+
+```py
+#strip()
+text = "---Hallo---"
+print(text.strip('-'))
+
+Output: Hallo
+
+#rstrip()
+text = "---Hallo---"
+print(text.rstrip('-'))
+
+Output: ---Hallo
+
+#lstrip()
+text = "---Hallo---"
+print(text.lstrip('-'))
+
+Output: Hallo---
+```
+
+### Kopieren und Einfügen von Strings mit `pyperclip`
+
+**`pyperclip.copy(text)`**: Kopiert den angegebenen String in die Zwischenablage.
+Damit können wir den kopierten Text überall einfügen, wo das Einfügen von Text möglich ist.
+
+Beispiel:
+```py
+import pyperclip
+pyperclip.copy("Hallo, Welt!")
+```
+
+**`pyperclip.paste()`**: Fügt den aktuellen Inhalt der Zwischenablage ein und gibt diesen als String zurück.
+
+Beispiel:
+```py
+import pyperclip
+text = pyperclip.paste()
+print(text)
+```
+
+Diese Funktionen sind praktisch, um automatisch Text zu kopieren oder aus der Zwischenablage zu holen.
 
 
 ## Übungen während den Lektionen (needs to be udpated)
@@ -861,6 +1170,7 @@ Number of things being brought:
 
 Versionskontrolle = 0.0.1 allererste Version
 Höhere Version "6.4.5" = weiterentwickelt
+
 
 #### Art Python
 
