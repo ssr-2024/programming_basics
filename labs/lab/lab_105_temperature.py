@@ -10,7 +10,7 @@ def celsius_to_fahrenheit(temperatur):
     return temperatur
 
 def fahrenheit_to_celsius(temperatur):
-    return temperatur
+    return (5/9)*(temperatur-32)
 
 
 def unit_input(selection):
