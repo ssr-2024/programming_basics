@@ -1,7 +1,7 @@
 ## Funktionen
 
 def celsius_to_kelvin(temperatur):
-    return temperatur
+    return temperatur+273.15
 
 def kelvin_to_celsius(temperatur):
     return temperatur
