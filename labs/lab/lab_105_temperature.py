@@ -14,7 +14,18 @@ def fahrenheit_to_celsius(temperatur):
 
 
 def unit_input(selection):
-    return ''
+    if selection == 1:
+        return 'Celsius'
+    elif selection == 2:
+        return 'Celsius'
+    elif selection == 3:
+        return 'Kelvin'
+    elif selection == 4:
+        return 'Kelvin'
+    elif selection == 5:
+        return 'Fahrenheit'
+    elif selection == 6:
+        return 'Fahrenheit'
 
 def unit_output(selection):
     return ''
