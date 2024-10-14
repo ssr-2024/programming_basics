@@ -7,7 +7,7 @@ def kelvin_to_celsius(temperatur):
     return temperatur-273.15
 
 def celsius_to_fahrenheit(temperatur):
-    return temperatur
+    return temperatur/(5/9) + 32
 
 def fahrenheit_to_celsius(temperatur):
     return (5/9)*(temperatur-32)
