@@ -100,6 +100,16 @@ In [lab_103_collections.py](./lab_103_collections.py) ist eine 2d-Liste `smiley`
 
 Füge ein Foto des UMLs oder das Mermaid-Diagramm hier ein.
 
+```mermaid
+flowchart TD
+    A[Start] --> B(initialize n as random int bigger than 0)
+    B --> C{n%2 == 0}
+    C -->|True| D[n = n/2]
+    C -->|False| E[n = 3n+1]
+    D --> C
+    E --> C
+```
+
 **b.)** Schreibe eine Funktion `collatz`, welche als Eingabe eine Zahl erhält und die nächste _Collatzzahl_ zurückgibt:
 
 - Zahl ungerade: `3n + 1`
