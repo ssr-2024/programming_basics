@@ -28,7 +28,18 @@ def unit_input(selection):
         return 'Fahrenheit'
 
 def unit_output(selection):
-    return ''
+    if selection == 1:
+        return 'Kelvin'
+    elif selection == 2:
+        return 'Fahrenheit'
+    elif selection == 3:
+        return 'Celsius'
+    elif selection == 4:
+        return 'Fahrenheit'
+    elif selection == 5:
+        return 'Celsius'
+    elif selection == 6:
+        return 'Kelvin'
 
 ## Skript
 unit = int(input("Welche Umrechnung willst du machen? \n"
@@ -38,6 +49,19 @@ unit = int(input("Welche Umrechnung willst du machen? \n"
                  + "(4) Umrechnung von Kelvin nach Fahrenheit \n"
                  + "(5) Umrechnung von Fahrenheit nach Celsius \n"
                  + "(6) Umrechnung von Fahrenheit nach Kelvin \n"))
+temperature = float(input(f"Gib die Temperatur in {unit_input(unit)} ein: "))
 
+if unit == 1:
+    new_temperature = celsius_to_kelvin(temperature)
+elif unit == 2:
+    new_temperature = celsius_to_fahrenheit(temperature)
+elif unit == 3:
+    new_temperature = kelvin_to_celsius(temperature)
+elif unit == 4:
+    new_temperature = celsius_to_fahrenheit(kelvin_to_celsius(temperature))
+elif unit == 5:
+    new_temperature = fahrenheit_to_celsius(temperature)
+elif unit == 6:
+    new_temperature = celsius_to_kelvin(fahrenheit_to_celsius(temperature))
 
-print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
+print(f'{temperature}° {unit_input(unit)} ≅ {new_temperature}° {unit_output(unit)}')
