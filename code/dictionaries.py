@@ -1,33 +1,40 @@
 from typing import *
 
+def print_result(name: str,percentage: Union[int,float]) -> None:
+   """prints the name and corresponding percentage value in a nicely formatted format.
+   
+   Parameters
+   ----------
 
-def print_results(name: str, percentage: Union[int, float]) -> None: # we tell the function what types the parameters have to be
-    """ prints name and corresponding percentage as number of '*'.
+   name: str,char
+        name of the individual or test case to be displayed
+   percentage: int, float
+        percentage score to be visualized as asterisks
 
-    Parameters
-    -----
-    name: str, char 
-        name of a individual or test case you want to be displayed
-    percentage: int, float
-        percentage score to be visualized as astrisks
-
-    Returns
-    -----
-    
+   Returns
+   -------
         none
+   """
+   print(f"{name}: {'*'*(int(percentage)//10)}")
 
-    """
-    print(f"{name}: {'* ' * (int(percentage)//10)}")
 
-# Dictionary that stores number successfull tests for different people (important: keys must be unique)
-successfull_tests = {
-    "Max" : 100,
-    "Remo": 61,
-    "Lars": 42,
-    "Lana": 87.8,
-    "Elio": 90
+successful_tests = {
+    'Janis':44,
+    'Matthieu': 55,
+    'Jonathan':63,
+    'Robin':68,
+    'Nicolas':72,
+    'Eliane':77,
+    'Johanna':82,
+    'Nicolas':87.8,
+    'Elias':93
 }
 
-for name, percentage in successfull_tests.items():
-    print_results(name, percentage)
+for name,percentage in successful_tests.items():
+    success = print_result(name,percentage)
+    
 
+name1 = "test"
+name2 = 33
+
+print_result(name1,name2)
