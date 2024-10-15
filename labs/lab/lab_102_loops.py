@@ -7,8 +7,7 @@ def triangle(size):
             print('* ' * (size-i))
 
 
-triangle(1)
 
-for i in range(2,9,3):
+for i in [1, 2, 5, 8]:
     triangle(i)
 
