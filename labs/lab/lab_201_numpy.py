@@ -10,7 +10,12 @@ array = np.full((4, 3), 4)
 
 # @exercise_3
 
+array = np.arange(1, 10, 2)
+
 # @exercise_4
+
+
+
 
 # @exercise_5
 init = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
