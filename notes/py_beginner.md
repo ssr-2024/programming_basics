@@ -1,3 +1,6 @@
+Ein anderes Python Tutrorial:
+https://docs.python.org/3/tutorial/
+
 # Zeichenfolge in Python
 
 Zeichenfolgenmethoden sind einer der gängigsten Methodentypen in Python. Sie müssen häufig Zeichenfolgen bearbeiten, um Informationen zu extrahieren oder ein bestimmtes Format einzuhalten. Python umfasst mehrere Zeichenfolgenmethoden, die für die Durchführung der gängigsten und nützlichsten Transformationen konzipiert sind.
@@ -343,6 +346,8 @@ print(round_down)
 
 # Einführung in Listen
 Liste = Typus zum Speichern von Werten
+
+hier sollte ggf. nochmal stehen, wie eine Liste erstellt wird, du Genie.
 
 ### Zugreifen auf Listenelemente nach Index
 
