@@ -2,7 +2,10 @@ import numpy as np
 
 # @exercise_1
 
+array = np.arange(10)
+
 # @exercise_2
+
 
 # @exercise_3
 
