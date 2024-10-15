@@ -43,11 +43,17 @@ Wichtig: `None` wird nicht als True oder False betrachtet, ist aber selbst als F
 # Sammeldatentypen
 
 ## Listen
-Listen können mehrere Objekte eines Datentyps speichern. Es müssen aber alle dem gleichen Datentyp angehören.
+Listen können mehrere Objekte eines Datentyps speichern. Normalerweise müssen alle Objekte einer Liste dem gleichen Datentyp angehören, jedoch ist in Python nicht so.
 <br>
 Beispiel:
 ```Python
 list = [1, 2, 3, 4]
+```
+Python nutzt Polymorphismus: Man kann auf alle Datentypen operatoren anwenden, welche in anderen Sprachen nicht funktionieren.
+<br>
+Beispiel:
+```Python
+text = 'nono' + 'no' # das würde beispielsweise in C nicht funktionieren
 ```
 
 ## Dictionaries
