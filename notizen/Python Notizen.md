@@ -647,3 +647,25 @@ Vorteil:
 - direkte Berechnungen mit arrays, nicht mehr über einzelne Indizes --> geringere Komplexität 
 - bei unserem Beispiel Faktor 2000 schneller!
 
+Operation durchführen:
+```py
+# Add 2 to each element of array
+array + 2
+```
+
+in anderen Datenyp konvertieren:
+```py
+# Create a float 2d array when initialising
+array = np.array(list2, dtype='float')
+
+# Convert to 'int' datatype after
+array.astype('int')
+```
+
+Indexing gleich wie in Matlab! z.B.:
+```py
+# Extract the first 2 rows and columns
+array[:2, :2]
+```
+
+Weitere Infos unter: [Numpy](https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/)
