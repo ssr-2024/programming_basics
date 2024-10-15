@@ -147,4 +147,5 @@ elif transformation == 5:
 elif transformation == 6:
     new_temperature = celsius_to_kelvin(fahrenheit_to_celsius(temperature))
 
+# prints results of transformation
 print(f'{temperature}° {unit_input(transformation)} ≅ {new_temperature}° {unit_output(transformation)}')
