@@ -6,6 +6,7 @@ array = np.arange(10)
 
 # @exercise_2
 
+array = np.full((4, 3), 4)
 
 # @exercise_3
 
