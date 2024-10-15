@@ -1,9 +1,8 @@
 import numpy as np
-
 # @exercise_1
-
+    
 array = np.arange(10)
-
+    
 # @exercise_2
 
 array = np.full((4, 3), 4)
@@ -14,7 +13,8 @@ array = np.arange(1, 10, 2)
 
 # @exercise_4
 
-
+array = np.arange(10)
+array [np.arange(1,10,2)] = -1
 
 
 # @exercise_5
