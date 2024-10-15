@@ -53,7 +53,7 @@ git merge main
 ```
 Den Merge comitten:
 ```cmd
-git commit -m "Merges main into my branch"
-git push origin Jonatha
+git commit -m "Merges main into Jonathan"
+git push origin Jonathan
 ```
 
