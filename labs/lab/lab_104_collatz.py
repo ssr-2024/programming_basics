@@ -1,3 +1,18 @@
+'''mermaid
+graph TD
+    A[Start: n > 0] --> B[Zahl n ausgeben]
+    B --> C{Ist n gerade?}
+    C -- Ja --> D[n = n / 2]
+    C -- Nein --> E[n = 3n + 1]
+    D --> F[Zahl ausgeben]
+    E --> F[Zahl ausgeben]
+    F --> C
+    C --> G{n == 1?}
+    G -- Ja --> H[Ende]
+    G -- Nein --> C
+'''
+
+
 def collatz(a):
     if a % 2 == 0:
         a = a//2
