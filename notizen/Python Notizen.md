@@ -631,3 +631,19 @@ sqrt(100)
 Beachte dabei, dass der Standort des Ordners wichtig ist!
 
 - Package installieren: via Terminal mit `pip install package_name`
+
+## Laufzeit ermitteln
+
+mit `time`-Modul
+
+## Numpy 
+
+```py 
+import numpy as np 
+
+np_array_2d = np.array([[1,2,3],[4,5,6]])
+```
+Vorteil: 
+- direkte Berechnungen mit arrays, nicht mehr über einzelne Indizes --> geringere Komplexität 
+- bei unserem Beispiel Faktor 2000 schneller!
+
