@@ -66,11 +66,11 @@ class Test001Datatypes(unittest.TestCase):
         with patch('builtins.input', side_effect=['Hello']):
             with stdoutIO() as s:
                 script_mode.call_nth_test(FILE_NAME, '3a')
-        self.assertEqual('5 Letters', s.getvalue().strip())
+        self.assertEqual('5', s.getvalue().strip())
         with patch('builtins.input', side_effect=['My length is 16.']):
             with stdoutIO() as s:
                 script_mode.call_nth_test(FILE_NAME, '3a')
-        self.assertEqual('16 Letters', s.getvalue().strip())
+        self.assertEqual('16', s.getvalue().strip())
 
     def test_exercise_3b(self):
         time.sleep(1)
