@@ -7,8 +7,10 @@
   - [Boolean Operators](#boolean-operators)
     - [Binary Boolean Operators](#binary-boolean-operators)
   - [Mixing Boolean and comparison Operators](#mixing-boolean-and-comparison-operators)
+  - [Membership operators](#membership-operators)
+  - [Augmented assignment statement](#augmented-assignment-statement)
   - [Logische Operatoren](#logische-operatoren)
-  - [Membership Operator](#membership-operator)
+  - [Membership operators](#membership-operators-1)
   - [Identitätsoperator](#identitätsoperator)
 
 # Operators
@@ -143,8 +145,33 @@ True and True
    ↓
 True
 ```
+## Membership operators
+You can determine whether a value is or isn’t in a list with the in and not in operators. Like other operators, in and not in are used in expressions and connect two values: a value to look for in a list and the list where it may be found. These expressions will evaluate to a Boolean value. Enter the following into the interactive shell:
+| Operator | 
+|:---------|
+| `in`     | 
+| `not in` |   
+**Example**:
+```py
+'howdy' in ['hello', 'hi', 'howdy', 'heyas']
+True
 
-
+spam = ['hello', 'hi', 'howdy', 'heyas']
+'cat' in spam
+False
+'howdy' not in spam
+False
+'cat' not in spam
+True
+```
+## Augmented assignment statement 
+| Augmented Assignment Statement | Equivalent Assignment Statement |
+|--------------------------------|---------------------------------|
+| `spam += 1`                    | `spam = spam + 1`               |
+| `spam -= 1`                    | `spam = spam - 1`               |
+| `spam *= 1`                    | `spam = spam * 1`               |
+| `spam /= 1`                    | `spam = spam / 1`               |
+| `spam %= 1`                    | `spam = spam % 1`               |
 
 
 
@@ -156,7 +183,7 @@ True
 | `or`     |              |                   |
 | `not`    |              |                   |
 
-## Membership Operator
+## Membership operators
 | Operator | Beschreibung | Beispiel          |
 |:---------|:-------------|:------------------|
 | `in`     |              |                   |
