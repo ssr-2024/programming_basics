@@ -23,18 +23,30 @@
 - [Infinity Loop](#infinity-loop)
   - [Cause](#cause-5)
   - [Solution](#solution-3)
-- [](#)
+- [list index out of range](#list-index-out-of-range)
   - [Cause](#cause-6)
   - [Solution](#solution-4)
   - [Example](#example-5)
-- [](#-1)
+- [list indices must be integers, not float](#list-indices-must-be-integers-not-float)
   - [Cause](#cause-7)
   - [Solution](#solution-5)
   - [Example](#example-6)
-- [](#-2)
+- [unorderable types: str() \< int()](#unorderable-types-str--int)
   - [Cause](#cause-8)
   - [Solution](#solution-6)
   - [Example](#example-7)
+- [](#)
+  - [Cause](#cause-9)
+  - [Solution](#solution-7)
+  - [Example](#example-8)
+- [](#-1)
+  - [Cause](#cause-10)
+  - [Solution](#solution-8)
+  - [Example](#example-9)
+- [](#-2)
+  - [Cause](#cause-11)
+  - [Solution](#solution-9)
+  - [Example](#example-10)
 
 
 ## NameError
@@ -125,6 +137,68 @@ Bug in a program causing to get stuck in a Infinity Loop
 ### Solution
 Press CTRL-C. This will send a *KeyboardInterrrupt* error to your program and cause it to stop immediately.
 
+
+## list index out of range
+### Cause
+Python will give you an IndexError error message if you use an index that exceeds the number of values in your list value.
+### Solution
+Check your lists
+### Example
+```py
+spam = ['cat', 'bat', 'rat', 'elephant']
+spam[10000]
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    spam[10000]
+IndexError: list index out of range
+```
+
+## list indices must be integers, not float
+### Cause
+You typed a float into the index of a list
+### Solution
+Recheck that all indexes are integer. If for any reason you still want to work with float values, you have to work with int()-functions.
+For more details consulte [INT() Functions](101_functions.md#functions-str-int-float)
+
+### Example
+```py
+spam = ['cat', 'bat', 'rat', 'elephant']
+spam[1]
+'bat'
+spam[1.0]
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    spam[1.0]
+TypeError: list indices must be integers, not float
+spam[int(1.0)]
+'bat'
+```
+
+## unorderable types: str() < int()
+### Cause
+You cannot sort lists that have both number values and string values in them, since Python doesn’t know how to compare these values. 
+### Solution
+If you want to sort the list but need to account for the presence of both strings and integers, you could consider this option:
+You can provide a custom sort key that converts all elements to a common type, such as strings, for comparison:
+```py
+spam = [1, 3, 2, 4, 'Alice', 'Bob']
+spam.sort(key=str)
+print(spam)
+# output
+[1, 2, 3, 4, 'Alice', 'Bob']
+```
+
+This will treat all elements as strings during the sort:
+However, note that in this approach, numbers are sorted based on their string representation.
+### Example
+```py
+spam = [1, 3, 2, 4, 'Alice', 'Bob']
+spam.sort()
+Traceback (most recent call last):
+ File "<pyshell#70>", line 1, in <module>
+   spam.sort()
+TypeError: unorderable types: str() < int()
+```
 
 ## 
 ### Cause
