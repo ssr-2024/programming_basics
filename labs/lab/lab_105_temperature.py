@@ -4,13 +4,13 @@ def celsius_to_kelvin(temperatur):
     return temperature + 273.15
 
 def kelvin_to_celsius(temperatur):
-    return temperatur
+    return temperatur  - 273.15
 
 def celsius_to_fahrenheit(temperatur):
-    return temperatur
+    return (temperature * 9/5) + 32
 
 def fahrenheit_to_celsius(temperatur):
-    return temperatur
+    return 5/9*(temperature - 32)
 
 
 def unit_input(selection):
@@ -46,5 +46,5 @@ selection = int(input("Deine Wahl: "))
 print(unit_input(selection))
 
 temperature = float(input(f"Gib eine Temperatur in {unit_input(selection)} ein: "))
-print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
+#print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
