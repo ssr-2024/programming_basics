@@ -46,5 +46,20 @@ selection = int(input("Deine Wahl: "))
 print(unit_input(selection))
 
 temperature = float(input(f"Gib eine Temperatur in {unit_input(selection)} ein: "))
-#print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
+
+if selection == 1:
+    converted_temp = celsius_to_kelvin(temperature)
+elif selection == 2:
+    converted_temp = celsius_to_fahrenheit(temperature)
+elif selection == 3:
+    converted_temp = kelvin_to_celsius(temperature)
+elif selection == 4:
+    converted_temp = celsius_to_fahrenheit(kelvin_to_celsius(temperature))
+elif selection == 5:
+    converted_temp = fahrenheit_to_celsius(temperature)
+elif selection == 6:
+    converted_temp = celsius_to_kelvin(fahrenheit_to_celsius(temperature))
+
+
+print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
