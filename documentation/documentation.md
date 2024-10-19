@@ -1166,12 +1166,224 @@ Diese Funktionen sind praktisch, um automatisch Text zu kopieren oder aus der Zw
 
 ## Übungen während den Lektionen (needs to be udpated)
 
-### 08.10.2024 Pypi
+### 17.09.2024, Woche 1
 
-Versionskontrolle = 0.0.1 allererste Version
-Höhere Version "6.4.5" = weiterentwickelt
+In der ersten Woche haben wir Übungen gemacht, in denen wir einen Kreis, ein Hexagon und einen Stern in Python dargestellt haben. Dazu haben wir das Modul „turtle“ in Python verwendet, welches mit der Importanweisung „import turtle as t“ aufgerufen wird. Die Übungen in Python sahen wie folgt aus:
+
+```py
+# Hexagon 
+import turtle as t
+# Importanweisung zur graphsichen Darstellung
+
+for i in range(6):
+# Mit range(6) werden die sechs Ecken des Hexagons erezugt, t.forward() definiert eine Seitenlänge und t.right() den Winkel
+    t.forward(100)
+    t.right(60)
+
+t.exitonclick()
+
+#Stern
+import turtle as t
+
+for i in range(5):
+# Der Stern besteht aus 5 "Ecken" die einen Winkel von 144 Grad besitzen.
+    t.forward(100)
+    t.right(144)
+
+t.exitonclick()
+
+# Kreis
+import turtle as t
+
+for i in range(360):
+# Ein Kreis kann angenähert werden durch ein Vieleck mit ganz vielen Ecken, kleinen Seitenlängen und kleinen Winkeln.   
+    t.forward(1)
+    t.right(1)
+
+t.exitonclick()
+```
+
+### 24.09.2024, Woche 2
+
+In der zweiten Woche haben wir die Übung aus Woche 1 ergänzt mit einem Rechteck, das unterschiedliche Seitenlängen hat. Wir haben hierbei mit if und else Bedingungen gearbeitet, um die unterschiedlichen Seitenlängen zu erstellen.
+
+```py 
+# Rechteck
+import turtle as t
+
+for i in range(4):
+    if i%2:
+        t.forward(100)
+    else:
+        t.forward(50)
+    t.right(90)
+
+t.exitonclick()
+```
+
+### 01.10.2024, Woche 3
+
+In der dritten Woche haben wir haben wir ein Skript erstellt, dass eine gerade Linie mit einem "Zick-Zack" (Sprung) erstellt. Dies geschah nach folgender Vorlage aus den Folien:
+
+<img src='imgs/jump.PNG'>
+
+Dazu haben wir folgenden Code geschrieben:
+
+```py
+import turtle as t
+
+# Definieren der jump-Funktion
+def jump(jump_height=50):
+    """Simulates a turtle jump by moving in a triangular path.
+
+    Parameters
+    -----------
+    jump_height : int, optional
+        The height of the jump in units (default is 50 units).
+
+    Returns
+    --------
+        None
+    """
+    t.left(60)
+    t.forward(jump_height)
+    t.right(120)
+    t.forward(jump_height)
+    t.left(60)
 
 
-#### Art Python
+for height in range(20,70,5):
+    t.forward(5)
+    jump(height) # unsere eigene jump-Funktion
+    t.forward(5)
 
-Auf der Seite von Art Python kann direkt der Link kopiert werden, der zur Installation verwendet wird. 
+t.exitonclick()
+```
+
+### 08.10.2024, Woche 4
+
+In Woche 4 haben wir versucht eine Visualisierung von Prozentzahlen zu coden. Dies geschah nach folgender Vorgabe in den Folien:
+
+<img src='imgs/percentage1.PNG'>
+
+Der Code in Python dazu sah so aus:
+
+```py
+def visualize(percentage):
+    """Visualizes the given percentage as asterisks for easier comparison.
+
+    Parameters
+    -----------
+    percentage : int
+        The percentage value to be visualized as asterisks. Each asterisk represents 10%.
+
+    Returns
+    --------
+        None
+    """
+    print(f"{percentage}%: {'* ' * (percentage // 10)}") # integer divison durch 10, um eine zahl zwischen 1 und 10 zu erhalten
+
+percentages = [33, 50, 22, 70, 12, 90]
+for percentage in percentages:
+    visualize(percentage)
+
+Output:
+33%: * * * 
+50%: * * * * *         
+22%: * * 
+70%: * * * * * * *     
+12%: * 
+90%: * * * * * * * * * 
+```
+
+Zum Lösen dieser Aufgabe wurde eine Liste verwendet.
+
+In einem zweiten Schritt wurde die Aufgabe erweitert, nach folgender Vorgabe:
+
+<img src='imgs/percentage2.PNG'>
+
+Hierfür wurde dann ein Dictionary verwendet:
+
+```py
+from typing import *
+
+def print_result(name: str,percentage: Union[int,float])-> None:
+    """prints the name and the corresponding precentage value nicely formatted.
+
+    Parameters
+    -----------
+
+    name: str, char
+        name of the individual or test case to be displayed.
+
+    percentage: int, float
+        percentage score to be visualized as asterisks
+
+    Returns
+    --------
+
+        none    
+    """
+    print(f"{name}: {'*'*(percentage//10)}")
+
+successful_tests = {
+    'Janis': 44,
+    'Matthieu': 55,
+    'Jonathan': 63,
+    'Robin': 78,
+    'Nicolas1': 72, # Werte können hier auch andere Datentypen annehmen, beispielsweise ein float also hier 72.8 Dazu muss dann oben "percentage" in einen integer umgewandelt werden, damit die integer division funktioniert. Dictionaries sind sehr flexibles, anders als Listen.
+    'Eliane': 77,
+    'Johanna': 82,
+    'Nicolas2': 87,
+    'Elias': 93, 
+}
+
+for name, percentage in successful_tests.items():
+    print_result(name, percentage)
+
+Output:
+Janis: ****
+Matthieu: *****  
+Jonathan: ****** 
+Robin: *******   
+Nicolas1: *******
+Eliane: *******  
+Johanna: ********
+Nicolas2: ********
+Elias: *********
+```
+
+#### Python Packages
+
+Ausserdem haben wir in Woche 4 Python Packages angeschaut, beispielhaft an art Python. 
+
+
+ Pakete in Python sind Sammlungen von Modulen, die zusammengefasst sind, um bestimmte Funktionalitäten oder Bibliotheken bereitzustellen. Sie helfen dabei, Code zu strukturieren, wiederverwendbar zu machen und komplexe Anwendungen in kleinere, leichter handhabbare Teile zu unterteilen.
+
+**Modul vs. Paket:**
+
+- Ein Modul ist eine einzelne Python-Datei, die Funktionen, Klassen oder Variablen enthält.
+- Ein Paket ist eine Sammlung von Modulen, oft in einem Verzeichnis organisiert, das auch eine spezielle Datei namens __init__.py enthält (früher obligatorisch), um das Verzeichnis als Paket zu kennzeichnen.
+
+#### PyPi
+
+PyPi (PyPi.org) ist ein Online Verzeichnis, das solche Python Pakete zur Verfügung stellt. Entwickler von Paketen können sie hier hochladen und User*innen können diese runterladen und nutzen. 
+
+Zur Installation von Paketen wird Pip verwendet. Pip ist ein Paketmanager für Python, der es ermöglicht, externe Python-Pakete zu installieren, zu verwalten und zu aktualisieren. Mit Pip können wir die eben beschriebene Bibliothek von PyPi nutzen.
+
+Die Installation eines Packages geschieht mit folgendem Befehl:
+
+```py
+pip install _paket-name_
+```
+Auf der Seite von PyPi können auf der jeweiligen Seite des Pakets der Name, bzw. der ganze Code zur Installation gefunden werden. Dazu einige Beispiele:
+
+```py
+pip install art # zur Installation von art python
+
+pip install plotly # zur Installation von plotly
+
+pip install pandas # zur Installation von pandas
+```
+
+### 15.10.2024
