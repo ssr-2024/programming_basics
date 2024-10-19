@@ -28,7 +28,18 @@ def unit_input(selection):
         return 'Fahrenheit'
 
 def unit_output(selection):
-    return ''
+    if selection == 1:
+        return 'Kelvin'
+    elif selection == 2:
+        return 'Fahrenheit'
+    elif selection == 3:
+        return 'Celsius'
+    elif selection == 4:
+        return 'Fahrenheit'
+    elif selection == 5:
+        return 'Celsius'
+    elif selection == 6:
+        return 'Kelvin'
 
 ## Skript
 # Benutzer nach Umrechnungstyp fragen
