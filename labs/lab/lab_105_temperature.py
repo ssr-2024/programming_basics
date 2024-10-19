@@ -1,7 +1,7 @@
 ## Funktionen
 
 def celsius_to_kelvin(temperatur):
-    return temperatur
+    return temperature + 273.15
 
 def kelvin_to_celsius(temperatur):
     return temperatur
@@ -43,7 +43,8 @@ print("(6) Umrechnung von Fahrenheit nach Kelvin")
 # Entscheidung als int speichern
 selection = int(input("Deine Wahl: "))
 
+print(unit_input(selection))
 
-
+temperature = float(input(f"Gib eine Temperatur in {unit_input(selection)} ein: "))
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
