@@ -36,3 +36,46 @@ array = np.vstack((a,b))
 
 # @exercise_range
 
+# Defining the function to solve the exercise
+def exercise_range() -> np.ndarray:
+    """
+    Filter the elements of an array to return only the values greater than 5 
+    and less than or equal to 10.
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    array : numpy.ndarray
+        A NumPy array containing the elements greater than 5 and less than or 
+        equal to 10 from the original array.
+    """
+
+    # original array
+    array = np.array([2, 6, 1, 9, 10, 3, 27])
+    
+    # filtering the arry
+    array = array[(array > 5) & (array <= 10)]
+    
+    return array
+
+# Calling the function and storing the result in the variable array
+
+array = exercise_range()
+array = np.array(array)
+array
+
+
+
+
+
+
+
+
+
+
+
+
+
