@@ -44,18 +44,24 @@ heart = HEART
 
 
 def reset():
+    # This function resets the global variable 'heart' to its initial state 'HEART'
     global heart
     heart = HEART
 
 
 def circshift_left_to_right():
+    # This function performs a circular shift of each row in the 'heart' grid to the right.
     global heart
-    # do the circshift left to the heart
-
+    for i in range(len(heart)):
+        # For each row, move the last element to the first position and shift all other elements to the right.
+        heart[i] = [heart[i][-1]] + heart[i][:-1]
 
 def circshift_top_to_bottom():
     global heart
-    # do the circshift top_bottom to the heart
+    last_row = heart[-1]  # Store the last row
+    for i in range(len(heart) - 1, 0, -1):
+        heart[i] = heart[i - 1]  # Shift each row down by one position
+    heart[0] = last_row  # Set the first row to the last row
 
 
 if __name__ == '__main__':
