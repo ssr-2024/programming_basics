@@ -110,6 +110,7 @@ class Test102_Loops(unittest.TestCase):
         with open(file_path, 'r+') as f:
             raw = f.read()
         self.assertRegex(raw, r'(for.*in.*:|while.*:)', 'Expecting the use of a loop inside the implementation')
+        # had to change test, because the uses an expired method
         #self.assertRegexpMatches(raw, r'(for.*in.*:|while.*:)', 'Expecting the use of a loop inside the implementation')
 
 

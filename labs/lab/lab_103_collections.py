@@ -89,11 +89,14 @@ def draw_transposed_grid(grid):
     """
     
     transposed_grid =  []
-    for zeile in range(0,len(grid),1):
+    for spalte in range(0,len(grid[0])):
+        print(f"spalten: {len(grid)}")
         line = []
-        for spalte in range(0,len(grid[0]),1):
+        for zeile in range(0,len(grid)):
+                print(f"zeile: {zeile}")
+                print(f"Zeilen: {len(grid[0])}")
         #        print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                line.append(grid[len(grid)-zeile-1][spalte])
+                line.append(grid[zeile][spalte])
         transposed_grid.append(line)
                 #print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
                 #print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
@@ -105,7 +108,6 @@ def draw_transposed_grid(grid):
 
 if __name__ == '__main__':
     print(summary([1, 2, 3, 4, 17]))
-
     
     draw_grid(draw_transposed_grid(smiley))
     draw_grid(draw_transposed_grid(heart))
