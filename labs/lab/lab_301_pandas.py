@@ -53,8 +53,8 @@ def load_relevant_data(file_name):
 
 
 
-df = load_relevant_data('labs/lab/data/lab301_sport/data.csv')
-df.to_excel("text.xlsx")
+# df = load_relevant_data('labs/lab/data/lab301_sport/data.csv')
+# df.to_excel("text.xlsx")
 
 if __name__ == '__main__':
     experiment_setup('output.xlsx')
