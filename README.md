@@ -8,7 +8,9 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
 * [Lecture 2 Markdown and Git](docs/slides/002_Markdown_Git.pptx)
-* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)
+* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)¨
+* [Lecture 4 Sammeldatentypen](docs/slides/004_Testing_Sammeldatentypen.pptx)
+* [Lecture 5 NumPy and PanDas](docs/slides/005_NumPy_pandas.pptx)
 
 ## Code Beispiele
 
@@ -20,6 +22,10 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 * [Circle](code/circle.py)
 * [Square](code/square.py)
 * [Rectangle](code/rectangle.py)
+
+### Woche 3
+
+* [Jump](code/jump.py)
 
 ## Wiki
 
