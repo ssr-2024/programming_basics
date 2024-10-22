@@ -82,6 +82,6 @@ else:
 
 # Ergebnis anzeigen
 if converted_temp is not None:
-    print(f"{temperature}° {unit_input(selection)} ≅ {converted_temp:.2f}° {unit_output(selection)}")
+    print(f"{temperature}° {unit_input(selection)} ≅ {converted_temp}° {unit_output(selection)}")
 else:
     print("Ungültige Auswahl.")

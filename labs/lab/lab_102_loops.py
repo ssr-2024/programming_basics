@@ -1,3 +1,4 @@
+'''
 from typing import NoReturn
 
 def triangle(n: int) -> NoReturn:
@@ -17,5 +18,13 @@ def triangle(n: int) -> NoReturn:
     for i in range(n - 1, 0, -1):
         print("* " * i)
 
-# Example call:
+triangle(5)
+'''
+
+def triangle(size):
+    for i in range(1, 2 * size):
+        # Erhöhe bis n und dann verringere die Anzahl der Sterne
+        stars = i if i <= size else 2 * size - i
+        print("*  " * 1)
+
 triangle(5)
