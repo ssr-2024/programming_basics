@@ -104,7 +104,14 @@ for i in range(5):
 
     continue- and break-statements can only be used inside while- and for-loops. Otherwise Python will show an Error.
 
+To create a function that starts and ends at a certain point, undertaking predetermined steps, `start-`, `stop-` and `step- arguments` can be added to the range() function; separated by comma.
 
+```py
+for i in range(5, 10, 2)
+```
+the first number defines the starting point, the second the ending point -1 (i.e., in the present example the function would stop at 9) and the third number defines the stepping-size.
+
+## Importing Modules
 
 
 # Chapter 3 - Functions
