@@ -109,7 +109,7 @@ class Test102_Loops(unittest.TestCase):
         file_path = os.path.join(script_dir, "..", "lab", FILE_NAME)
         with open(file_path, 'r+') as f:
             raw = f.read()
-        self.assertRegexpMatches(raw, r'(for.*in.*:|while.*:)', 'Expecting the use of a loop inside the implementation')
+        self.assertRegex(raw, r'(for.*in.*:|while.*:)', 'Expecting the use of a loop inside the implementation')
 
 
 if __name__ == '__main__':
