@@ -2,7 +2,7 @@
 
 *inspired by [@Bhavani Ravi](https://medium.com/bhavaniravi/python-pandas-tutorial-92018da85a33)*
 
-Why do we need this blog when there are already a lot of documentation and tutorials? Pandas, unlike most python libraries, has a steep learning curve. The reason is that you need to understand your data well in order to apply the functions appropriately. Learning Pandas syntactically is not going to get you anywhere. Another problem with Pandas is that there is that there is more than one way to do things. Also, when I started with Pandas it’s extensive and elaborate documentation was overwhelming. I checked out the [cheatsheets](https://www.google.com/search?q=pandas+cheetsheets&oq=pandas+cheetsheets&aqs=chrome..69i57.3801j0j7&sourceid=chrome&ie=UTF-8) and that scared me even more.
+Why do we need this blog when there are already a lot of documentation and tutorials? Pandas, unlike most python libraries, has a steep learning curve. The reason is that you need to understand your data well in order to apply the functions appropriately. Learning Pandas syntactically is not going to get you anywhere. Another problem with Pandas is that there is more than one way to do things. Also, when I started with Pandas it’s extensive and elaborate documentation was overwhelming. I checked out the [cheatsheets](https://www.google.com/search?q=pandas+cheetsheets&oq=pandas+cheetsheets&aqs=chrome..69i57.3801j0j7&sourceid=chrome&ie=UTF-8) and that scared me even more.
 
 In this blog, I am going to take you through Pandas functionalities by cracking specific use cases that you would need to achieve with a given data.
 
