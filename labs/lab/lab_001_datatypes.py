@@ -29,7 +29,7 @@ print(str(a) + ' times 3 = ' + str(a_times_3))
 # @exercise_3a
 
 something = input("Enter something:")
-print(str(len(something)) + ' Letters') # die variable something ist ursrpünglich ein integer und muss mit str in einen string umgewandelt werden
+print(str(len(something))) # die variable something ist ursrpünglich ein integer und muss mit str in einen string umgewandelt werden
 
 
 # @exercise_3b
