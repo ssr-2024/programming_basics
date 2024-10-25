@@ -73,25 +73,14 @@ smiley = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [0, 9, 9, 9, 9, 9, 9, 9, 9, 0],
           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-
 def draw_transposed_grid(grid):
-    """
-    transposed_grid =  [([0] *len(smiley[0]))] * len(smiley[0])
-    print(type(transposed_grid))
-    for zeile in range(0,len(grid),1):
-        for spalte in range(0,len(grid[0]),1):
-                print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                transposed_grid[len(grid[0])-(spalte+1)][zeile] = grid[zeile][spalte]
-                print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        print(transposed_grid[len(grid[0])-(spalte+1)])
-    #print(transposed_grid)
-    """
+    #fixed this function, by interchanging rows and columns
     
+
     transposed_grid =  []
-    for zeile in range(0,len(grid),1):
+    for spalte in range(0,len(grid[0]),1):
         line = []
-        for spalte in range(0,len(grid[0]),1):
+        for zeile in range(0,len(grid),1):
         #        print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
                 line.append(grid[len(grid)-zeile-1][spalte])
         transposed_grid.append(line)
@@ -99,13 +88,13 @@ def draw_transposed_grid(grid):
                 #print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
         #print(transposed_grid[len(grid[0])-(spalte+1)])
     
-
     return transposed_grid
 
 
 if __name__ == '__main__':
     print(summary([1, 2, 3, 4, 17]))
 
+    draw_grid(smiley)
     
     draw_grid(draw_transposed_grid(smiley))
     draw_grid(draw_transposed_grid(heart))
