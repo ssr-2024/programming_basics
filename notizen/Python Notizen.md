@@ -669,3 +669,22 @@ array[:2, :2]
 ```
 
 Weitere Infos unter: [Numpy](https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/)
+
+
+## Pandas
+Umgang mit Dataframes, zur Datenanalyse
+
+CSV-Datei importieren(natürlich mit Dateipfad):
+```py 
+import pandas as pd 
+
+df = pd.read_csv('data/400_demo.csv',
+                sep = ';' #als Standard-Separationszeichen
+                header = 3, 
+                nrows = 2, 
+                usecols = [0,1]
+                )
+```
+Danach sehr ähnlich, wie in Matlab! Für genauere Infos siehe [Cheat Sheet Pandas](./Pandas_Cheat_Sheet.pdf)
+
+Gerade auch in Kombination mit Matplotlib sehr nützlich! Siehe auch: [Cheat Sheet Matplotlib](./Matplotlib_Cheat_Sheet.pdf)
