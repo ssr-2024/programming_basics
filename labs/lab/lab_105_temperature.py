@@ -30,6 +30,21 @@ print("    (6) Umrechnung von Fahrenheit nach Kelvin")
 # Speichere die Auswahl des Benutzers als int
 selection = int(input("Ihre Auswahl: "))
 
+# Definiere die Funktion unit_input
+def unit_input(selection):
+    """Gibt die Einheitsbezeichnung basierend auf der Benutzerauswahl zurück"""
+    if selection == 1 or selection == 2:
+        return 'Celsius'
+    elif selection == 3 or selection == 4:
+        return 'Kelvin'
+    elif selection == 5 or selection == 6:
+        return 'Fahrenheit'
+    return ''
+
+
+# Speichere die Auswahl des Benutzers als int
+selection = int(input("Ihre Auswahl: "))
+
 
 
 
