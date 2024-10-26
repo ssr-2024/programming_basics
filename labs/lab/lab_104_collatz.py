@@ -1,23 +1,35 @@
-def collatz(a):
-    if a % 2 == 0:
-        a = a//2
+
+
+def collatz(n):
+    if n % 2 == 0:
+        return n // 2
     else:
-        a = a*3+1
-    return a
+        return 3 * n + 1
 
 def run():
     liste = []
-    a = int(input("Please enter a number"))
-    liste.append(a)
-    zaehler = 0
-    while zaehler < 3:
-        a = collatz(a)
-        liste.append(a)
-        if a == 1:
-            zaehler += 1
+    n = int(input("Please enter a number: "))
+    liste.append(n)
+    
+    while n != 1:
+        n = collatz(n)
+        liste.append(n)
     
     print(liste)
     return liste
 
-if __name__ == '__main__':
-    run()
+def run():
+    liste = []
+    n = int(input("Please enter a number: "))
+    liste.append(n)
+    count_ones = 0
+    
+    while count_ones < 3:
+        n = collatz(n)
+        liste.append(n)
+        if n == 1:
+            count_ones += 1
+    
+    print(liste)
+    return liste
+
