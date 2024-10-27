@@ -1,3 +1,6 @@
+Link to Microsoft Learn Path for Github: https://learn.microsoft.com/de-de/training/paths/manage-project-lifecycle-github/
+
+
 # Zusammenarbeiten mit Markdown und GitHub Pages
 
 GitHub bietet eine KI-gestützte Entwicklerplattform zum Erstellen, Skalieren und Bereitstellen sicherer Software. GitHub ist eine cloudbasierte Plattform, deren Kernstück das System für die verteilte Versionskontrolle namens Git ist. 

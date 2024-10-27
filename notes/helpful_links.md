@@ -70,12 +70,3 @@ A: As much as I'd love that, unfortunately, no. But:
     3. Return Values: The documentation also describes what read_csv returns, typically a DataFrame object.
    
 *Source: ChatGPT*
-
-
-    
-
-
-
-
-
-

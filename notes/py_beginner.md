@@ -1,3 +1,6 @@
+Link to Microsoft Learn Path for Python: https://learn.microsoft.com/de-de/training/paths/beginner-python/?source=learn
+
+
 Ein anderes Python Tutrorial:
 https://docs.python.org/3/tutorial/
 
