@@ -685,6 +685,78 @@ df = pd.read_csv('data/400_demo.csv',
                 usecols = [0,1]
                 )
 ```
-Danach sehr ähnlich, wie in Matlab! Für genauere Infos siehe [Cheat Sheet Pandas](./Pandas_Cheat_Sheet.pdf)
+
+Spalten auswählen:
+```py
+# 1. Create a list of columns to be selected
+columns_to_be_selected = ["Player", "Team", "Goals"]
+
+# 2. Use it as an index to the DataFrame
+df[columns_to_be_selected]
+
+# 3. Using loc method
+df.loc[columns_to_be_selected]
+```
+
+Zeilen auswählen:
+```py
+# 1. using numerical indexes as with numpy - iloc
+df.iloc[0:3, :]
+
+# 2. using labels as index - loc
+row_index_to_select = [0, 1, 4, 5]
+df.loc[row_index_to_select]
+``` 
+
+Zeilen filtern:(wie in Matlab)
+```py
+# 1. Total points > 100
+df[df["Points"] > 100]
+
+# 2. Total points > 100 and in Western Conference
+
+df[(df["Points"] > 100) & (df["Conference"] == "Western")]
+```
+
+Statistische Operationen:
+```py 
+df["Points"].sum()
+df[["Points", "Games"]].mean()
+df[["Points", "Games"]].min()
+df[["Points", "Games"]].max()
+df[["Points", "Games"]].median()
+df[["Points", "Games"]].mode()
+```
+
+Gruppieren mit `groupby("column name")`:
+```py 
+# 1. Conference wise stats
+df.groupby("Conference").sum()
+# 2. goals over each conference & division
+df.groupby(["Conference", "Division"])["Goals"].sum()
+# 3. More than one aggregation
+df.groupby(["Conference", "Division", "Team"]).agg({
+    'Goals': ['sum', 'max'],
+    'Points':'mean'
+})
+```
+
+Sortieren: 
+```py
+df.sort_values(by="Goals", ascending=False)
+```
+
+Plots ausgeben:
+```py
+pivot.loc[
+    ['BOS', 'CAR', 'STL', 'SJS']
+].plot(
+    kind='bar'
+).legend(
+    bbox_to_anchor=(1.6, 1)
+)
+```
+
+Fazit: sehr ähnlich, wie in Matlab! Für genauere Infos siehe [Cheat Sheet Pandas](./Pandas_Cheat_Sheet.pdf)
 
 Gerade auch in Kombination mit Matplotlib sehr nützlich! Siehe auch: [Cheat Sheet Matplotlib](./Matplotlib_Cheat_Sheet.pdf)
