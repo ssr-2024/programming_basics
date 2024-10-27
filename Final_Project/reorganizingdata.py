@@ -1,4 +1,10 @@
 import pandas as pd
+import re
+
+# Function to sanitize sheet names because Excel sheet names have restrictions like no special characters
+def sanitize_sheet_name(name):
+    # Remove invalid characters
+    return re.sub(r'[\\/*?:\[\]]', '', name)
 
 # Load the Excel sheet
 file_path = 'Final_Project/organized_tables.xlsx'
@@ -59,35 +65,3 @@ if unstandardized_start is not None and standardized_start is not None and patte
         unstandardized_means.to_excel(writer, sheet_name='Unstandardized Means', index=True)
         standardized_means.to_excel(writer, sheet_name='Standardized Means', index=True)
         pattern_means.to_excel(writer, sheet_name='Pattern of Standardized Means', index=True)
-
-# Extract the five tables at the beginning of the first sheet
-def extract_initial_tables(df):
-    tables = {}
-    current_table = []
-    current_title = None
-
-    for i in range(len(df)):
-        row = df.iloc[i]
-        if pd.isna(row[0]):
-            continue
-        if row[0].startswith('CLUSTER'):
-            if current_title is not None:
-                tables[current_title] = pd.DataFrame(current_table)
-            current_title = row[0]
-            current_table = [row]
-        else:
-            current_table.append(row)
-
-    if current_title is not None:
-        tables[current_title] = pd.DataFrame(current_table)
-
-    return tables
-
-initial_tables = extract_initial_tables(df)
-
-# Save the initial tables to new sheets in the same Excel file
-with pd.ExcelWriter(file_path, mode='a', if_sheet_exists='replace') as writer:
-    for title, table in initial_tables.items():
-        title = ' '.join(str(title).split()[:2])  # Shorten the title to the first two words
-        title = sanitize_sheet_name(title)  # Sanitize the title
-        table.to_excel(writer, sheet_name=title, index=False)
