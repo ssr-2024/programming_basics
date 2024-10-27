@@ -128,11 +128,11 @@ Im Text-Boox werden einige Regeln aufgelistet zu Variablen Namen:
 
 Für meine eigene Klarstellung: mit einem Wort ist gemeint, dass kein Leerschlag dazwischen sein kann. So etwas wie 'jump_height' ist völlig okay, nicht aber 'jump height'.
 
-### Print Funktion
+### `print()` Funktion
 
 Auch die Print Funktion wurde in einigen Beispielen schon verwendet. Sie wird benutzt, um Ausgaben in der Konsole anzuzeigen. 
 
-### Input Funktion
+### `input()` Funktion
 
 Mit der Input FUnktion kann eine Eingabe des Benutzers angefordert werden. Diese muss dann mit der Eingabe Taste bestätigt werden. Hier ein Beispiel:
 
@@ -144,7 +144,7 @@ print('Schön dich zu sehen, ' + name)
 Output: Schön dich zu sehen, Robin # Sofern oben der Name Robin eingegeben wurde ;)
 ```
 
-### len Funktion
+### `len()` Funktion
 
 Die len-Funktion in Python wird verwendet, um die Länge (Anzahl der Elemente) eines Objekts zu ermitteln. Sie funktioniert grundsätzlich mit verschiedenen Datentypen, vorläufig mal mit Strings. Auch dazu ein Beispiel: 
 
@@ -173,11 +173,11 @@ Einfach ausgedrückt versucht ein Flowchart (auch UML-Diagramm genannt) das Prob
 ### Boolesche Operatoren
 
 
-Boolesche Operatoren in Python werden verwendet, um logische Ausdrücke zu vergleichen und zu verknüpfen. Sie geben Wahrheitswerte aus, das heisst true oder false, basierend auf deren Bedingungen. Sie helfen, komplexe logische Ausdrücke zu formulieren und steuern den Ablauf von Entscheidungen im Code.
+Boolesche Operatoren in Python werden verwendet, um logische Ausdrücke zu vergleichen und zu verknüpfen. Sie geben Wahrheitswerte aus, das heisst `true` oder `false`, basierend auf deren Bedingungen. Sie helfen, komplexe logische Ausdrücke zu formulieren und steuern den Ablauf von Entscheidungen im Code.
 
 ### Vergleichs Operatoren
 
-Vergleichs Operatoren werden, wie der Name schon vermuten lässt, verwendet, um 2 Werte miteinander zu vergleichen. Aus diesem Vergleich entsteht schlussendlich ein Wert: entweder true oder false.
+Vergleichs Operatoren werden, wie der Name schon vermuten lässt, verwendet, um 2 Werte miteinander zu vergleichen. Aus diesem Vergleich entsteht schlussendlich ein Wert: entweder `true` oder `false`.
 
 Die Vergleichs Operatoren, wie sie im Text-Book sind:
 
@@ -217,18 +217,18 @@ print(a <= b)  # True
 print(a >= b)  # False
 ```
 
-Wichtig festzuhalten ist noch, dass "=" verwendet wird, um einer Variablen einen Wert zuzuweisen und "==" um zwei Werte miteinander zu vergleichen.
+Wichtig festzuhalten ist noch, dass `"="` verwendet wird, um einer Variablen einen Wert zuzuweisen und `"=="` um zwei Werte miteinander zu vergleichen.
 
 
-### and, or & not
+### `and`, `or` & `not`
 
-And, or und not sind auch boolesche Operatoren, sie werden verwendet um logische Ausdrücke zu kombinieren. And gibt nur dann true zurück, wenn beide Operanden wahr sind, während or true zurückgibt, wenn mindestens einer der Operanden wahr ist. Not kehr tden Wahrheiswert eines Ausdrucks um, also wird true zu false und umgekehrt.
+`And`, `or` und `not` sind auch boolesche Operatoren, sie werden verwendet um logische Ausdrücke zu kombinieren. `And` gibt nur dann `true` zurück, wenn beide Operanden wahr sind, während `or` `true` zurückgibt, wenn mindestens einer der Operanden wahr ist. `Not` kehrt den Wahrheiswert eines Ausdrucks um, also wird `true` zu `false` und umgekehrt.
 
 ### Bedingte Anweisungen
 
-Bedingte Anweisungen, auch Kontrollstrukturen genannt, ermöglichen es im Code Entscheidungen zu treffen. Dazu werden unterschiedliche Codeblöcke basierend auf bestimmten Bedingungen ausgeführt. Dazu werden in Python **if, else und elif** verwendet:
+Bedingte Anweisungen, auch Kontrollstrukturen genannt, ermöglichen es im Code Entscheidungen zu treffen. Dazu werden unterschiedliche Codeblöcke basierend auf bestimmten Bedingungen ausgeführt. Dazu werden in Python `if`, `else` und `elif` verwendet:
 
-**if** prüft eine Bedingung, **elif** (steht für else if) bietet zusätzliche Bedingungen und **else** wird asugeführt, wenn keine der vorherigen Bedingungen zutraf. Dazu wieder Beispiele: 
+`if` prüft eine Bedingung, `elif` (steht für else if) bietet zusätzliche Bedingungen und `else` wird asugeführt, wenn keine der vorherigen Bedingungen zutraf. Dazu wieder Beispiele: 
 
 ```python
 # Beispiel 1: if-Anweisung
@@ -255,7 +255,7 @@ else:
 
 ### While Schleifen
 
-While Bedingungen oder Schleifen werden in Python verwendet um einen Codeblock solange auszuführen (bzw. zu wiederholen), wie ein Statement wahr, also true ist. Sobald die Bedingung nicht mehr wahr ist, wird die Schleife beendet. Auch hier wieder ein Beispiel, das es viel besser erklärt:
+While Bedingungen oder Schleifen werden in Python verwendet um einen Codeblock solange auszuführen (bzw. zu wiederholen), wie ein Statement wahr, also `true` ist. Sobald die Bedingung nicht mehr wahr ist, wird die Schleife beendet. Auch hier wieder ein Beispiel, das es viel besser erklärt:
 
 
 ```py
@@ -281,26 +281,27 @@ Der Codeblock wird solange "please type your name" ausgeben, bis der User wirkli
 
 Mit den Befehlen "break" kann eine While Schleife unterbrochen werden, mit "continue" wird sie weiter ausgeführt, obwohl sie zu einem Ende gekommen ist.
 
-### For Schleifen und die range Funktion
+### `for` Schleifen und die `range()` Funktion
 
-While Schleifen werden ausgeführt solange ihre Bedingung wahr ist. For Schleifen sind ähnlich, hier kann aber festgelegt werden, wie viel mal sie ausgeführt werden sollen. Dies geschieht mit der range funktion:
+While Schleifen werden ausgeführt solange ihre Bedingung wahr ist. For Schleifen sind ähnlich, hier kann aber festgelegt werden, wie viel mal sie ausgeführt werden sollen. Dies geschieht mit der `range()` funktion:
 
 ```py
 for i in range(1, 6):
     print(i)
+
 Output: 1, 2, 3, 4, 5
 #!!6 ist ausgeschlossen!!
 ```
 
 In for Schleifen mit range stehen in Klammern immer der Startpunkt, Endpunkt (der aber nicht inklusive ist) und das Intervall. 
 
-Der Befehl range(0, 10, 2) fängt also bei 0 an und geht in 2er Schritten bis 10, wobei 10 aber eben nicht inklusive ist. Die Ausgabe wäre also:
+Der Befehl `range(0, 10, 2)` fängt also bei 0 an und geht in 2er Schritten bis 10, wobei 10 aber eben nicht inklusive ist. Die Ausgabe wäre also:
 0, 2, 4, 6, 8
 
 ## Kapitel 3: Funktionen
 
-In Python gibt es neben den Basic Funktionen wie print(),input() oder len(). In Python sind Funktionen wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Funktionen helfen, den Code übersichtlicher zu gestalten und wiederholte Abläufe zu vermeiden.
-Funktionen werden in Python immer mit dem Schlüsselwort ***def** definiert. 
+In Python gibt es neben den Basic Funktionen wie `print()`, `input()` oder `len()`. In Python sind Funktionen wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Funktionen helfen, den Code übersichtlicher zu gestalten und wiederholte Abläufe zu vermeiden.
+Funktionen werden in Python immer mit dem Schlüsselwort `def` definiert. 
 
 Es folgt wieder ein einfaches Beispiel einer Funktion:
 
@@ -314,7 +315,6 @@ print(ergebnis)
 Output: 8
 ```
 ### Scope
-
 
 In Python bezieht sich der Scope (Gültigkeitsbereich) auf den Bereich des Codes, in dem eine Variable zugänglich ist. Es gibt zwei Hauptarten von Scope:
 
@@ -341,8 +341,8 @@ x = 10  # globale Variable
 def meine_funktion():
     print(x)  # kann auf die globale Variable zugreifen
 
-meine_funktion()  # Ausgabe: 10
-print(x)  # Ausgabe: 10
+meine_funktion()  # Output: 10
+print(x)  # Output: 10
 ```
 
 **Unterschied:**
@@ -383,7 +383,7 @@ ZeroDivisionError: division by zero
 # das return statmement in spam(0) verursacht einen Error. 
 ```
 
-Solche Fehlermeldungen kann man mit **try** und **except** statements in den Griff bekommen. Man schreibt dazu den Code um, wie folgt:
+Solche Fehlermeldungen kann man mit `try` und `except` statements in den Griff bekommen. Man schreibt dazu den Code um, wie folgt:
 
 ```py
 def spam(divideBy):
@@ -427,7 +427,8 @@ Dazu wieder ein Beispiel:
 meine_liste = [1, 2, 3, "Hallo", True]
 
 # mit dem Befehl print(Name der Liste[Nummer des Elements]) kann dieses Element ausgegeben werden.
-print(meine_liste[3])  
+print(meine_liste[3])
+
 Output: Hallo
 
 # Mit dem Befehl .append können Items/Elemente hinzugefügt werden
@@ -443,7 +444,7 @@ Eine Liste kann auch mehrere kleinere Listen enthalten. Der Umgang damit geschie
 
 ```py
 spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]
-# Der erste Index spricht die entsprechende Liste an und der Zweite Index das darin enthaltene Element. Wenn ich also 30 als Ausgabe erhalten will muss ich folgende Eingabe tätigen:
+# Der erste Index spricht die entsprechende Liste an und der Zweite Index das darin enthaltene Element. Wenn ich also 30 als Output erhalten will muss ich folgende Eingabe tätigen:
 spam[0,2]
 ```
 ### Negative Indexe
@@ -465,7 +466,7 @@ Output: ['Katze', 'Maus']
 
 ### Elemente hinzufügen
 
-In einer Liste können Elemente auch hinzugefügt werden. Einerseits wie angesprochen mit dem Befehl '.append', dann wird das Element am Ende der Liste hinzugefügt. Alternativ gibt es auch diese Variante:
+In einer Liste können Elemente auch hinzugefügt werden. Einerseits wie angesprochen mit dem Befehl `.append`, dann wird das Element am Ende der Liste hinzugefügt. Alternativ gibt es auch diese Variante:
 
 ```py
 meine_liste = ['Hund', 'Katze', 'Maus', 'Fuchs', 'Hirsch']
@@ -479,7 +480,7 @@ Output: ['Hund', 'Hamster', 'Maus', 'Fuchs', 'Hirsch']
 
 ### Elemente löschen
 
-So wie Elemente hinzugefügt werden können, können auch Elemente aus einer Liste gelöscht werden. Dies geschieht mit dem Befehl 'del'.
+So wie Elemente hinzugefügt werden können, können auch Elemente aus einer Liste gelöscht werden. Dies geschieht mit dem Befehl `del.`
 
 ```py
 meine_liste = ['Hund', 'Katze', 'Maus', 'Fuchs', 'Hirsch']
@@ -493,7 +494,7 @@ Output: ['Hund', 'Katze', 'Maus', 'Hirsch']
 
 ### in und not Operatoren für Listen
 
-Mit den Befehlen 'in' und 'not' kann geprüft werden, ob sich ein Element in der Liste befindet:
+Mit den Befehlen `in` und `not kann geprüft werden, ob sich ein Element in der Liste befindet:
 
 ```py 
 'howdy' in ['hello', 'hi', 'howdy', 'heyas']
@@ -549,7 +550,8 @@ Ein Beispiel in Python:
 fruits = ['Apfel', 'Banane', 'Kirsche', 'Banane']
 index_banane = fruits.index('Banane')
 
-print(index_banane)  
+print(index_banane)
+
 Output: 1
 ```
 
@@ -564,6 +566,7 @@ fruits = ['Apfel', 'Banane', 'Kirsche']
 fruits.append('Orange')
 
 print(fruits)
+
 Output: ['Apfel', 'Banane', 'Kirsche', 'Orange']
 ```
 
@@ -573,11 +576,12 @@ Mit `insert()` kann das Elemenent an einer bestimmten Position eingefügt werden
 fruits = ['Apfel', 'Banane', 'Kirsche']
 fruits.insert(1, 'Orange')
 
-print(fruits)  
+print(fruits)
+
 Output: ['Apfel', 'Orange', 'Banane', 'Kirsche']
 ```
 
-### Der `remove()`-Methode
+### Die `remove()`-Methode
 
 Mit dem `remove()`-Befehl können Elemente aus einer Liste gelöscht werden:
 
@@ -585,7 +589,8 @@ Mit dem `remove()`-Befehl können Elemente aus einer Liste gelöscht werden:
 fruits = ['Apfel', 'Banane', 'Kirsche', 'Banane']
 fruits.remove('Banane')
 
-print(fruits) 
+print(fruits)
+
 Output: ['Apfel', 'Kirsche', 'Banane']
 ```
 
@@ -597,10 +602,10 @@ Beispiele:
 
 ```python
 name = 'Zophie'
-print(name[0])      # Ausgabe: 'Z'
-print(name[-2])     # Ausgabe: 'i'
-print(name[0:4])    # Ausgabe: 'Zoph'
-print('Zo' in name) # Ausgabe: True
+print(name[0])      # Output: 'Z'
+print(name[-2])     # Output: 'i'
+print(name[0:4])    # Output: 'Zoph'
+print('Zo' in name) # Output: True
 ```
 
 ### Veränderbare und unveränderbare Datentypen
@@ -609,7 +614,8 @@ Listen sind veränderbar (mutable), das heisst, wir können ihre Werte veränder
 
 ```py
 name = 'Zophie a cat'
-name[7] = 'the'  
+name[7] = 'the'
+
 Output ist ein Fehler: TypeError
 ```
 Um einen String zu verändern, erstellt man einen neuen String durch Verkettung und Slicing. Dies gezeigt an einem Beispiel:
@@ -629,9 +635,11 @@ Tupel funktionieren nach dem gleichen Prinzip wie Listen, sie sind jedoch unver�
 eggs = ('hello', 42, 0.5)
 
 print(eggs[0])
+
 Output: 'hello'
 
-print(eggs[1:3])   
+print(eggs[1:3])
+
 Output: (42, 0.5)
 ```
 
@@ -688,7 +696,7 @@ while True:
         # Eine Bestätigungs-Nachricht, dass der Dictionary aktualisiert wurde.
 ```
 
-### Die Methoden keys(), values() und items()
+### Die Methoden `keys()`, `values()` und `items()`
 
 Es gibt die Möglichkeit sich die Schlüssel, Werte und Schlüssel und Werte eines Dictionaries ausgeben zu lassen. Dazu werden die Befehle `keys()`, `values()` und `items()`verwendet. Die von diesen Methoden zurückgegebenen Werte werden in einer Art Liste aufgeführt, es handelt sich dabei jedoch um keine echten Listen: Sie können nicht verändert werden und besitzen keine `append()`-Methode. Diese Datentypen (**dict_keys**, **dict_values** und **dict_items**) können jedoch in `for`-Schleifen verwendet werden. Dies zeigt sich am Besten an Beispielen:
 
@@ -697,6 +705,7 @@ spam = {'color': 'red', 'age': 42}
 
 for v in spam.values():
         print(v)
+
 Output: 
 red
 42
@@ -704,12 +713,14 @@ red
 
 for k in spam.keys():
         print(k)
+
 Output:
 color
 age
 
 for i in spam.items():
         print(i)
+
 Output:
 ('color', 'red')
 ('age', 42)
@@ -736,7 +747,7 @@ Output:
 
 ### Überprüfung der Inhalte eines Dictionaries
 
-Mit den `in`und `not`Operatoren kann überprüft werden, ob ein Key oder ein Wert in einem Dictionary existiert. Dazu können beispielsweise folgende Abfragen in der interaktiven Shell in Visual Studio Code gemacht werden:
+Mit den `in`und `not` Operatoren kann überprüft werden, ob ein Key oder ein Wert in einem Dictionary existiert. Dazu können beispielsweise folgende Abfragen in der interaktiven Shell in Visual Studio Code gemacht werden:
 
 ```py
 >>> test = {'Ort': 'Bern', 'Quartier': 'Breitenrain'}
@@ -928,14 +939,14 @@ test1 = 'mein name ist ben'
 test1 = test1.upper()
 
 print(test1)
-Ausgabe:
+Output:
 MEIN NAME IST BEN
 
 test2 = 'Mein Name ist Gwen'
 test2 = test2.lower()
 
 print(test2)
-Ausgabe:
+Output:
 'mein name ist gwen'
 ```
 **Beispiel: Verwendung von `upper()` und `lower()`**
@@ -1045,6 +1056,7 @@ woerter = ['Das', 'ist', 'ein', 'Test']
 satz = ' '.join(woerter)
 
 print(satz)
+
 Output: "Das ist ein Test"
 ```
 
@@ -1058,6 +1070,7 @@ woerter = ['Das', 'ist', 'ein', 'Test']
 satz = 's'.join(woerter)
 
 print(satz)
+
 Output: "DassistseinsTest"
 ```
 
@@ -1067,14 +1080,16 @@ Die `split()`-Methode macht genau das umgekehrte:
 satz = "Das ist ein Test"
 woerter = satz.split()
 
-print(woerter)  
+print(woerter)
+
 Output: ['Das', 'ist', 'ein', 'Test']
 
 # Zerlegt einen String anhand eines Kommas
 daten = "Apfel,Banane,Kirsche"
 fruechte = daten.split(',')
 
-print(fruechte)  
+print(fruechte)
+
 Output: ['Apfel', 'Banane', 'Kirsche']
 ```
 
