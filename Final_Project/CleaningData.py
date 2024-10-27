@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 
-# Function to sanitize sheet names
+# Function to sanitize sheet names because Excel sheet names have restrictions like no special characters
 def sanitize_sheet_name(name):
     # Remove invalid characters
     return re.sub(r'[\\/*?:\[\]]', '', name)
@@ -25,7 +25,7 @@ for i in range(len(df)):
         
         # Get the title from the next row as the sheet name
         title = df.iloc[i + 1, 0]
-        title = ' '.join(str(title).split()[:2])  # Shorten the title to the first two words
+        title = ' '.join(str(title).split()[:4])  # Shorten the title to the first four words
         title = sanitize_sheet_name(title)  # Sanitize the title
         
         # Update table_start to the row after the current title row
@@ -36,6 +36,6 @@ if title is not None and table_start < len(df):
     tables[title] = df.iloc[table_start:]
 
 # Save each table to a separate sheet in a new Excel file
-with pd.ExcelWriter('organized_tables.xlsx') as writer:
+with pd.ExcelWriter('Final_Project/organized_tables.xlsx') as writer:
     for title, table in tables.items():
         table.to_excel(writer, sheet_name=title, index=False)
