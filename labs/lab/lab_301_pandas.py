@@ -3,6 +3,18 @@ import pandas as pd
 from pathlib import Path
 
 def experiment_setup(xlsx_path):
+    """
+    Creates an excel file of the experiment setup
+
+    Parameters:
+    -----------
+    xlsx_path : str
+        path to the excel file
+    
+    Returns:
+    --------
+    None
+    """
     path = Path(xlsx_path)
     data = {
         'vpn01': {
@@ -28,6 +40,19 @@ def experiment_setup(xlsx_path):
 
 
 def load_relevant_data(file_name):
+    """
+    loading the relevant data from the csv file, filtering and cleaning it
+
+    Parameters:
+    -----------
+    file_name : str
+        path to the csv file
+    
+    Returns:
+    --------
+    pd.DataFrame
+        the cleaned and filtered data
+    """
     # Importiere die Datei mit dem `;`-Trennzeichen und überspringe die ersten beiden Zeilen
     df = pd.read_csv(file_name, sep=';', skiprows=2, usecols=[0, 1, 2, 3, 4, 5], na_values="UNKNOWN")
     
