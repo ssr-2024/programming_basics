@@ -3,7 +3,7 @@ from typing import Union, Dict
 
 
 # erwartet entweder str oder path und gibt vor, was er als Rückgabewert erwartet
-def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
+def vpns_exp01(path: Union[str, Path] = 'lab/data/exp01') -> Dict[str, Path]:
     """
     Returns a dictionary containing the experiment setup based on
     all CSV files in the provided path.
@@ -38,10 +38,21 @@ def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
     }
     ```
     """
+    path = Path(path) # convert to Path object
+
+    exp_setup = {} # create empty dict
+
+    # for each file in the path, write the file name as key and the path as value
+    for file in path.iterdir():
+        # check if file is a csv file
+        if file.is_file() and file.suffix == '.csv':
+            exp_setup[file.stem] = file
+
+    return exp_setup
     
 
 
-def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
+def vpns_exp02(path: Union[str, Path] = 'lab/data/exp02') -> Dict[str, Dict[int, Path]]:
     """
     Returns a dictionary containing the experiment setup based on
     the folder structure of the provided path and the containing CSV files.
@@ -94,6 +105,20 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     }
     ```
     """
+    path = Path(path) # convert to Path object
+    exp_setup = {} # create empty dict
+
+    # for each vpn_folder in the path, write the folder name as key and the path as value
+    for vpn_folder in path.iterdir():
+        if vpn_folder.is_dir():
+            vpn_setup = {}
+            # for each file in the vpn_folder, write the last 2 digits of the file name as key and the path as value
+            for file in vpn_folder.iterdir():
+                if file.is_file() and file.suffix == '.csv':
+                    mzp = int(file.stem[-2:])
+                    vpn_setup[mzp] = file
+            exp_setup[vpn_folder.stem] = vpn_setup
+    return exp_setup
     
 
 
