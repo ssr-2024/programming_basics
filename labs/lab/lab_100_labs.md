@@ -100,6 +100,8 @@ In [lab_103_collections.py](./lab_103_collections.py) ist eine 2d-Liste `smiley`
 
 Füge ein Foto des UMLs oder das Mermaid-Diagramm hier ein.
 
+![alt text](mermaid-diagram-2024-10-29-162159.png)
+
 **b.)** Schreibe eine Funktion `collatz`, welche als Eingabe eine Zahl erhält und die nächste _Collatzzahl_ zurückgibt:
 
 - Zahl ungerade: `3n + 1`

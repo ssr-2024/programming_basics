@@ -1,3 +1,13 @@
+# UML für das Collatz Problem
+'''
+flowchart TD
+    A[input: 'Please enter a number > 0']-->
+    B{n % 2 = 0}--TRUE-->
+    C[n = n/2] --> B
+    B--FALSE-->
+    D[n = 3n+1] --> B
+'''
+
 def collatz(a):
     if a % 2 == 0:
         a = a//2
