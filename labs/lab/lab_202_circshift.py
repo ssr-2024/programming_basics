@@ -20,7 +20,7 @@ def update_grid(grid):
     fig.canvas.draw()
     fig.canvas.flush_events()
 
-
+ 
 
 HEART = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 9, 0, 0, 0, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -49,14 +49,18 @@ def reset():
     heart = HEART
 
 
+def circshift(array, shift, axis):
+    return np.roll(array, shift=shift, axis=axis)
+
 def circshift_left_to_right():
     global heart
-    # do the circshift left to the heart
+    heart = circshift(heart, shift=1, axis=1)
 
-
+# Zirkuläre Verschiebung von oben nach unten
 def circshift_top_to_bottom():
     global heart
-    # do the circshift top_bottom to the heart
+    heart = circshift(heart, shift=1, axis=0)
+
 
 
 if __name__ == '__main__':
