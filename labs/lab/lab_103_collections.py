@@ -7,35 +7,16 @@ def draw_grid(grid):
     plt.imshow(grid, cmap='Reds', norm=mpl.colors.Normalize(vmin=0, vmax=10))
     plt.show()
 
-
-def summary(array):
-    # => {
-#       min: 2,
-#       max: 7,
-#       sum: 17,
-#       length: 4,
-#       mean: 4.25,
-#       raw: [2, 5, 3, 7]
-#    }
-
-    """
-    my_summary = {
-    my_summary["min"] = min(array)
-    my_summary["max"] = max(array)
-    my_summary["sum"] = sum(array)
-    my_summary["length"] = len(array)
-    my_summary["mean"] = sum(array)/len(array)
-    my_summary["raw"] = array
-    """
-
-    # nicht mehr mit 3.11.6 möglich
+# das habe ich nicht selber geschrieben
+def summary(list):
+    # Erstellen eines Wörterbuchs, um verschiedene Informationen strukturiert zu organisieren
     my_summary =  {
-        "min": min(array),
-        "max": max(array),
-        "sum": sum(array),
-        "length": len(array),
-        "mean": sum(array)/len(array),
-        "raw": array
+        "min": min(list),
+        "max": max(list),
+        "sum": sum(list),
+        "length": len(list),
+        "mean": sum(list)/len(list),
+        "raw": list # gibt die ursprüngliche Liste unverändert zurück
     }
 
     return my_summary
@@ -75,31 +56,15 @@ smiley = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
 
 def draw_transposed_grid(grid):
-    """
-    transposed_grid =  [([0] *len(smiley[0]))] * len(smiley[0])
-    print(type(transposed_grid))
-    for zeile in range(0,len(grid),1):
-        for spalte in range(0,len(grid[0]),1):
-                print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                transposed_grid[len(grid[0])-(spalte+1)][zeile] = grid[zeile][spalte]
-                print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        print(transposed_grid[len(grid[0])-(spalte+1)])
-    #print(transposed_grid)
-    """
-    
-    transposed_grid =  []
-    for zeile in range(0,len(grid),1):
+    transposed_grid = []
+    # Iteriert an erster Stelle über die Spalten (anstatt über die Zeilen)
+    for spalte in range(len(grid[0])):
+        # Erstellt eine neue, leere Liste innerhalb der transposed_grid-Liste
         line = []
-        for spalte in range(0,len(grid[0]),1):
-        #        print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                line.append(grid[len(grid)-zeile-1][spalte])
+        # Von oben nach unten durch die Zeilen iterieren
+        for zeile in range(len(grid)):  
+            line.append(grid[zeile][spalte])
         transposed_grid.append(line)
-                #print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                #print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        #print(transposed_grid[len(grid[0])-(spalte+1)])
-    
-
     return transposed_grid
 
 
