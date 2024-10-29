@@ -12,16 +12,28 @@ def celsius_to_fahrenheit(temperatur):
 def fahrenheit_to_celsius(temperatur):
     return (temperatur-32) * 5/9
 
-
-def unit_input(selection):
-    return ''
+def unit_input(selection): # Schleifen!
+     if selection == 1:
+        return 'Celsius'
+     elif selection == 2:
+        return 'Celsius'
+     elif selection == 3:
+        return 'Kelvin'
+     elif selection == 4:
+        return 'Kelvin'
+     elif selection == 5:
+        return 'Fahrenheit'
+     elif selection == 6:
+        return 'Fahrenheit'
+     else:
+        return 'Invalid selection'
 
 def unit_output(selection):
     return ''
 
 ## Skript
 # Fragt Nutzer*innen nach der Umrechnung, die sie durchführen möchten
-user_input = int(input('Please enter the number corresponding to the conversion you want to do:\n'
+selection = int(input('Please enter the number corresponding to the conversion you want to do:\n'
                             '(1) Celsius to Kelvin\n'
                             '(2) Celsius to Fahrenheit\n'
                             '(3) Kelvin to Celsius\n'
@@ -29,4 +41,6 @@ user_input = int(input('Please enter the number corresponding to the conversion 
                             '(5) Fahrenheit to Celsius\n'
                             '(6) Fahrenheit to Kelvin\n'
                             'Your choice: '))
+
+
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
