@@ -1,5 +1,6 @@
 ## Funktionen
 
+# 4. / 5. Funktionen, welche die Umrechnungen durchführen (eigentlich 4. Schritt, ich habe es im Ersten gemacht, ups.)
 def celsius_to_kelvin(temperatur):
     return temperatur + 273.15
 
@@ -12,6 +13,7 @@ def celsius_to_fahrenheit(temperatur):
 def fahrenheit_to_celsius(temperatur):
     return (temperatur-32) * 5/9
 
+# 2. Funktion, welche basierend auf der Eingabe des Benutzers die Einzugebende Einheit zurückgibt.
 def unit_input(selection): # Schleifen!
      if selection == 1:
         return 'Celsius'
@@ -32,7 +34,8 @@ def unit_output(selection):
     return ''
 
 ## Skript
-# Fragt Nutzer*innen nach der Umrechnung, die sie durchführen möchten
+
+# 1. Fragt Nutzer*innen nach der Umrechnung, die sie durchführen möchten
 selection = int(input('Please enter the number corresponding to the conversion you want to do:\n'
                             '(1) Celsius to Kelvin\n'
                             '(2) Celsius to Fahrenheit\n'
@@ -41,6 +44,12 @@ selection = int(input('Please enter the number corresponding to the conversion y
                             '(5) Fahrenheit to Celsius\n'
                             '(6) Fahrenheit to Kelvin\n'
                             'Your choice: '))
+
+# 3. Fragt Nutzer*innen nach der Temperatur, die sie umrechnen möchten
+temperatur = float(input(f'Please enter a temperature in {unit_input(selection)}: '))
+
+
+
 
 
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
