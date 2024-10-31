@@ -20,7 +20,7 @@ def kelvin_to_fahrenheit(temperatur):
 def fahrenheit_to_kelvin(temperatur):
     return (temperatur - 32) * 5/9 + 273.15
 
-# 2. Funktion, welche basierend auf der Eingabe des Benutzers die Einzugebende Einheit zurückgibt.
+# 2. Funktion, welche basierend auf der Eingabe des Benutzers die einzugebende Einheit zurückgibt.
 def unit_input(selection): # Schleifen!
      if selection == 1:
         return 'Celsius'
@@ -37,8 +37,20 @@ def unit_input(selection): # Schleifen!
      else:
         return 'Invalid selection'
 
+# 7. Funktion, welche basierend auf der Eingabe des Benutzers die Ausgabeeinheit zurückgibt.
 def unit_output(selection):
-    return ''
+    if selection == 1:
+        return 'Kelvin'
+    elif selection== 2:
+        return 'Fahrenheit'
+    elif selection == 3:
+        return 'Celsius'
+    elif selection == 4:
+        return 'Fahrenheit'
+    elif selection == 5:
+        return 'Celsius'
+    elif selection == 6:
+        return 'Kelvin'
 
 ## Skript
 
@@ -69,7 +81,5 @@ elif selection == 5:
 elif selection == 6:
     converted_temp=fahrenheit_to_kelvin(temperatur)
 
-
-
-
-print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
+# 8. Ausgabe der umgerechneten Temperatur
+print(f'{temperatur}° {unit_input(selection)} ≅ {converted_temp}° {unit_output(selection)}')
