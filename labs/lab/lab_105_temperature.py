@@ -35,15 +35,20 @@ def get_transformation_choice()->int:
     -------
     int: the transformation choice
         1: Celsius to Kelvin
-        2: Kelvin to Celsius
-        3: Celsius to Fahrenheit
-        4: Fahrenheit to Celsius
+        2: Celsius to Fahrenheit
+        3: Kelvin to Celsius
+        4: Kelvin to Fahrenheit
+        5: Fahrenheit to Celsius
+        6: Fahrenh5eit to Kelvin
+
     """
     print("Choose a transformation:")
     print("1. Celsius to Kelvin")
-    print("2. Kelvin to Celsius")
-    print("3. Celsius to Fahrenheit")
-    print("4. Fahrenheit to Celsius")
+    print("2. Celsius to Fahrenheit")
+    print("3. Kelvin to Celsius")
+    print("4. Kelvin to Fahrenheit")
+    print("5. Fahrenheit to Celsius")
+    print("6. Fahrenheit to Kelvin")    
     
     choice = int(input("Enter the number of your choice: "))
     return choice
