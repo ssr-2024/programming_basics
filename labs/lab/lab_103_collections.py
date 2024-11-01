@@ -74,32 +74,37 @@ smiley = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 
-def draw_transposed_grid(grid):
-    """
-    transposed_grid =  [([0] *len(smiley[0]))] * len(smiley[0])
-    print(type(transposed_grid))
-    for zeile in range(0,len(grid),1):
-        for spalte in range(0,len(grid[0]),1):
-                print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                transposed_grid[len(grid[0])-(spalte+1)][zeile] = grid[zeile][spalte]
-                print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        print(transposed_grid[len(grid[0])-(spalte+1)])
-    #print(transposed_grid)
-    """
+def draw_transposed_grid(grid: list) -> list:
+    """ Transposes a 2D grid (list of lists) by swapping rows and columns 
     
-    transposed_grid =  []
-    for zeile in range(0,len(grid),1):
-        line = []
-        for spalte in range(0,len(grid[0]),1):
-        #        print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                line.append(grid[len(grid)-zeile-1][spalte])
-        transposed_grid.append(line)
-                #print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                #print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        #print(transposed_grid[len(grid[0])-(spalte+1)])
-    
+    Parameters
+    ----------
+    grid: list of lists
+        A 2D list representing the original grid to be transposed. 
 
+    Returns
+    ----------
+    transposed_grid: list of lists
+        A 2D list representing the transposed grid. 
+    """
+    # Initialize an empty list to hold the transposed grid
+    transposed_grid = []
+    
+    # Iterate over each column in the original grid
+    for zeile in range(len(grid[0])):  # len(grid[0]) gives the number of columns in the original grid
+        # Initialize an empty list to hold the current line of the transposed grid
+        line = []
+        
+        # Iterate over each row in the original grid
+        for spalte in range(0, len(grid)):  # len(grid) gives the number of rows in the original grid
+            # Append the element from the original grid to the current line
+            # The element is taken from the current row (spalte) and the current column (zeile)
+            line.append(grid[spalte][zeile])
+        
+        # Append the current line to the transposed grid
+        transposed_grid.append(line)
+    
+    # Return the transposed grid
     return transposed_grid
 
 
