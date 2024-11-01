@@ -13,8 +13,32 @@ def fahrenheit_to_celsius(temperatur):
     return temperatur
 
 
-def unit_input(selection):
-    return ''
+def unit_input(transformation_choice)->str:
+    """
+    Get the unit of the input temperature
+
+    Parameters:
+    ----------
+    transformation_choice: int
+    
+    Returns:
+    -------
+    str: the unit of the input temperature
+    """
+
+    if transformation_choice == 1:
+        return 'Celsius'
+    elif transformation_choice == 2:
+        return 'Celsius'
+    elif transformation_choice == 3:
+        return 'Kelvin'
+    elif transformation_choice == 4:
+        return 'Kelvin'
+    elif transformation_choice == 5:
+        return 'Fahrenheit'
+    elif transformation_choice == 6:
+        return 'Fahrenheit'
+    
 
 def unit_output(selection):
     return ''
@@ -39,7 +63,7 @@ def get_transformation_choice()->int:
         3: Kelvin to Celsius
         4: Kelvin to Fahrenheit
         5: Fahrenheit to Celsius
-        6: Fahrenh5eit to Kelvin
+        6: Fahrenheit to Kelvin
 
     """
     print("Choose a transformation:")
