@@ -1,3 +1,15 @@
+# Create an UML diagram for the collatz problem
+'''
+mermaid
+graph TD
+    A[Start with n > 0] --> B[Print the value of n]
+    B --> C{Is n even?}
+    C -- Yes --> D[n = n / 2]
+    C -- No --> E[n = 3 * n + 1]
+    D --> B
+    E --> B
+'''
+
 def collatz(a):
     if a % 2 == 0:
         a = a//2
