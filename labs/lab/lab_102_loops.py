@@ -1,4 +1,4 @@
-def triangle(size: int) --> None:
+def triangle(size: int) -> None:
     """Draws a symmetrical triangle of stars with the given size.
 
     This function prints an upper and a lower triangle made of asterisks ('*') 
