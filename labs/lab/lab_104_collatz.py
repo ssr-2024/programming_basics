@@ -10,14 +10,40 @@ graph TD
     E --> B
 '''
 
-def collatz(a):
+def collatz(a: int) -> int: 
+    """
+    Returns the next number in the Collatz sequence for a given number.
+
+    Parameters  
+    ----------
+    a: int
+        The current number in the Collatz sequence to be processed.
+
+    Returns 
+    -------
+    int
+        The next number in the Collatz sequence.
+    """
     if a % 2 == 0:
         a = a//2
     else:
         a = a*3+1
     return a
 
-def run():
+def run()-> list:
+    """
+    Returns a list of the Collatz sequence for a given number, until 1 is reached 3 times.
+
+    Parameters  
+    ----------
+    None
+
+    Returns
+    -------
+    list
+        A list containing the Collatz sequence for a given number, until 1 is reached 3 times.
+    
+    """
     liste = []
     a = int(input("Please enter a number"))
     liste.append(a)
