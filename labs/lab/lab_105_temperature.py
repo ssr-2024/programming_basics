@@ -81,7 +81,10 @@ transformation_choice = get_transformation_choice()
 
 print(f"You chose transformation number: {transformation_choice}")
 
+# Step 2: ask the user for a temperature to transform
 
+temperature = float(input(f"Enter the temperature in {unit_input(transformation_choice)} you want to transform: "))
+print(f"You entered {temperature} {unit_input(transformation_choice)}")
 
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
