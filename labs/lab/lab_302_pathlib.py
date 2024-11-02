@@ -103,7 +103,28 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     }
     ```
     """
-    
+    exp_setup = {}  # Initialize an empty dictionary to store the experiment setup
+    experiment_path = Path(path) # Convert the provided path to a Path object
+
+    # Iterate over each folder in the provided path
+    for vpn_folder in experiment_path.iterdir():
+        # Check if the current item is a directory.
+        if vpn_folder.is_dir( ):
+             # Initialize an empty dictionary to store the setup for the current vpn folder
+            vpn_setup = {}  
+
+            # Iterate over each CSV file in the current vpn folder 
+            for csv_file in vpn_folder.glob('*.csv'):
+                # Check if the current item is a file.
+                if csv_file.is_file():
+                    # Extract the mzp number from the last two characters of the file name
+                    mzp_number = int(csv_file.stem[-2:])
+                    vpn_setup[mzp_number] = csv_file # Add the file path to the dictionary with the mzp number as key
+
+            # Add the vpn setup to the experiment setup dictionary
+            exp_setup[vpn_folder.stem] = vpn_setup 
+
+    return exp_setup # Return the experiment setup dictionary
 
 
 if __name__ == '__main__':
