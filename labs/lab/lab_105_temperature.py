@@ -135,3 +135,18 @@ print(f"You entered {temperature} {unit_input(transformation_choice)}")
 
 print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
+# Step 3: Calculate the transformed temperature depending on the transformation choice
+
+if transformation_choice == 1:
+    transformed_temperature = celsius_to_kelvin(temperature)
+elif transformation_choice == 2:
+    transformed_temperature = celsius_to_fahrenheit(temperature)
+elif transformation_choice == 3:
+    transformed_temperature = kelvin_to_celsius(temperature)
+elif transformation_choice == 4:
+    transformed_temperature = kelvin_to_celsius(temperature)
+elif transformation_choice == 5:
+    transformed_temperature = fahrenheit_to_celsius(temperature)
+elif transformation_choice == 6:
+    transformed_temperature = fahrenheit_to_celsius(temperature)
+
