@@ -2,7 +2,19 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-def experiment_setup(xlsx_path):
+def experiment_setup(xlsx_path: str)->None:
+    """
+    Create a DataFrame and save it as an Excel file.
+    The DataFrame contains data for an experiment setup.
+    
+    Parameters
+    ----------
+    xlsx_path : str
+
+    Returns
+    -------
+    None
+    """
     # Data for the experiment setup
     data = {
             'vpn01': {
@@ -30,7 +42,25 @@ def experiment_setup(xlsx_path):
 
 
 
-def load_relevant_data(file_name):
+def load_relevant_data(file_name:str)->pd.DataFrame:
+    """
+    Load the relevant data from a CSV file and return it as a DataFrame.
+    
+    The relevant data consists of the columns 'country code', 'height [cm]', 'weight [kg]', and 'main sport'. 
+    The columns are renamed to 'country', 'height', 'weight', and 'sport'.
+    Unknown values are treated as NaN.
+    Rows with missing values are dropped.
+
+    Parameters
+    ----------
+    file_name : str
+        The path to the CSV file.
+
+    Returns
+    -------
+    pd.DataFrame
+        The DataFrame containing the relevant data.
+    """
     # Load the data from the CSV file, treating 'UNKNOWN' as NaN
     df = pd.read_csv(file_name, sep=';', skiprows=2, usecols= ['country code', 'height [cm]', 'weight [kg]', 'main sport'], na_values='UNKNOWN')
     
@@ -46,6 +76,7 @@ if __name__ == '__main__':
     experiment_setup('output.xlsx')
     df = load_relevant_data('labs/lab/data/lab301_sport/data.csv')    
     print(df)
+
 
 
 
