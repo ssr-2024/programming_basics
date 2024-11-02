@@ -1,7 +1,21 @@
 ## Funktionen
 
-def celsius_to_kelvin(temperatur):
-    return temperatur
+def celsius_to_kelvin(temperature: float)->float:
+    """
+    Convert a temperature from Celsius to Kelvin
+    
+    Parameters
+    ----------
+    temperature: float
+
+    
+    Returns
+    -------
+    float: the temperature in Kelvin
+
+    """
+
+    return temperature + 273.15
 
 def kelvin_to_celsius(temperatur):
     return temperatur
