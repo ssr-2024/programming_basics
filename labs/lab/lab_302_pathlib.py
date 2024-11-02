@@ -38,7 +38,16 @@ def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
     }
     ```
     """
-    
+    exp_setup = {}  # Initialize an empty dictionary to store the experiment setup
+    experiment_path = Path(path) # Convert the provided path to a Path object
+
+    # List all CSV files in the given directory
+    for file in experiment_path.glob('*.csv'):
+        # Extract file name without extension to use as key
+        file_name = file.stem
+        exp_setup[file_name] = file # Add the file path to the dictionary with the file name as key
+
+    return exp_setup # Return the experiment setup dictionary
 
 
 def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
