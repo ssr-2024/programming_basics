@@ -30,23 +30,23 @@ def experiment_setup(xlsx_path):
 
 
 
-def load_relevant_data(lab301_sport/data.csv):
-     # Load the data from the CSV file
-    df = pd.read_csv(lab301_sport/data.csv, na_values='UNKNOWN')
+def load_relevant_data(file_name):
+    # Load the data from the CSV file, treating 'UNKNOWN' as NaN
+    df = pd.read_csv(file_name, sep=';', skiprows=2, usecols= ['country code', 'height [cm]', 'weight [kg]', 'main sport'], na_values='UNKNOWN')
     
-    # Select relevant columns and rename them
-    df = df[['country code', 'height [cm]', 'weight [kg]', 'main sport']]
-    df.columns = ['country', 'height', 'weight', 'sport']
+    # Rename the columns
+    df = df.rename(columns={'country code': 'country', 'height [cm]': 'height', 'weight [kg]': 'weight', 'main sport': 'sport'})
     
     # Drop rows with any NaN values
-    df = df.dropna()
+    df = df.dropna(axis=0, how='any')
 
     return df
 
-
 if __name__ == '__main__':
     experiment_setup('output.xlsx')
-    load_relevant_data('labs/lab/data/lab301_sport/data.csv')
-    
+    df = load_relevant_data('labs/lab/data/lab301_sport/data.csv')    
+    print(df)
+
+
 
 
