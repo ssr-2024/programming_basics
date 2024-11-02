@@ -60,6 +60,7 @@ def fahrenheit_to_celsius(temperature: float)->float:
     return (temperature - 32) * 5/9
 
 
+
 def unit_input(transformation_choice)->str:
     """
     Get the unit of the input temperature
@@ -155,7 +156,6 @@ print(f"You chose transformation number: {transformation_choice}")
 temperature = float(input(f"Enter the temperature in {unit_input(transformation_choice)} you want to transform: "))
 print(f"You entered {temperature} {unit_input(transformation_choice)}")
 
-print(f'{12}° {unit_input(12)} ≅ {12}° {unit_output(12)}')
 
 # Step 3: Calculate the transformed temperature depending on the transformation choice
 
@@ -166,9 +166,12 @@ elif transformation_choice == 2:
 elif transformation_choice == 3:
     transformed_temperature = kelvin_to_celsius(temperature)
 elif transformation_choice == 4:
-    transformed_temperature = kelvin_to_celsius(temperature)
+    transformed_temperature = celsius_to_fahrenheit(kelvin_to_celsius(temperature))
 elif transformation_choice == 5:
     transformed_temperature = fahrenheit_to_celsius(temperature)
 elif transformation_choice == 6:
-    transformed_temperature = fahrenheit_to_celsius(temperature)
+    transformed_temperature = celsius_to_kelvin(fahrenheit_to_celsius(temperature))
 
+# Step 4: Print the transformed temperature
+
+print(f'{temperature} {unit_input(transformation_choice)} = {transformed_temperature} {unit_output(transformation_choice)}')
