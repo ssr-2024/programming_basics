@@ -87,8 +87,30 @@ def unit_input(transformation_choice)->str:
         return 'Fahrenheit'
     
 
-def unit_output(selection):
-    return ''
+def unit_output(transformation_choice)->str:
+    """
+    Get the unit of the output temperature
+
+    Parameters
+    ----------
+    transformation_choice: int
+
+    Returns
+    -------
+    str: the unit of the output temperature
+    """
+    if transformation_choice == 1:
+        return 'Kelvin'
+    elif transformation_choice == 2:
+        return 'Fahrenheit'
+    elif transformation_choice == 3:
+        return 'Celsius'
+    elif transformation_choice == 4:
+        return 'Fahrenheit'
+    elif transformation_choice == 5:
+        return 'Celsius'
+    elif transformation_choice == 6:
+        return 'Kelvin'
 
 ## Skript
 
