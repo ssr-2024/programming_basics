@@ -17,14 +17,47 @@ def celsius_to_kelvin(temperature: float)->float:
 
     return temperature + 273.15
 
-def kelvin_to_celsius(temperatur):
-    return temperatur
+def kelvin_to_celsius(temperature: float)->float:
+    """
+    Convert a temperature from Kelvin to Celsius
 
-def celsius_to_fahrenheit(temperatur):
-    return temperatur
+    Parameters
+    ----------
+    temperature: float
 
-def fahrenheit_to_celsius(temperatur):
-    return temperatur
+    Returns
+    -------
+    float: the temperature in Celsius
+    """
+    return temperature - 273.15
+
+def celsius_to_fahrenheit(temperature: float)->float:
+    """
+    Convert a temperature from Celsius to Fahrenheit
+
+    Parameters
+    ----------
+    temperature: float
+
+    Returns
+    -------
+    float: the temperature in Fahrenheit
+    """
+    return temperature * 9/5 + 32
+
+def fahrenheit_to_celsius(temperature: float)->float:
+    """
+    Convert a temperature from Fahrenheit to Celsius
+
+    Parameters
+    ----------
+    temperature: float
+
+    Returns
+    -------
+    float: the temperature in Celsius
+    """
+    return (temperature - 32) * 5/9
 
 
 def unit_input(transformation_choice)->str:
