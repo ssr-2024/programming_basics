@@ -74,13 +74,10 @@ ax = fig.gca()
 ax.scatter(x,y, color = 'red')
 
 # Add title and labels
-ax.title('Sample Scatter Plot')
-ax.xlabel('X Values')
-ax.ylabel('Y Values')
-ax.legend()
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Simple Plot')
 
 ax.figure.set_size_inches(6.3, 3.54) # size must be set in inches; 1cm / 2.54 = 1 inch
 ax.figure.set_dpi (1000)
 ax.figure.savefig("Scatterplot_example.png")
-
-# %%
