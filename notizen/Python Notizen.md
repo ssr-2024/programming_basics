@@ -757,6 +757,99 @@ pivot.loc[
 )
 ```
 
+Tabellen zusammenfügen: mit `concat`
+```py
+s1 = pd.Series(['a', 'b'])
+s2 = pd.Series(['c', 'd'])
+
+#untereinander, mit beachten von Index 
+pd.concat([s1, s2])
+
+#untereinander, ohne beachten von Index
+pd.concat([s1, s2], ignore_index=True)
+
+#es gibt noch viele weitere, siehe Dokumentation
+```
+
 Fazit: sehr ähnlich, wie in Matlab! Für genauere Infos siehe [Cheat Sheet Pandas](./Pandas_Cheat_Sheet.pdf)
 
 Gerade auch in Kombination mit Matplotlib sehr nützlich! Siehe auch: [Cheat Sheet Matplotlib](./Matplotlib_Cheat_Sheet.pdf)
+
+## Pathlib
+
+`glob` ist etwas konfigurierbarer, als `iterdir`. Es können noch Dateienanfänge angehängt werden. 
+
+## Plots, Matplotlib
+
+Fenster: `figure`
+Objekt: `object`
+Achsen: `xlabel`, `ylabel` 
+
+Beispiel-Plot: 
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt 
+
+fig = plt.figure() # erstelle figure
+ax = fig.gca() # get current axes (gca)
+ax.plot([1,2,3,4,5], [9,6,7,1,3]) #plotte auf die axes
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Plot Title')
+
+plt.show() # gebe Plot aus
+```
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt 
+
+fig = plt.figure() # erstelle figure
+ax = fig.gca() # get current axes (gca)
+ax.plot([1,2,3,4,5], [9,6,7,1,3], label = 'random')
+ax.plot([1,2,3,4,5], [6,7,1,3,9], label = 'random2')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Plot Title')
+
+plt.show() # gebe Plot aus
+```
+
+Plot designen: 
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt 
+
+fig = plt.figure() # erstelle figure
+ax = fig.gca() # get current axes (gca)
+ax.plot([1,2,3,4,5], [9,6,7,1,3], 'g+-')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Plot Title')
+
+plt.show() # gebe Plot aus
+```
+
+Plots von Pandas-Dataframes:
+```py
+import pandas as pd 
+import matplotlib.pyplot as plt 
+
+# Dataframe erstellen
+df = pd.DataFrame({ 
+	'Name': ['John', 'Sammy', 'Joe'], 
+	'Age': [45, 38, 90] 
+}) 
+
+# barplot ertellen
+df.plot(x="Name", y="Age", kind="bar")
+plt.show()
+```
+
+Plot abspeichern mit: 
+```py
+...
+plt.savefig('plot_name.png') #auch andere Dateinamen möglich 
+```
