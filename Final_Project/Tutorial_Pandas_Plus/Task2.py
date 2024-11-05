@@ -7,12 +7,13 @@ def sanitize_sheet_name(name):
     return re.sub(r'[\\/*?:\[\]]', '', name)
 
 # Load the Excel sheet
+'''1. Add filepath'''
 file_path = ''
 df = pd.read_excel(file_path, sheet_name='', header=None)
 
 # Function to find the start of a section by a keyword (exact match)
 def find_section_start_exact(keyword):
-    matches = df['''your code here'''].index
+    matches = df['''2. your code here'''].index
     if len(matches) > 0:
         return matches[0] + 1  # Return the row after the match
     else:
