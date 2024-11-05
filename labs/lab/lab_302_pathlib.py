@@ -107,7 +107,7 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
 
     # Iterate through each subdirectory in the base path
     for vpn_dir in dir_name.iterdir():
-        if vpn_dir.is_dir() and vpn_dir.name.startswith('vpn_'):
+        if vpn_dir.is_dir() and vpn_dir.name.startswith('vp'):
             vpn_name = vpn_dir.stem
             # Initialize a nested dictionary for this VPN
             mzp_dict = {}
@@ -123,7 +123,7 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
 
     return experiment_setup
 
-print(vpns_exp02('labs/lab/data/exp02'))
+#print(vpns_exp02('labs/lab/data/exp02'))
     
 
 
