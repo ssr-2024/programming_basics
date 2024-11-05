@@ -1,10 +1,22 @@
 def triangle(size):
-    for i in range(1, size + 1):
-        # Berechne die Anzahl der Leerzeichen und Sterne
-        spaces = size - i
-        stars = 2 * i - 1
-        # Zeichne die Leerzeichen und Sterne
-        print(" " * spaces + "*" * stars)
+    """
+    Draws a right-facing triangle that expands to the specified size and then contracts.
 
+    Parameters
+    ----------
+    size : int
+        The maximum width of the triangle.
+    """
+    # First, build the increasing part of the triangle
+    for i in range(1, size + 1):
+        # Print each line with an increasing number of stars
+        print("*" * i)
+    
+    # Then, build the decreasing part of the triangle
+    for i in range(size - 1, 0, -1):
+        # Print each line with a decreasing number of stars
+        print("*" * i)
+
+# Get user input for the triangle size
+n = int(input("Enter a number: "))
 triangle(n)
-n=int(input("gib eine Zahl ein"))
