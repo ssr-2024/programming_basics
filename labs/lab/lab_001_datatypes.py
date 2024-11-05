@@ -27,7 +27,8 @@ print(str(a) + ' times 3 = ' + str(a_times_3))
 # @exercise_3a
 
 something = input("Enter something:")
-print(str(len(something)) + ' Letters')
+print(str(len(something)))
+
 
 # @exercise_3b
 something = input("Enter something:")
