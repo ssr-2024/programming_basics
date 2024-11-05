@@ -22,7 +22,7 @@ def find_section_start_exact(keyword):
     
 # Function to find the start of a section by a keyword (partial match)
 def find_section_start_partial(keyword):
-    matches = df['''your code here'''].index
+    matches = df['''3. your code here'''].index
     if len(matches) > 0:
         return matches[0] + 1  # Return the row after the match
     else:
