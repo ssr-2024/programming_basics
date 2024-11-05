@@ -103,8 +103,43 @@ y = [2, 7, 5, 7, 2, 9]
 plt.fill_between(x, y)
 plt.show()
 ```
+
 ### Umgesetztes Beispiel für Area Plot
 <img src="../media/plots/area_plot.png" alt="Bild von Area Plot" title="Beispiel Area Plot" />
+
+Beispiel als Code:
+
+```python
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Daten für den Area Plot
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x) + 1.5
+y2 = np.cos(x) + 1
+
+# Erstellung der Figur und der Achsen
+fig, ax = plt.subplots()
+ax.fill_between(x, y1, color="skyblue", alpha=0.4, label="sin(x) + 1")
+ax.fill_between(x, y2, color="sandybrown", alpha=0.4, label="cos(x) + 1")
+
+# Einstellung der Größe und DPI für den Export
+ax.figure.set_size_inches(6.3, 3.54)
+ax.figure.set_dpi(100)
+
+# Achsenbeschriftungen und Titel
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Area Plot von sin(x) + 1 und cos(x) + 1')
+ax.legend(loc='upper right')
+
+# Hintergrundgitter aktivieren
+ax.grid()
+
+
+plt.show()
+```
 
 [Source und weitere Beispiele](https://www.python-graph-gallery.com/area-plot/)
 
