@@ -1,0 +1,22 @@
+# Anleitung für das verbinden der Manus Metagloves in Unreal
+
+1. Plugin Ordner hineinkopieren. 
+2. überprüfen ob das Plugin enabled ist
+3. sich mit "Manus" verbinden (wähle den local Host)
+4. verwende ein beliebiges "skeletal mesh" (beispielsweise von Manus Plugin her)
+5. kopiere dieses Ojekt in den Content Ordener und gebe dies ein neuen Namen
+6. hinweis: der "normale" Weg von Manus funktioniert nicht. verwende den alternativen Weg
+7. erstelle einen Actor, rechtsklick in Content Browser, "Blueprint Class" auswählen dann Actor auswählen. 
+8. nicht vergessen den Actor in das Projekt hineinziehen
+9. rechtsklick auf skeleton mesh und **SUCHE** das Manus Skeleton aus. 
+10. rechtsklick auf das neue Manus sysmbol im Content Browser
+11. folge den Answeisungen der Anleitung
+12. Compile und speichere es ab.
+
+[Link von der Manus Webseite für die Anleitung](https://docs.manus-meta.com/2.4.0/Plugins/Unreal/getting%20started/#:~:text=forums%20and%20documentation.-,Alternative%20way%20of%20setting%20up%20a%20model,-Here%20is%20an)
+
+Bemerkung: Host ist nicht per se ganz klar. 
+
+Für die Datenübertragung von  Unreal nach Streamix. Via Blueprints in UE werden die Daten folgendermassen aufgezeichnet (es wird nur eine Hand betrachtet und zwar die Linke Hand): 
+
+![alt text](UE_Blueprint.jpg)
