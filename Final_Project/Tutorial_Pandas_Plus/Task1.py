@@ -17,7 +17,7 @@ def sanitize_sheet_name(name):
     # re.sub() is used to replace all occurrences of certain patterns in a string.
     return re.sub(r'[\\/*?:\[\]]', '', name)
 
-'''Provide the path to the excel file (messyfile.xlsx)'''
+'''1. Provide the path to the excel file (messyfile.xlsx)'''
 file_path = ''
 df = pd.read_excel(file_path, header=None)  # read the entire excel file into a dataframe and treat no row as a header
 
@@ -26,9 +26,9 @@ table_start = 0
 tables = {}
 title = None
 
-''' Loop through rows to find delimiters and titles'''
+''' 2. Loop through rows to find delimiters and titles'''
 #put your own code here using your knoweldge of loops and if statements
-    ''' Check for delimiter line using the iloc function to access the row and the str.contains() function to check if the row contains the delimiter string.'''
+    ''' 3. Check for delimiter line using the iloc function to access the row and the str.contains() function to check if the row contains the delimiter string.'''
     #put your own code here using your knoweldge of the iloc function and the str.contains() function
 
 
