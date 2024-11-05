@@ -8,11 +8,11 @@ Zu was werden die folgenden Ausdrücke evaluiert?
 
 a.
 ```py
-'Yes' + 'YesYes'
+'YesYesYes'
 ```
 b.
 ```py
-'NoNoNo' * 3
+'NoNoNoNoNoNoNoNoNo'
 ```
 c.
 ```py
