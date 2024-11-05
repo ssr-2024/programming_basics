@@ -38,8 +38,14 @@ def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
     }
     ```
     """
+    # Initialize an actual dictionary
+    my_dict: Dict[str, Path] = {}
+    dir_name = Path(path)
+    for item in dir_name.glob('*.csv'):
+        my_dict[str(item.stem)] = Path(path +'/' + item.name)
+    return my_dict
     
-
+#print(vpns_exp01('labs/lab/data/exp01'))
 
 def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     """
@@ -94,6 +100,30 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     }
     ```
     """
+    dir_name = Path(path)
+    
+    # Initialize the result dictionary
+    experiment_setup = {}
+
+    # Iterate through each subdirectory in the base path
+    for vpn_dir in dir_name.iterdir():
+        if vpn_dir.is_dir() and vpn_dir.name.startswith('vpn_'):
+            vpn_name = vpn_dir.stem
+            # Initialize a nested dictionary for this VPN
+            mzp_dict = {}
+            
+            # Iterate through all CSV files in the VPN directory
+            for csv_file in vpn_dir.glob('*.csv'):
+                # Extract the mzp number from the filename
+                mzp_number = int(csv_file.stem[-2:])  # Get the last two characters as an int
+                mzp_dict[mzp_number] = csv_file  # Add the Path to the dictionary
+            
+            # Add the VPN dictionary to the experiment setup
+            experiment_setup[vpn_name] = mzp_dict
+
+    return experiment_setup
+
+print(vpns_exp02('labs/lab/data/exp02'))
     
 
 

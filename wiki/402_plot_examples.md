@@ -159,6 +159,7 @@ plt.show()`
 ```
 
 ![scatterplot](../media/plots/scatter_plot.png)
+![Scatterplot2](../code/Scatterplot_example.png)
 
 ## 3D-Plot
 
