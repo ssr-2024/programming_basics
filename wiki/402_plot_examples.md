@@ -57,6 +57,32 @@ plt.xticks(y_pos, bars)
 plt.show()
 ```
 
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt 
+
+ 
+# creating the dataset
+data = {'C':20, 'C++':15, 'Java':30, 
+        'Python':35}
+courses = list(data.keys())
+values = list(data.values())
+ 
+fig = plt.figure(figsize = (10, 5))
+
+# creating vertical bar plot
+plt.bar(courses, values, color ='maroon', 
+        width = 0.4)
+# creating horizontal bar plot 
+plt.barh(y = courses, width = values)
+
+plt.xlabel("Courses offered")
+plt.ylabel("No. of students enrolled")
+plt.title("Students enrolled in different courses")
+plt.show()
+```
+
 ![BarPlot](../media/plots/bar_plot.png)
 
 ## Histogramme 
