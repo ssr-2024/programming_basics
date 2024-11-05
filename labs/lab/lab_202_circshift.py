@@ -40,23 +40,22 @@ HEART = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 global heart
-heart = HEART
+heart = HEART # reference to the original heart (an array of arrays)
 
 
-def reset():
+def reset(): # reset necessary as currently every change in heart also affects HEART
     global heart
-    heart = HEART
+    heart = HEART.copy() 
 
 
-def circshift_left_to_right():
+def circshift_left_to_right():  # do the circshift left to the heart
     global heart
-    # do the circshift left to the heart
+    heart = np.roll(heart, shift=1, axis=1) # shift the heart to the right by 1 pixel
+    
 
-
-def circshift_top_to_bottom():
+def circshift_top_to_bottom(): # do the circshift top_bottom to the heart
     global heart
-    # do the circshift top_bottom to the heart
-
+    heart = np.roll(heart, shift=1, axis=0) # shift the heart to the bottom by 1 pixel
 
 if __name__ == '__main__':
     global fig, handle
