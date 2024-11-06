@@ -2,15 +2,75 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
+def experiment_setup(xlsx_path: str) -> None:
+    """
+    Create a DataFrame and save it as an Excel file.
+    The DataFrame contains data for an experiment setup.
+    
+    Parameters
+    ----------
+    xlsx_path : str
 
-def experiment_setup(xlsx_path):
+    Returns
+    -------
+    None
+    """
+    # Data for the experiment setup
+    data = {
+        'vpn01': {
+            'Gruppe': 'A',
+            'Trial_01': 'vid_01.mp4',
+            'Trial_02': 'vid_02.mp4',
+            'Trial_03': 'vid_03.mp4',
+            'Trial_04': 'vid_04.mp4'
+        },
+        'vpn02': {
+            'Gruppe': 'B',
+            'Trial_01': 'vid_03.mp4',
+            'Trial_02': 'vid_04.mp4',
+            'Trial_03': 'vid_01.mp4',
+            'Trial_04': 'vid_02.mp4'
+        }
+    }
+    
+    # Create a DataFrame
+    df = pd.DataFrame(data).transpose()
+    
+    # Save the DataFrame as an Excel file
+    df.to_excel(xlsx_path)
     return None
 
+def load_relevant_data(file_name: str) -> pd.DataFrame:
+    """
+    Load the relevant data from a CSV file and return it as a DataFrame.
+    
+    The relevant data consists of the columns 'country code', 'height [cm]', 'weight [kg]', and 'main sport'. 
+    The columns are renamed to 'country', 'height', 'weight', and 'sport'.
+    Unknown values are treated as NaN.
+    Rows with missing values are dropped.
 
-def load_relevant_data(file_name):
-    return None
+    Parameters
+    ----------
+    file_name : str
+        The path to the CSV file.
 
+    Returns
+    -------
+    pd.DataFrame
+        The DataFrame containing the relevant data.
+    """
+    # Load the data from the CSV file, treating 'UNKNOWN' as NaN
+    df = pd.read_csv(file_name, sep=';', skiprows=2, usecols=['country code', 'height [cm]', 'weight [kg]', 'main sport'], na_values='UNKNOWN')
+    
+    # Rename the columns
+    df = df.rename(columns={'country code': 'country', 'height [cm]': 'height', 'weight [kg]': 'weight', 'main sport': 'sport'})
+    
+    # Drop rows with any NaN values
+    df = df.dropna(axis=0, how='any')
+
+    return df
 
 if __name__ == '__main__':
     experiment_setup('output.xlsx')
-    load_relevant_data('labs/lab/data/lab301_sport/data.csv')
+    df = load_relevant_data('labs/lab/data/lab301_sport/data.csv')    
+    print(df)

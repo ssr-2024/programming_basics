@@ -1,9 +1,6 @@
 from pathlib import Path
-from typing import Union, Dict
 
-
-# erwartet entweder str oder path und gibt vor, was er als Rückgabewert erwartet
-def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
+def vpns_exp01(path='lab/data/exp01'):
     """
     Returns a dictionary containing the experiment setup based on
     all CSV files in the provided path.
@@ -14,38 +11,26 @@ def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
     Parameters
     ----------
     path : str, optional
-        path to the experiment folder, by default 'labs/lab/data/exp01'
+        path to the experiment folder, by default 'lab/data/exp01'
 
     Returns
     -------
     dict
         the exp setup dict{ str : Path }
-
-    Examples
-    --------
-    expect the following folder structure:
-
-    labs/lab/data/exp01/
-             ├───vpn_01.csv
-             └───vpn_02.csv
-
-    ```py
-    >>> vpns_exp01('labs/lab/data/exp01')
-
-    {
-        'vpn_01': Path(labs/lab/data/vpn_01.csv),
-        'vpn_02': Path(labs/lab/data/vpn_02.csv)
-    }
-    ```
     """
+    exp_setup = {}
+    base_path = Path(path)
     
+    for file in base_path.glob("*.csv"):
+        key = file.stem  # Use the file name without the .csv extension as the dictionary key
+        exp_setup[key] = file
 
+    return exp_setup
 
-def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
+def vpns_exp02(path='lab/data/exp02'):
     """
     Returns a dictionary containing the experiment setup based on
     the folder structure of the provided path and the containing CSV files.
-
 
     CSV files located elsewhere than in the vpn folders are ignored.
     The vpn names are derived from the folder names.
@@ -54,49 +39,28 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     Parameters
     ----------
     path : str, optional
-        path to the experiment folder, by default 'labs/lab/data/exp02'
+        path to the experiment folder, by default 'lab/data/exp02'
 
     Returns
     -------
     dict
         the exp setup dict{ str : dict{ int : Path } }
-
-    Examples
-    --------
-    expect the following folder structure:
-
-    labs/lab/data/exp02/
-             ├───vpn_01/
-             │   ├───mzp_01.csv
-             │   ├───mzp_02.csv
-             │   ├───mzp_03.csv
-             │   └───mzp_04.csv
-             └───vpn_02/
-                 ├───mzp_01.csv
-                 ├───mzp_02.csv
-                 ├───mzp_03.csv
-                 └───mzp_04.csv
-    ```py
-    >>> vpns_exp02('labs/lab/data/exp02')
-    {
-        'vpn_01': {
-            1: Path(labs/lab/data/vpn_01/mzp_01.csv),
-            2: Path(labs/lab/data/vpn_01/mzp_02.csv),
-            3: Path(labs/lab/data/vpn_01/mzp_03.csv),
-            4: Path(labs/lab/data/vpn_01/mzp_04.csv)
-        },
-        'vpn_02': {
-            1: Path(labs/lab/data/vpn_02/mzp_01.csv),
-            2: Path(labs/lab/data/vpn_02/mzp_02.csv),
-            3: Path(labs/lab/data/vpn_02/mzp_03.csv),
-            4: Path(labs/lab/data/vpn_02/mzp_04.csv)
-        }
-    }
-    ```
     """
-    
+    exp_setup = {}
+    base_path = Path(path)
 
+    for folder in base_path.iterdir():
+        if folder.is_dir() and folder.name.startswith("vp_"):
+            vp_name = folder.name  # Use the exact folder name as key
+            vp_data = {}
 
-if __name__ == '__main__':
-    vpns_exp01('labs/lab/data/exp01')
-    vpns_exp02('labs/lab/data/exp02')
+            for file in folder.glob("mzp_*.csv"):
+                try:
+                    mzp_number = int(file.stem.split("_")[-1])  # Extracts the last part as an integer
+                    vp_data[mzp_number] = file
+                except ValueError:
+                    continue  # Skip files that do not end with a number
+
+            exp_setup[vp_name] = vp_data
+
+    return exp_setup
