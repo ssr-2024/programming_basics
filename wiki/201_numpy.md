@@ -59,7 +59,7 @@ array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
 print(array_3d[0, 1, 1])  # Accesses element (4) in the 3D array
 ```
 ### From the example in the lecture
-<img src="./Medien/Bildschirmfoto 2024-11-01 um 17.05.03.png" width="80%"/>
+<img src="./Pictures/example.png" width="80%"/>
 
 
 ### Joining and Splitting Arrays
