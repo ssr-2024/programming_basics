@@ -9,32 +9,32 @@ def draw_grid(grid):
 
 
 def summary(array):
-    # => {
-#       min: 2,
-#       max: 7,
-#       sum: 17,
-#       length: 4,
-#       mean: 4.25,
-#       raw: [2, 5, 3, 7]
-#    }
-
     """
+    Generates a summary of a list of numbers.
+    ---
+    Parameters:
+    array (list of int or float): A list of numerical values.
+    ---
+    Returns:
+    dict: A dictionary containing the minimum, maximum, sum, length, mean, and the raw array.
+          If the array is empty, min, max, and mean will be None, sum will be 0, and length will be 0.
+    """
+    if not array:
+        return {
+            "min": None,
+            "max": None,
+            "sum": 0,
+            "length": 0,
+            "mean": None,
+            "raw": array
+        }
+
     my_summary = {
-    my_summary["min"] = min(array)
-    my_summary["max"] = max(array)
-    my_summary["sum"] = sum(array)
-    my_summary["length"] = len(array)
-    my_summary["mean"] = sum(array)/len(array)
-    my_summary["raw"] = array
-    """
-
-    # nicht mehr mit 3.11.6 möglich
-    my_summary =  {
         "min": min(array),
         "max": max(array),
         "sum": sum(array),
         "length": len(array),
-        "mean": sum(array)/len(array),
+        "mean": sum(array) / len(array),
         "raw": array
     }
 
@@ -76,36 +76,20 @@ smiley = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
 def draw_transposed_grid(grid):
     """
-    transposed_grid =  [([0] *len(smiley[0]))] * len(smiley[0])
-    print(type(transposed_grid))
-    for zeile in range(0,len(grid),1):
-        for spalte in range(0,len(grid[0]),1):
-                print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                transposed_grid[len(grid[0])-(spalte+1)][zeile] = grid[zeile][spalte]
-                print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        print(transposed_grid[len(grid[0])-(spalte+1)])
-    #print(transposed_grid)
+    Transposes a grid and returns the transposed version.
     """
-    
-    transposed_grid =  []
-    for zeile in range(0,len(grid),1):
+    transposed_grid = []
+    for spalte in range(len(grid[0])):
         line = []
-        for spalte in range(0,len(grid[0]),1):
-        #        print(f"get element [{zeile}][{spalte}]) with value {grid[zeile][spalte]}.")
-                line.append(grid[len(grid)-zeile-1][spalte])
+        for zeile in range(len(grid)):
+            line.append(grid[zeile][spalte])
         transposed_grid.append(line)
-                #print(f"set element [{len(grid[0])-(spalte+1)}][{zeile}]) with value {transposed_grid[len(grid[0])-(spalte+1)][zeile]}.")
-                #print(transposed_grid[len(grid[0])-(spalte+1)][zeile])
-        #print(transposed_grid[len(grid[0])-(spalte+1)])
-    
-
     return transposed_grid
 
 
 if __name__ == '__main__':
     print(summary([1, 2, 3, 4, 17]))
+    print(summary([]))  # Test case for empty list
 
-    
     draw_grid(draw_transposed_grid(smiley))
     draw_grid(draw_transposed_grid(heart))
