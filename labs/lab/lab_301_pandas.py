@@ -3,7 +3,20 @@ import pandas as pd
 from pathlib import Path
 
 def experiment_setup(xlsx_path):
-    # Definierte Datenstruktur ähnlich wie in deinem Beispiel
+    """
+    Creates an experiment setup structure and exports it as an Excel file.
+    
+    Parameters:
+    - xlsx_path (str or Path): Path where the output Excel file will be saved.
+    
+    The function generates a predefined structure with participant identifiers ('vpn01', 'vpn02')
+    and experimental trials. It then creates a DataFrame with this structure, transposes it to
+    match the expected format, and exports the data to the specified Excel file.
+    
+    Returns:
+    - None
+    """
+    
     data = {
         'vpn01': {
             'Gruppe': 'A',
@@ -21,32 +34,45 @@ def experiment_setup(xlsx_path):
         }
     }
     
-    # Konvertiere die Daten in ein DataFrame
+    # Convert data structure to DataFrame
     df = pd.DataFrame(data)
     
-    # Transponiere das DataFrame, um die Struktur wie gefordert darzustellen
+    # Transpose DataFrame to match desired format
     df_transposed = df.transpose()
     
-    # Exportiere das DataFrame als Excel-Datei
+    # Export transposed DataFrame to Excel file
     df_transposed.to_excel(xlsx_path, index=True)
 
 
 def load_relevant_data(file_name):
-    # Liest die CSV-Datei ein und filtert relevante Spalten
-    df = pd.read_csv('labs/lab/data/lab301_sport/data.csv',
-        sep=';',  # Semikolon als Trennzeichen
-        skiprows=3,  # Überspringt die ersten 2 Zeilen
-        usecols=[0, 1, 2, 5],  # Verwendet nur die Spalten für country, height, weight und main sport
-        names=['country', 'height', 'weight', 'sport'],  # Definierte Spaltennamen
-        na_values=['UNKNOWN']  # 'UNKNOWN' wird als NaN behandelt
-    ).dropna(axis=0, how='any')  # Entfernt Zeilen mit mindestens einem NaN-Wert
+    """
+    Loads and filters relevant data from a CSV file.
+    
+    Parameters:
+    - file_name (str): Path to the CSV file containing the data.
+    
+    The function reads the specified CSV file, selects only the columns for 'country', 
+    'height', 'weight', and 'sport', and drops rows with missing values.
+    
+    Returns:
+    - pd.DataFrame: A DataFrame containing the filtered data.
+    """
+
+    df = pd.read_csv(
+        file_name,
+        sep=';',                  # Set delimiter to semicolon
+        skiprows=3,               # Skip first 3 rows to get to data
+        usecols=[0, 1, 2, 5],     # Only load specified columns
+        names=['country', 'height', 'weight', 'sport'],  # Set custom column names
+        na_values=['UNKNOWN']     # Treat 'UNKNOWN' values as NaN
+    ).dropna(axis=0, how='any')   # Remove rows with any missing values
+
     return df
 
 
 if __name__ == '__main__':
-    # Führt die experiment_setup Funktion aus und speichert das Ergebnis
-    df_experiment = experiment_setup('input.xlsx')
+    # Call experiment_setup function to create and save the experiment setup file
+    experiment_setup('input.xlsx')
     
-    # Führt die load_relevant_data Funktion aus und speichert das Ergebnis
+    # Call load_relevant_data function to load and filter data from CSV file
     df_relevant = load_relevant_data('labs/lab/data/lab301_sport/data.csv')
-    

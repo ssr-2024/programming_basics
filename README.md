@@ -4,6 +4,17 @@
 
 Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
+## Summary from the book
+
+1. [text](wiki/chapter1.md)
+2. [text](wiki/chapter2.md)
+3. [text](wiki/chapter3.md)
+4. [text](wiki/chapter4.md)
+5. [text](wiki/chapter5.md)
+6. [text](wiki/chatpter6.md)
+
+
+
 ## PPT-Folien
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
