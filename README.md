@@ -6,12 +6,12 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
 ## Summary from the book
 
-1. [text](wiki/chapter1.md)
-2. [text](wiki/chapter2.md)
-3. [text](wiki/chapter3.md)
-4. [text](wiki/chapter4.md)
-5. [text](wiki/chapter5.md)
-6. [text](wiki/chatpter6.md)
+1. [chapter 1](wiki/chapter1.md)
+2. [chapter 2](wiki/chapter2.md)
+3. [chapter 3](wiki/chapter3.md)
+4. [chapter 4](wiki/chapter4.md)
+5. [chapter 5](wiki/chapter5.md)
+6. [chapter 6](wiki/chapter6.md)
 
 
 
@@ -19,7 +19,7 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
 * [Lecture 2 Markdown and Git](docs/slides/002_Markdown_Git.pptx)
-* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)¨
+* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)
 * [Lecture 4 Sammeldatentypen](docs/slides/004_Testing_Sammeldatentypen.pptx)
 * [Lecture 5 NumPy and PanDas](docs/slides/005_NumPy_pandas.pptx)
 
