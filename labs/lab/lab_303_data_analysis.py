@@ -3,6 +3,16 @@ from pathlib import Path
 import pandas as pd
 
 def run(folder: Union[Path, str], export_file: Union[Path, str] = "output.xlsx") -> None:
+    """
+    Reads all CSV files in the specified folder, processes the data, and exports the combined data to an Excel file.
+
+    Parameters:
+    folder (Union[Path, str]): The path to the folder containing the CSV files.
+    export_file (Union[Path, str], optional): The path to the output Excel file. Defaults to "output.xlsx".
+
+    Returns:
+    None
+    """
     # read folder
     folder_path = Path(folder)
     files = list(folder_path.glob("*.csv"))

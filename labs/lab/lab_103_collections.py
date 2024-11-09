@@ -3,12 +3,30 @@ import matplotlib as mpl
 
 
 def draw_grid(grid):
-    """ draws a list of colors in the range of 0 to 10 as an image """
+    """ draws a list of colors in the range of 0 to 10 as an image
+    parameters
+    ----------
+    grid: np.ndarray
+        A 2D numpy array representing the grid to be drawn.
+    Returns
+    -------
+    None 
+    
+     """
     plt.imshow(grid, cmap='Reds', norm=mpl.colors.Normalize(vmin=0, vmax=10))
     plt.show()
 
 
 def summary(array):
+    """
+    Returns a dictionary with the following statistics of the input array:
+    - min: The minimum value.
+    - max: The maximum value.
+    - sum: The sum of all values.
+    - length: The number of elements.
+    - mean: The mean value.
+    - raw: The input array.
+    """
     # => {
 #       min: 2,
 #       max: 7,
@@ -75,6 +93,17 @@ smiley = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
 
 def draw_transposed_grid(grid):
+    """
+    Transposes the input grid.
+    Parameters
+    ----------
+    grid: np.ndarray
+        
+    Returns
+    -------
+    np
+    The transposed grid.
+    """
     """
     transposed_grid =  [([0] *len(smiley[0]))] * len(smiley[0])
     print(type(transposed_grid))
