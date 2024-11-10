@@ -1,5 +1,7 @@
 ![A course logo](logo.png)
 
+# !! Meine Dokumentation befindet sich im Ordner "documentation" und nicht in den Wikis.
+
 # Programming Basics
 
 Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
