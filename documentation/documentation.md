@@ -78,7 +78,15 @@ print(beispiel5)
 
 Output: LauraLauraLaura
 ```
+#### Datentyp einer Variablen bestimmen
+Um den Datentyp einer Variable zu bestimmen, kann man die type()-Funktion verwenden. Diese Funktion gibt den Typ der übergebenen Variable zurück.
 
+```py
+x = 5
+print(type(x))  # <class 'int'>
+```
+
+#### Umwandeln von Datentypen (casten)
 Um eine Variable in den jeweiligen Datentyp umzuwandeln, kann die Abkürzug des Datentyps verwendet werden:
 
 str(variable)
@@ -102,6 +110,15 @@ alter = int(input("Wie alt bist du? "))
 print("Du bist " + str(alter) + " Jahre alt.")
 # Somit ist die Variable alter als Ganzzahl gespeichert, dadurch kann sie aber nicht mit Strings kombiniert werden. Damit das möglich ist, wird sie mit dem Befehl str() in einen String umgewandelt.
 ```
+
+#### Spezialfälle
+
+**None**
+None ist in Python ein spezielles Schlüsselwort, das für „nichts“ oder „kein Wert“ steht. Es repräsentiert das Fehlen eines Werts oder eines „Null“-Zustands. None wird oft als Rückgabewert für Funktionen verwendet, die keinen expliziten Wert zurückgeben, und kann als Platzhalter genutzt werden, um auf das Fehlen von Daten hinzuweisen.
+
+**nan**
+nan steht für „Not a Number“ und wird in Python verwendet, um ungültige oder undefinierte numerische Werte darzustellen, oft bei Berechnungen mit Gleitkommazahlen (z. B. Division durch null). nan gehört zum float-Typ und wird in der Regel durch die Bibliotheken math und numpy definiert.
+
 
 ### Kommentare in Python
 
@@ -186,9 +203,9 @@ Die Vergleichs Operatoren, wie sie im Text-Book sind:
 | ==       | Gleich                        |
 | !=       | Ungleich                      |
 | <        | Kleiner als                   |
-| >        | Größer als                    |
+| >        | Grösser als                    |
 | <=       | Kleiner gleich           |
-| >=       | Größer gleich            |
+| >=       | Grösser gleich            |
 
 Beispiele in Python:
 
@@ -207,13 +224,13 @@ print(a != b)  # True
 # Kleiner als
 print(a < b)  # True
 
-# Größer als
+# Grösser als
 print(a > b)  # False
 
 # Kleiner oder gleich
 print(a <= b)  # True
 
-# Größer oder gleich
+# Grösser oder gleich
 print(a >= b)  # False
 ```
 
@@ -234,19 +251,19 @@ Bedingte Anweisungen, auch Kontrollstrukturen genannt, ermöglichen es im Code E
 # Beispiel 1: if-Anweisung
 x = 10
 if x > 5:
-    print("x ist größer als 5")
+    print("x ist grösser als 5")
 
 # Beispiel 2: if-else-Anweisung
 y = 3
 if y > 5:
-    print("y ist größer als 5")
+    print("y ist grösser als 5")
 else:
     print("y ist kleiner oder gleich 5")
 
 # Beispiel 3: if-elif-else-Anweisung
 z = 7
 if z > 10:
-    print("z ist größer als 10")
+    print("z ist grösser als 10")
 elif z == 7:
     print("z ist genau 7")
 else:
@@ -300,6 +317,11 @@ Der Befehl `range(0, 10, 2)` fängt also bei 0 an und geht in 2er Schritten bis 
 
 ## Kapitel 3: Funktionen
 
+### Modularität
+
+Das Prinzip der Modularität in Python bezieht sich auf das Zerlegen eines Programms in kleinere, unabhängig funktionierende Einheiten, sogenannte Module oder Funktionen. Anstatt ein grosses, unübersichtliches Programm zu schreiben, teilt man den Code in kleinere, spezifische Funktionen auf, die jeweils eine bestimmte Aufgabe erfüllen. Dieses VOrgehen bietet einige Vorteile, darunter bessere Lesbarkeit des Codes, Widerverwendbarkeit, Wartbarkeit und Testbarkeit.
+
+
 In Python gibt es neben den Basic Funktionen wie `print()`, `input()` oder `len()`. In Python sind Funktionen wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Funktionen helfen, den Code übersichtlicher zu gestalten und wiederholte Abläufe zu vermeiden.
 Funktionen werden in Python immer mit dem Schlüsselwort `def` definiert. 
 
@@ -320,7 +342,7 @@ In Python bezieht sich der Scope (Gültigkeitsbereich) auf den Bereich des Codes
 
 1. Local Scope:
 - Variablen, die innerhalb einer Funktion definiert werden, befinden sich im local scope.
-- Sie sind nur innerhalb der Funktion verfügbar und können außerhalb der Funktion nicht verwendet werden.
+- Sie sind nur innerhalb der Funktion verfügbar und können ausserhalb der Funktion nicht verwendet werden.
 
 ```py
 def meine_funktion():
@@ -328,12 +350,12 @@ def meine_funktion():
     print(x)
 
 meine_funktion()
-# print(x) würde hier einen Fehler auslösen, weil x außerhalb der Funktion nicht existiert
+# print(x) würde hier einen Fehler auslösen, weil x ausserhalb der Funktion nicht existiert
 ```
 
 2. Global Scope:
-- Variablen, die außerhalb aller Funktionen definiert werden, befinden sich im global scope.
-- Sie sind überall im Programm zugänglich, auch innerhalb von Funktionen (außer wenn sie dort überschrieben werden).
+- Variablen, die ausserhalb aller Funktionen definiert werden, befinden sich im global scope.
+- Sie sind überall im Programm zugänglich, auch innerhalb von Funktionen (ausser wenn sie dort überschrieben werden).
 
 ```py
 x = 10  # globale Variable
@@ -969,7 +991,7 @@ ob alle Buchstaben in einem String entweder in Klein- oder Grossbuchstaben vorli
 
 **`islower()`**
 `islower()` gibt `True` zurück, wenn alle alphabetischen Zeichen im String klein geschrieben sind.
-Wenn es keine Buchstaben gibt oder der String gemischte Groß- und Kleinbuchstaben enthält, gibt es `False` zurück.
+Wenn es keine Buchstaben gibt oder der String gemischte Gross- und Kleinbuchstaben enthält, gibt es `False` zurück.
 
 Beispiel:
 ```python
@@ -979,7 +1001,7 @@ print(text.islower())
 Output: True
 ```
 **`isupper()`**
-`isupper()` gibt `True` zurück, wenn alle alphabetischen Zeichen im String groß geschrieben sind.
+`isupper()` gibt `True` zurück, wenn alle alphabetischen Zeichen im String gross geschrieben sind.
 Andernfalls gibt es `False` zurück.
 
 Beispiel:
@@ -998,7 +1020,7 @@ Neben `islower()` und `isupper()` gibt es mehrere String-Methoden, die mit "is" 
 - **`isalnum()`**: Gibt `True` zurück, wenn der String nur aus Buchstaben und Zahlen besteht und nicht leer ist.
 - **`isdecimal()`**: Gibt `True` zurück, wenn der String nur aus Dezimalziffern besteht und nicht leer ist.
 - **`isspace()`**: Gibt `True` zurück, wenn der String nur aus Leerzeichen, Tabs oder Zeilenumbrüchen besteht und nicht leer ist.
-- **`istitle()`**: Gibt `True` zurück, wenn jedes Wort im String mit einem Großbuchstaben beginnt und nur aus Kleinbuchstaben besteht.
+- **`istitle()`**: Gibt `True` zurück, wenn jedes Wort im String mit einem Grossbuchstaben beginnt und nur aus Kleinbuchstaben besteht.
 
 Beispiele:
 ```py
@@ -1179,7 +1201,7 @@ print(text)
 Diese Funktionen sind praktisch, um automatisch Text zu kopieren oder aus der Zwischenablage zu holen.
 
 
-## Übungen während den Lektionen (needs to be udpated)
+## Übungen während den Lektionen
 
 ### 17.09.2024, Woche 1
 
@@ -1401,4 +1423,466 @@ pip install plotly # zur Installation von plotly
 pip install pandas # zur Installation von pandas
 ```
 
-### 15.10.2024
+### 15.10.2024, Woche 5
+
+#### NumPy
+
+NumPy (Numerical Python) ist eine leistungsstarke Bibliothek für numerische Berechnungen in Python und wird als Grundlage für viele datenwissenschaftliche und maschinelle Lernbibliotheken verwendet.
+
+##### Arrays
+
+In NumPy sind Arrays grundlegende Datenstrukturen, die ähnlich sind wie Listen in Python. Arrays sind aber speziell für numerische Berechnungen optimiert. Die Elemente in einem Array haben alle den gleichen Datentyp (z.B. Integer, Float etc.).
+
+Der NumPy-Array-Datentyp wird als `ndarray` bezeichnet (steht für n-dimensional array). Es ist eine leistungsstarke Struktur, die effiziente Speicherung und Berechnung ermöglicht. Arrays in NumPy können beliebig viele Dimensionen haben (1D, 2D, 3D usw.), damit sind sie für viele verschiedene mathematische oder wissenschaftliche Berechnungen geeignet. 
+
+Beispiel zur Erstellung eines Arrays:$
+
+```py
+import numpy as np
+
+# Erstellen eines eindimensionalen Arrays (1D-Array)
+array_1d = np.array([1, 2, 3, 4, 5])
+
+print(array_1d)
+
+Output:
+[1 2 3 4 5]
+
+
+# Erstellen eines zweidimensionalen Arrays (2D-Array)
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(array_2d)
+
+Output:
+[[1 2 3]
+ [4 5 6]]
+
+
+# Erstellen eines dreidimensionalen Arrays (3D-Array)
+array_3d = np.array([
+    [[1, 2, 3], [4, 5, 6]], 
+    [[7, 8, 9], [10, 11, 12]]
+])
+
+print(array_3d)
+
+Output:
+[[[ 1  2  3]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]]
+```
+
+##### Daten aus einem Array abfragen
+
+Daten können aus einem NumPy-Array durch verschiedene Techniken abgefragt werden, wie Indexierung, Slicing und Bedingte Auswahl. Es folgen Beispiele zu den jeweiligen Varianten.
+
+1. Indexierung
+Mit der Indexierung können wir einzelne Elemente eines Arrays abfragen, indem wir die Positionen der Elemente angeben. Die Zählung in NumPy beginnt bei 0.
+
+```py
+import numpy as np
+
+# Erstellen eines 2D-Arrays
+array_2d = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])
+
+# Zugriff auf ein bestimmtes Element
+element = array_2d[1, 2]  # Element in der zweiten Zeile, dritte Spalte
+
+print(element)
+
+Output:
+60
+```
+
+2. Slicing
+Mit Slicing können wir Teile eines Arrays auswählen. Dies ist besonders nützlich, wenn wir eine bestimmte Zeile, Spalte oder einen Bereich von Elementen auswählen möchten. Die Syntax lautet array[start:stop], wobei start die Startposition und stop die Endposition (nicht eingeschlossen) ist.
+
+```py
+import numpy as np
+
+array_2d = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])
+
+# Zugriff auf die erste Zeile
+first_row = array_2d[0, :]  # Alle Spalten in der ersten Zeile
+
+# Zugriff auf die erste Spalte
+first_column = array_2d[:, 0]  # Alle Zeilen in der ersten Spalte
+
+# Zugriff auf einen Teilbereich
+sub_array = array_2d[0:2, 1:3]  # Erste bis zweite Zeile, zweite bis dritte Spalte
+
+print("First Row:", first_row)
+Output: [10 20 30]
+print("First Column:", first_column)
+Output: [10 40 70]
+print("Sub Array:", sub_array)
+Output: [[20 30]
+        [50 60]]
+```
+
+3. Bedingte Auswahl
+Mit der bedingten Auswahl können wir Elemente auswählen, die bestimmte Bedingungen erfüllen. NumPy erlaubt es, logische Bedingungen direkt auf Arrays anzuwenden, um Elemente zu filtern.
+
+```py
+import numpy as np
+
+array_2d = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])
+
+# Abfragen aller Elemente grösser als 50
+greater_than_50 = array_2d[array_2d > 50]
+
+print(greater_than_50)
+
+Output:
+[60 70 80 90]
+```
+
+##### Rechnen mit Arrays
+Mit NumPy-Arrays kann man einfach und effizient mathematische Berechnungen durchführen. Die Operationen werden dabei elementweise durchgeführt, was bedeutet, dass sie auf jedes einzelne Element des Arrays angewendet werden. Dabei können die normalen Operationen wie Addition, Subtraktion, Multiplikation und Division vorgenommen werden.  
+
+```py
+import numpy as np
+
+# Erstellen zweier Arrays
+array1 = np.array([1, 2, 3, 4])
+array2 = np.array([5, 6, 7, 8])
+
+# Addition
+addition_result = array1 + array2
+print(addition_result)  
+Output: [6 8 10 12]
+
+# Subtraktion
+subtraction_result = array1 - array2
+print(subtraction_result)  
+Output: [-4 -4 -4 -4]
+
+# Multiplikation
+multiplication_result = array1 * array2
+print(multiplication_result)
+Output: [5 12 21 32]
+
+# Division
+division_result = array1 / array2
+print(division_result) 
+Output: [0.2 0.33333333 0.42857143 0.5]
+```
+
+### 22.10.2024, Woche 6
+
+#### Pandas
+Pandas ist eine leistungsstarke Python-Bibliothek zur Datenanalyse und -manipulation. Sie bietet Werkzeuge zur Arbeit mit strukturierten Daten, insbesondere durch die `DataFrame`-Struktur.
+
+##### DataFrames
+Ein `DataFrame` ist eine tabellenartige Datenstruktur in Pandas, die aus Zeilen und Spalten besteht. Es ist das Hauptobjekt zur Datenmanipulation und ermöglicht eine flexible Handhabung von Daten.
+
+##### DataFrames erstellen
+`DataFrames` Können aus einer Vielzahl verschiedener Quellen erstellt werden, darunter Listen, Dictionaries, NumPy-Arrays oder sogar CSV oder Excel-Dateien. 
+
+```py
+import pandas as pd
+
+# Ein Dictionary erstellen, das die Daten für den DataFrame enthält
+# Die Schlüssel "Name" und "Alter" werden die Spaltennamen im DataFrame
+# Die Werte sind Listen, die die Daten für jede Spalte enthalten
+data = {
+    "Name": ["Anna", "Ben", "Chris"],  # Spalte "Name" mit drei Namen
+    "Alter": [28, 24, 35]              # Spalte "Alter" mit den zugehörigen Alterswerten
+}
+
+# Einen DataFrame aus dem Dictionary "data" erstellen
+# Pandas ordnet die Schlüssel des Dictionaries als Spaltennamen zu und
+# die Listenwerte werden als Zeilenwerte in den entsprechenden Spalten eingefügt
+df = pd.DataFrame(data)
+
+# Ausgabe des DataFrames zur Kontrolle (optional)
+print(df)
+```
+
+##### Index und Column
+
+
+In einem Pandas DataFrame sind Index und Columns grundlegende Konzepte, die dabei helfen, Daten effizient zu organisieren und zu referenzieren.
+
+**Index:** 
+Der Index eines DataFrames bezeichnet die eindeutigen Zeilenbezeichner. Jeder Eintrag im Index entspricht einer Zeile im DataFrame. Standardmässig verwendet Pandas eine numerische Indexierung, beginnend bei 0. Der Index kann jedoch auch angepasst werden, um zum Beispiel eine bestimmte Spalte oder benutzerdefinierte Labels zu verwenden.
+
+```py
+import pandas as pd
+
+# DataFrame mit Standard-Index erstellen
+data = {
+    "Name": ["Anna", "Ben", "Chris"],
+    "Alter": [28, 24, 35]
+}
+df = pd.DataFrame(data)
+print(df)
+
+Output:
+   Name  Alter
+0  Anna     28
+1   Ben     24
+2  Chris    35
+```
+
+**Columns:**
+
+Columns sind die Spaltenbezeichner des DataFrames. Sie beschreiben, welche Art von Daten in jeder Spalte enthalten ist, wie zum Beispiel "Name" oder "Alter" in den obigen Beispielen. Die Spaltennamen können direkt beim Erstellen des DataFrames festgelegt oder später geändert werden.
+
+
+Zusammengefasst:
+- Index: Identifiziert die Zeilen und kann angepasst werden, um die Lesbarkeit oder Organisation der Daten zu verbessern.
+- Columns: Beschreiben den Inhalt der Spalten und lassen sich ebenso ändern, um die Daten leichter verständlich zu machen.
+
+##### Daten abfragen und ändern
+
+Daten abfragen: Mit df["Spalte"] oder df.loc[Zeile] können Spalten und Zeilen abgefragt werden.
+
+```py
+import pandas as pd
+
+# Beispiel-Daten
+data = {
+    "Name": ["Anna", "Ben", "Chris"],
+    "Alter": [28, 24, 35],
+    "Stadt": ["Bern", "Zürich", "Luzern"]
+}
+df = pd.DataFrame(data)
+
+# Zugriff auf eine einzelne Spalte
+print(df["Name"])
+Output: Spalte "Name"
+
+# Zugriff auf mehrere Spalten
+print(df[["Name", "Alter"]])
+Output: Spalten "Name" und "Alter"
+
+
+# Zugriff auf eine bestimmte Zeile mit `loc`
+print(df.loc[0])  # Ausgabe: Zeile mit Index 0
+
+# Zugriff auf bestimmte Zeilen und Spalten mit `loc`
+print(df.loc[0:1, ["Name", "Stadt"]])  
+Output: Erste bis zweite Zeile, nur Spalten "Name" und "Stadt"
+
+# Zugriff auf eine bestimmte Zeile und Spalte mit `iloc`
+print(df.iloc[1, 2])
+Output: Element in der zweiten Zeile und dritten Spalte ("Zürich")
+```
+
+Daten ändern: Daten lassen sich direkt ändern oder mit Zuweisungen updaten, z. B. df["Spalte"] = Werte.
+
+```py
+# Ändern der gesamten Spalte "Stadt"
+df["Stadt"] = ["Fribourg", "Basel", "Genf"]
+print(df)
+
+# Ändern eines bestimmten Werts
+df.at[1, "Alter"] = 26  # Ändert das Alter von "Ben" auf 26
+print(df)
+```
+##### Group By
+Mit groupby() können Daten nach bestimmten Kategorien gruppiert und aggregiert werden.
+
+```py
+import pandas as pd
+
+# Beispiel-Daten
+data = {
+    "Name": ["Anna", "Ben", "Chris", "Diana", "Eva", "Frank"],
+    "Abteilung": ["Vertrieb", "Marketing", "Vertrieb", "IT", "IT", "Marketing"]
+}
+
+# DataFrame erstellen
+df = pd.DataFrame(data)
+print("Original DataFrame:")
+print(df)
+
+Output: 
+   Name     Abteilung
+0  Anna     Vertrieb
+1   Ben     Marketing
+2 Chris     Vertrieb
+3 Diana     IT
+4   Eva     IT
+5 Frank     Marketing
+
+
+# Gruppieren nach "Abteilung" und Anzahl der Personen zählen
+abteilung_count = df.groupby("Abteilung")["Name"].count()
+print("\nAnzahl der Personen pro Abteilung:")
+print(abteilung_count)
+
+Output:
+Anzahl der Personen pro Abteilung:
+Abteilung
+IT          2
+Marketing   2
+Vertrieb    2
+```
+
+##### Pivot 
+Mit pivot() können wir Daten in eine neue Struktur bringen, dabei werten Spaltenwerte als neue Indexebenen verwendet. 
+
+##### Transpose
+Mit `df.T`kann ein DataFrame transponiert werden, das heisst die Zeilen und Spalten werden vertauscht. 
+
+##### Daten importieren
+Pandas kann Daten aus verschiedenen Quellen importieren, wie CSV, Excel, SQL oder JSON. Die Funktion pd.read_csv("datei.csv") ist eine der häufigsten Importmethoden.
+
+##### Tabellenbereiche
+Bereiche innerhalb einer Datei (wie bestimmte Blätter oder Spalten in einer Excel-Datei) können mit Parametern wie `usecols` oder `sheet_name` ausgewählt werden.
+
+##### Unbekannte Werte
+Unbekannte oder fehlende Werte können beim Import als NaN markiert werden, indem man na_values verwendet.
+
+```py
+df = pd.read_csv("datei.csv", na_values=["?"])
+```
+
+##### Daten exportieren
+Pandas ermöglicht das Exportieren eines DataFrames in verschiedene Formate, wie CSV, Excel oder JSON. Beispiel für den Export in eine CSV-Datei:
+
+```py
+df.to_csv("output.csv", index=False)
+```
+index=False sorgt dafür, dass der Index des DataFrames nicht mit in die CSV-Datei exportiert wird.
+
+### 05.11.2024, Woche 7
+
+#### Python Files
+Pfad-Separatoren: Auf Windows und Unix-Systemen unterscheiden sich die Pfad-Separatoren (\ für Windows und / für Unix). Die Path-Klasse von pathlib vereinfacht die Arbeit mit Pfaden und sorgt für Kompatibilität.
+
+Path zusammensetzen: Verwende Path('pfad', 'zum', 'ordner'), um Pfadteile plattformunabhängig zusammenzusetzen.
+
+```py
+from pathlib import Path
+dir_name = Path('code/nhl_player_stats.py')  # ergibt: code/nhl_player_stats.py
+```
+
+Ordner abfragen:
+
+```py
+Path().cwd() gibt das aktuelle Arbeitsverzeichnis zurück.
+Path().home() gibt das Benutzerverzeichnis zurück.
+Path().home() / 'Documents' ergibt den Pfad zum Dokumentenordner (C:/Users/<user>/Documents auf Windows).
+```
+
+Dateipfad-Details:
+```py
+file_path.name: Name der Datei (z. B. vpn_01.csv).
+file_path.stem: Dateiname ohne Endung (z. B. vpn_01).
+file_path.suffix: Dateiendung (z. B. .csv).
+file_path.parent: Übergeordneter Ordner des Pfades.
+file_path.exists(): Prüft, ob der Pfad existiert.
+file_path.is_file(): Prüft, ob der Pfad eine Datei ist.
+file_path.is_dir(): Prüft, ob der Pfad ein Verzeichnis ist.
+file_path.resolve(): Gibt den absoluten Pfad zurück.
+```
+
+Verzeichnisinhalte auflisten:
+```py
+dir_name.iterdir(): Generator für alle Elemente im Verzeichnis.
+list(dir_name.iterdir()): Listet alle Elemente im Verzeichnis auf.
+dir_name.glob('*.csv'): Generator für alle .csv-Dateien im Verzeichnis.
+```
+
+Dateien im Verzeichnis filtern:
+```py
+for file_name in dir_name.glob('*.csv'): Schleife über alle .csv-Dateien.
+for item in dir_name.iterdir(): Schleife über alle Elemente im Verzeichnis.
+```
+Diese Methoden sind nützlich, um plattformübergreifend mit Dateipfaden zu arbeiten und Verzeichnisse sowie Dateien zu verwalten.
+
+#### Plots
+
+In Python werden Plots häufig mit der Bibliothek **Matplotlib** erstellt, die leistungsstarke und flexible Werkzeuge zur Visualisierung von Daten bietet. Hier sind die grundlegenden Elemente und Funktionen für das Erstellen und Anpassen von Plots.
+
+```py
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+series = pd.Series(3 * np.random.rand(4), index=["a", "b", "c", "d"], name="Klubmitglieder")
+
+
+series.plot.pie(
+        labels=["Frauen", "Männer", "Jugendliche", "Kinder"],
+        colors=["r", "g", "b", "c"],
+        autopct="%.2f",
+        fontsize=20,
+        figsize=(6, 6),
+        )
+plt.savefig("./media/pieplot.png")
+plt.show()
+````
+![pieplot](../media/plots/pie_plot.png)
+```
+
+##### Figure
+
+Eine **Figure** ist das übergeordnete Objekt, das den gesamten Plot enthält. Es kann mehrere Achsen enthalten, was besonders für komplexe Darstellungen mit mehreren Unterplots nützlich ist.
+
+##### Axes
+Axes (Achsen) sind die Bereiche, in denen die Daten tatsächlich dargestellt werden. Jede Figure kann eine oder mehrere Axes enthalten.
+
+##### Subplots
+Mit Subplots können mehrere Axes in einer Figure angeordnet werden. Dies ist nützlich für die Darstellung mehrerer Diagramme in einem einzigen Bild.
+
+```py
+# Erstellen einer 2x2-Gitterstruktur mit Subplots
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].plot([1, 2, 3], [4, 5, 6])
+axs[0, 1].plot([1, 2, 3], [6, 5, 4])
+axs[1, 0].plot([1, 2, 3], [5, 5, 5])
+axs[1, 1].plot([1, 2, 3], [3, 4, 3])
+```
+
+##### Styles
+Matplotlib bietet viele Möglichkeiten, das Aussehen eines Plots anzupassen.
+
+##### Farbe
+Die Farbe der Datenpunkte oder Linien kann mit dem Parameter color festgelegt werden.
+
+```py
+plt.plot([1, 2, 3], [4, 5, 6], color='green')  # Grüne Linie
+```
+
+##### Marker
+Marker werden verwendet, um die Datenpunkte in einem Plot zu markieren. Beispiele sind 'o' für Kreise und '^' für Dreiecke.
+
+```py
+plt.plot([1, 2, 3], [4, 5, 6], marker='o')  # Kreise als Marker für die Datenpunkte
+```
+
+##### Legenden
+Eine Legende wird verwendet, um die Bedeutung der dargestellten Datenreihen zu erklären. Diese wird automatisch generiert, wenn den Datenreihen Labels zugewiesen werden.
+
+```py
+plt.plot([1, 2, 3], [4, 5, 6], label='Reihe 1')
+plt.plot([1, 2, 3], [6, 5, 4], label='Reihe 2')
+plt.legend()  # Zeigt die Legende an
+```
+
+##### Export
+Ein Plot kann in verschiedenen Formaten exportiert werden, wie PNG oder SVG. Dies erfolgt mit der Methode savefig().
+
+```py
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.savefig('plot.png', dpi=300)  # Exportiert den Plot als PNG mit 300 dpi
+```
+
+##### Formate (png, svg)
+
+PNG: Ein verlustfreies Rasterformat, ideal für Bilder.
+
+SVG: Ein vektorbasiertes Format, das für Skalierbarkeit und Web-Darstellungen gut geeignet ist.
+
+| Eigenschaft | Beschreibung                                                                                                   | Beispiel                               |
+|-------------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| `dpi`       | Auflösung des Bildes in dpi (dots per inch). Eine höhere dpi führt zu einer höheren Qualität des exportierten Bildes. | `plt.savefig('plot.png', dpi=300)`     |
+| `figsize`   | Grösse der Figure in Zoll (`width`, `height`). Ermöglicht die Kontrolle der Abmessungen des Plots.              | `plt.figure(figsize=(10, 5))`          |
