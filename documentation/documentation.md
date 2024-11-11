@@ -4,7 +4,7 @@
 
 ### Interaktive Python Shell
 
-Es gibt mehrere Varianten, wie man in Visual Studio Code die interkative Shell von Python nutzen kann. Die einfachste (für mich) ist über das Terminal, welches sich über den Reiter "Anzeigen" -> "Terminal" öffnen lässt. Gibt man darin den Befehl "python" ein, wird diese interaktive Shell gestartet. Zu erkennen ist dies and den drei Grösser-als-Zeichen ">>>". Die interaktive Shell kann verwendet werden, um schnell Code, bzw. dessen Ausgabe zu testen.
+Es gibt mehrere Varianten, wie man in Visual Studio Code die interaktive Shell von Python nutzen kann. Die einfachste (für mich) ist über das Terminal, welches sich über den Reiter "Anzeigen" -> "Terminal" öffnen lässt. Gibt man darin den Befehl "python" ein, wird diese interaktive Shell gestartet. Zu erkennen ist dies and den drei Grösser-als-Zeichen ">>>". Die interaktive Shell kann verwendet werden, um schnell Code, bzw. dessen Ausgabe zu testen.
 
 ### Operationen in Python
 
@@ -87,7 +87,7 @@ print(type(x))  # <class 'int'>
 ```
 
 #### Umwandeln von Datentypen (casten)
-Um eine Variable in den jeweiligen Datentyp umzuwandeln, kann die Abkürzug des Datentyps verwendet werden:
+Um eine Variable in den jeweiligen Datentyp umzuwandeln, kann die Abkürzung des Datentyps verwendet werden:
 
 str(variable)
 
@@ -245,7 +245,7 @@ Wichtig festzuhalten ist noch, dass `"="` verwendet wird, um einer Variablen ein
 
 Bedingte Anweisungen, auch Kontrollstrukturen genannt, ermöglichen es im Code Entscheidungen zu treffen. Dazu werden unterschiedliche Codeblöcke basierend auf bestimmten Bedingungen ausgeführt. Dazu werden in Python `if`, `else` und `elif` verwendet:
 
-`if` prüft eine Bedingung, `elif` (steht für else if) bietet zusätzliche Bedingungen und `else` wird asugeführt, wenn keine der vorherigen Bedingungen zutraf. Dazu wieder Beispiele: 
+`if` prüft eine Bedingung, `elif` (steht für else if) bietet zusätzliche Bedingungen und `else` wird ausgeführt, wenn keine der vorherigen Bedingungen zutraf. Dazu wieder Beispiele: 
 
 ```python
 # Beispiel 1: if-Anweisung
@@ -319,7 +319,7 @@ Der Befehl `range(0, 10, 2)` fängt also bei 0 an und geht in 2er Schritten bis 
 
 ### Modularität
 
-Das Prinzip der Modularität in Python bezieht sich auf das Zerlegen eines Programms in kleinere, unabhängig funktionierende Einheiten, sogenannte Module oder Funktionen. Anstatt ein grosses, unübersichtliches Programm zu schreiben, teilt man den Code in kleinere, spezifische Funktionen auf, die jeweils eine bestimmte Aufgabe erfüllen. Dieses VOrgehen bietet einige Vorteile, darunter bessere Lesbarkeit des Codes, Widerverwendbarkeit, Wartbarkeit und Testbarkeit.
+Das Prinzip der Modularität in Python bezieht sich auf das Zerlegen eines Programms in kleinere, unabhängig funktionierende Einheiten, sogenannte Module oder Funktionen. Anstatt ein grosses, unübersichtliches Programm zu schreiben, teilt man den Code in kleinere, spezifische Funktionen auf, die jeweils eine bestimmte Aufgabe erfüllen. Dieses Vorgehen bietet einige Vorteile, darunter bessere Lesbarkeit des Codes, Widerverwendbarkeit, Wartbarkeit und Testbarkeit.
 
 
 In Python gibt es neben den Basic Funktionen wie `print()`, `input()` oder `len()`. In Python sind Funktionen wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe ausführen. Funktionen helfen, den Code übersichtlicher zu gestalten und wiederholte Abläufe zu vermeiden.
@@ -391,7 +391,7 @@ print(spam(1))
 
 ```
 
-Folgender Ouput wird erzeugt in Python:
+Folgender Output wird erzeugt in Python:
 
 ```py 
 21.0
@@ -402,7 +402,7 @@ Traceback (most recent call last):
   File "C:/zeroDivide.py", line 2, in spam
     return 42 / divideBy
 ZeroDivisionError: division by zero
-# das return statmement in spam(0) verursacht einen Error. 
+# das return statemement in spam(0) verursacht einen Error. 
 ```
 
 Solche Fehlermeldungen kann man mit `try` und `except` statements in den Griff bekommen. Man schreibt dazu den Code um, wie folgt:
@@ -412,7 +412,7 @@ def spam(divideBy):
     try:
         return 42 / divideBy
     except ZeroDivisionError:
-        print('Error: Invalid argument.') # damit wird eine 'costum' fehlermeldung herausgegeben, ohne dass das programm crashed und nicht weiterläuft.
+        print('Error: Invalid argument.') # damit wird eine 'custom' fehlermeldung herausgegeben, ohne dass das programm crashed und nicht weiterläuft.
 
 print(spam(2))
 print(spam(12))
@@ -420,7 +420,7 @@ print(spam(0))
 print(spam(1))
 ```
 
-Damit sieht der Ouput so aus:
+Damit sieht der Output so aus:
 
 ```py
 21.0
@@ -592,7 +592,7 @@ print(fruits)
 Output: ['Apfel', 'Banane', 'Kirsche', 'Orange']
 ```
 
-Mit `insert()` kann das Elemenent an einer bestimmten Position eingefügt werden:
+Mit `insert()` kann das Element an einer bestimmten Position eingefügt werden:
 
 ```py
 fruits = ['Apfel', 'Banane', 'Kirsche']
@@ -647,7 +647,7 @@ name = 'Zophie a cat'
 new_name = name[0:7] + 'the' + name[8:12]
 
 print(new_name)
-Ouput: 'Zophie the cat'
+Output: 'Zophie the cat'
 ```
 
 ### Tupel
@@ -668,7 +668,7 @@ Output: (42, 0.5)
 ## Kapitel 5: Dictionaries und Datenstrukturierung
 
 
-`Dictionaries` sind ähnlich wie Listen eine Samllung von Werten. Im Gegensatz zu den Indizes für Listen können die indizes für Dictionaries viele verschiedene Datentypen verwenden, nicht nur ganze Zahlen. In Dictionaries werden dafür sogennannte **Schlüssel** / **keys** verwendet, diesme Schlüssel wird ein Wert zugeordnet. Dadurch ensteht ein Schlüssel-Wert-Paar.
+`Dictionaries` sind ähnlich wie Listen eine Sammlung von Werten. Im Gegensatz zu den Indizes für Listen können die indizes für Dictionaries viele verschiedene Datentypen verwenden, nicht nur ganze Zahlen. In Dictionaries werden dafür sogennannte **Schlüssel** / **keys** verwendet, diesme Schlüssel wird ein Wert zugeordnet. Dadurch ensteht ein Schlüssel-Wert-Paar.
 
 ### Eigenschaften von Dictionaries:
 - **Unveränderliche Schlüssel**: Die Schlüssel in einem Dictionary müssen unveränderlich sein (z.B. Strings, Zahlen, Tupel). Listen können nicht als Schlüssel verwendet werden.
@@ -805,14 +805,14 @@ Mit der `setdefault()`-Methode kann einem Key einen Wert zugewiesen werden, aber
 ```py
 >>> person = {'name': 'Anna', 'age': 30}
 >>> person.setdefault('city', 'Bern')
-# Weil der Key 'city' im Dictionary noch nicht exisiert, wird er hinzugefügt und ihm der Wert 'Bern' zugewiesen.
+# Weil der Key 'city' im Dictionary noch nicht existiert, wird er hinzugefügt und ihm der Wert 'Bern' zugewiesen.
 >>> person
 
 {'city': 'Bern', 'age': 30, 'name': 'Anna'}
 # Dem Dictionary wurde der Key 'city' mit dem Wert 'Bern hinzugefügt.
 
 >>> person.setdefault('city', 'Zurich')
-# Wird jetzt versucht auf die gleiche Art dem Dictionary nochmals 'city' hinzuzufügen und der Wert 'Zurich', passiert aber nichts. Der Wert von 'city' wird auch nicht geändert. Wenn der Key schon exisitiert, hat die setdefault-Methode keinen Effekt. 
+# Wird jetzt versucht auf die gleiche Art dem Dictionary nochmals 'city' hinzuzufügen und der Wert 'Zurich', passiert aber nichts. Der Wert von 'city' wird auch nicht geändert. Wenn der Key schon existiert, hat die setdefault-Methode keinen Effekt. 
 
 >>> person
 {'city': 'Bern', 'age': 30, 'name': 'Anna'}
@@ -830,7 +830,7 @@ count = {}
 # Dictionary, das die Zählungen der Buchstaben speichert
 
 for character in message:
-    # Diese Schelife speichert die Zählung der Buchstaben und stellt sicher, dass der Buchstabe im Dictionary existiert, mit einem Standardwert von 0
+    # Diese Schleife speichert die Zählung der Buchstaben und stellt sicher, dass der Buchstabe im Dictionary existiert, mit einem Standardwert von 0
     count.setdefault(character, 0)
     
     count[character] = count[character] + 1
@@ -851,7 +851,7 @@ Im Text-Book wurde ausserdem ein Beispiel gemacht für ein Tic-Tac-Toe Board, an
 
 Das Beispield es Tic-Tac-Toe Boards geht in die Richtung von verschachtelten Dictionaries und Listen. Um für kompliziertere Dinge ein Modell zu erstellen, wird es nötig sein Listen und Dictionaries innerhalb von anderen Listen und Dictionaries zu erstellen.Listen sind nützlich, um eine geordnete Reihe von Werten zu enthalten, und Wörterbücher sind nützlich, um Schlüssel mit Werten zu verknüpfen. Dieses Thema wird im Text-Book wieder anhand eines Beispiels erklärt. Im Beispiel geht es um ein Picknick und wer was dazu mitbringt. 
 
-Die Funtkion `totalBrought()`kann diese Datenstruktur lesen und die Gesamtzahl der von allen Gästen mitgebrachten Gegenstände berechnen:
+Die Funktion `totalBrought()`kann diese Datenstruktur lesen und die Gesamtzahl der von allen Gästen mitgebrachten Gegenstände berechnen:
 
 ```py
 allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
@@ -908,7 +908,7 @@ Das Beispiel von vorhin kann also so gelöst werden:
 
 ```py
 print('Das ist Tim\'s Hut')
-# Dadurch stimmt der Ouput: Das ist Tim's Hut.
+# Dadurch stimmt der Output: Das ist Tim's Hut.
 ```
 Escape-Sequenzen wie \' und \" ermöglichen es, Anführungszeichen innerhalb von Strings zu verwenden, ohne die String-Begrenzung zu stören.
 Dazu gibt es eine Reihe von verschiedenen Escape characters, die nützlich sind:
