@@ -1,4 +1,4 @@
-![A course logo](logo.png)
+![programming](pictues/programming.jpg)
 
 # Programming Basics
 

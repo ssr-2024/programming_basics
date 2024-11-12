@@ -1,0 +1,21 @@
+{
+  "name": "Guest_2024-11-04_184549",
+  "source_directory": {
+    "pathlib.Path": "C:\\Users\\nicki\\UNI\\Master_SSR_local\\Programming_Basic\\programming_basics\\Eyetracking\\data\\Guest_2024-11-04_184549"
+  },
+  "start_time": {
+    "__Timestamp__": 1730738749
+  },
+  "duration": 10421,
+  "eye_tracker": {
+    "__enum.EyeTracker__": "EyeTracker.AdHawk_MindLink"
+  },
+  "project": "",
+  "participant": "None",
+  "firmware_version": "",
+  "glasses_serial": "",
+  "recording_unit_serial": "",
+  "recording_software_version": "",
+  "scene_camera_serial": "",
+  "scene_video_file": "worldCamera.mp4"
+}
