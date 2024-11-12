@@ -1,17 +1,32 @@
 # Python Notizen
 
-Notizen zum Arbeitsauftrag:
+- [Datentypen und Variablen](#datentypen-und-variablen)
+- [Einlesen von Tastatureingaben](#einlesen-von-tastatureingaben)
+- [Operatoren](#operatoren)
+- [Datumsangaben](#datumsangaben)
+- [if, elif und else](#if-elif-und-else)
+- [Strings](#strings)
+- [Mathematische Funktionen](#mathematische-funktionen)
+- [Listen](#listen)
+- [Schleifen](#schleifen)
+- [Wörterbücher](#wörterbücher)
+- [Funktionen](#funktionen)
+- [Fehlerbehandlung](#fehlerbehandlung)
+- [Module](#module)
+- [Laufzeit ermitteln](#laufzeit-ermitteln)
+- [Numpy](#numpy)
+- [Pandas](#pandas)
+- [Pathlib](#pathlib)
+- [Plots, Matplotlib](#plots-matplotlib)
+
+
+Notizen zum Arbeitsauftrag
 
 Python (Anaconda) auch für Machine Learning und Data Science interessant!
 
 ``` help([object]) ``` für informationen über objekt(z.B. Variablentyp, Funktion, etc.)
 
-## Datentypen
-
-
-
-
-## Variablen
+## Datentypen und Variablen
 
 Die Funktion ``` type(var) ``` gibt Typ der Variable aus. 
 
