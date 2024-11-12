@@ -43,6 +43,7 @@ plt.show()
 ## Berechnung einer ANOVA und anschliessenden Post-Hoc-t-Tests
 
 ```py
+# Schritt 0: Importiere Packages
 import pyRserve
 import numpy as np
 from itertools import combinations # später für Anzahl Kombinationen der t-Tests 

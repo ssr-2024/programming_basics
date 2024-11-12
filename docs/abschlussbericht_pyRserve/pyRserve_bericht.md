@@ -226,6 +226,7 @@ Berechne eine ANOVA mit drei unterschiedlichen Gruppen in `R` und schreibe ein P
 
 Verwende dabei folgendes Template und ergänze die jeweiligen Schritte: 
 ```py
+# Schritt 0: Importiere Packages
 import pyRserve
 import numpy as np
 from itertools import combinations # später für Anzahl Kombinationen der t-Tests 
