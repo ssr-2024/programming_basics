@@ -116,7 +116,7 @@ Ein interaktives Dashboard ist eine visuelle Oberfläche, die es ermöglicht, Da
 
 Weil das Erstellen, bzw. auch das Vorstellen dieser interkativen Dashboards den Rahmen dieser kleinen Arbeit sprengen würde, ich es persönlich aber trotzdem unheimlich interessant finde, wird hier ein Code-Beispiel, das von ChatGPT erstellt wurde vorgestellt. Anhand von diesem Beispiel bekommen wir einen guten Eindruck, was mit Dash und Plotly möglich wäre, wenn man die nötige Zeit und Effort dafür aufwendet. 
 
-Am einfachsten ist es den Python Code unten herauszukopieren, in einem File zu speichern und die Datei auszuführen. Sofern alles klappt, wir die Anwendung über den lokalen Server ausgeführt und kann in einem Webbrowser angezeigt werden, meist unter http://127.0.0.1:8050.
+Es kann entweder der Code unten kopiert werden oder die Datei 'plotly_dashboard.py' ausgeführt werden, um das Beispiel anzusehen. Sofern alles klappt, wir die Anwendung über den lokalen Server ausgeführt und kann in einem Webbrowser angezeigt werden, meist unter http://127.0.0.1:8050.
 
 Dieses interaktive Dashboard wurde mithilfe von Dash und Plotly entwickelt und bietet eine übersichtliche Visualisierung der Entwicklung des Bruttoinlandsprodukts (BIP) pro Kopf für verschiedene Länder über die Zeit.
 
