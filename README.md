@@ -1,8 +1,10 @@
 ![programming](pictues/programming.jpg)
 
-# Programming Basics
+# Python Package
 
-Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
+[Dokumentation](Eyetracking/docu_.md) für das Python-Paket. Eine allgemeine Information: Da diese Paketfamilie verschiedene Einschränkungen aufweist, sind die Möglichkeiten für eigenen Code begrenzt. Die Dokumentation der weiteren Pakete aus dieser Familie würde den Rahmen dieser Arbeit sprengen.
+
+Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Daten zurückgreifen ([Ältere Daten können hier abgerufen werden](Eyetracking/data/Guest_2024-11-04_184549)) oder eigene Daten aufnehmen. Falls du daran interessiert bist, einen Eyetracker auszuleihen, um eigene Daten zu sammeln, kontaktiere mich gerne – aktuell habe ich noch ein Gerät ausgeliehen (Stand: 14.11.2024).
 
 ## Summary from the book
 
@@ -12,7 +14,6 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 4. [chapter 4](wiki/chapter4.md)
 5. [chapter 5](wiki/chapter5.md)
 6. [chapter 6](wiki/chapter6.md)
-
 
 
 ## PPT-Folien
