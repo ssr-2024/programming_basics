@@ -6,6 +6,8 @@
 
 Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Daten zurückgreifen ([Ältere Daten können hier abgerufen werden](Eyetracking/data/Guest_2024-11-04_184549)) oder eigene Daten aufnehmen. Falls du daran interessiert bist, einen Eyetracker auszuleihen, um eigene Daten zu sammeln, kontaktiere mich gerne – aktuell habe ich noch ein Gerät ausgeliehen (Stand: 14.11.2024).
 
+[Für die Kontrolle des Python File hier klicken.](Eyetracking/glassesTL.py)
+
 ## Summary from the book
 
 1. [chapter 1](wiki/chapter1.md)
