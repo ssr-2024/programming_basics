@@ -14,9 +14,24 @@ conn = pyRserve.connect()
 x = np.random.rand(50)
 y = 2 * x + np.random.normal(0, 0.1, 50)  # Lineare Abhängigkeit mit etwas Rauschen
 
-# Schritt 3: Erstelle Variablen und Dataframe in R
+# Schritt 3a: Erstelle Variablen in R und erstelle eine Funktion, um y umzucodieren (multipliziere dafür y mit -1).
+# Variablen x und y in R einlesen 
 conn.r.x = x
 conn.r.y = y
+
+# Funktion erstellen für Umkodierung von y in R
+conn.voidEval("umcod <- function(v) { v*(-1) }")
+
+# y umkodieren, d.h. Funktion auf y anwenden
+
+# 1. Möglichkeit, mit mehr Datenverkehr:
+# conn.r.y = conn.r.sapply(conn.ref.y, conn.r.umcod)
+# 2. Möglichkeit, mit mehr Datenverkehr:
+# conn.r.y = conn.r.umcod(y)
+# 3. Möglichkeit, mit weniger Datenverkehr:
+conn.voidEval("y <- umcod(y)")
+
+# Schritt 3b: Erstelle mit neuen Variablen x, y ein Dataframe in R
 conn.voidEval("data <- data.frame(x=x, y=y)") # Dataframe erstellen, ohne Ausgabe
 
 # Schritt 4: Verwende ggplot2 in R, um einen Scatterplot mit einer Trendlinie zu erstellen und speichere Plot

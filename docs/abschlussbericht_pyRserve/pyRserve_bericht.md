@@ -183,6 +183,8 @@ Falls dennoch etwas unklar sein sollte oder du gerne noch detailliertere Informa
 
 ## Aufgaben
 
+Für das Lösen der Aufgaben bietet es sich an, einen lokalen Ordner auf dem Gerät zu erstellen, in welchem die Python-Skripte gespeichert sind, die ausgeführt werden sollen. Auf dem `OneDrive`-Ordner kann es eventuell zu Problemen kommen. 
+
 ### Plotten mit `pyRserve` über `ggplot2`
 
 Verwende `ggplot2`, um in `R` einen Scatterplot zu erstellen, welcher eine Trendline beinhaltet. Der entstandene Plot soll als PNG-Datei exportiert und dann in `Python` angezeigt werden kann. 
@@ -202,7 +204,17 @@ import matplotlib.image as mpimg # um Bild später zu laden
 x = np.random.rand(50)
 y = 2 * x + np.random.normal(0, 0.1, 50)  # lineare Abhängigkeit mit etwas Rauschen darin 
 
-# Schritt 3: Erstelle zuerst die Variablen und dann ein Dataframe in R mit Variablen x,y
+# Schritt 3a: Erstelle Variablen in R und erstelle eine Funktion, um y umzucodieren (multipliziere dafür y mit -1).
+# Variablen x und y in R einlesen 
+
+
+# Funktion erstellen für Umkodierung von y in R
+
+
+# y umkodieren, d.h. Funktion auf y anwenden
+
+
+# Schritt 3b: Erstelle mit neuen Variablen x, y ein Dataframe in R
 
 
 # Schritt 4: Verwende ggplot2 in R, um einen Scatterplot mit einer Trendlinie zu erstellen und speichere Plot
