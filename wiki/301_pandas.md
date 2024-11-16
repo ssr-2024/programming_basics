@@ -26,8 +26,6 @@ print(df)
 ```
 And here is an example of reading data from a CSV file:
 
-import pandas as pd
-
 ```python
 import pandas as pd
 
