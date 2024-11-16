@@ -26,6 +26,25 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 ### Woche 3
 
 * [Jump](code/jump.py)
+* [Visualize Percentage](code/visualize_percentage.py)
+
+### Woche 4
+
+* [Dictionary](code/dictionaries.py)
+
+### Woche 6
+* [Paths](code/path_testing.py) 
+
+### Woche 7
+* [Matplotlib](code/matplotlib_testing.py)
+
+## Package
+
+* [Openpyxl Dokumentation](code/final_report/Openpyxl.md)
+* [Daten, die zum Lösen der Übungsaufgaben benötigt werden](code/final_report/Beispieldaten_Tutorial.xlsx)
+* [Lösungen Aufgabe 1](code/final_report/Exercise_1_Solutions.py)
+* [Lösungen Aufgabe 2](code/final_report/Exercise_2_Solutions.py)
+
 
 ## Wiki
 
@@ -42,6 +61,8 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 11. [Pandas](wiki/301_pandas.md)
 12. [Plots](wiki/401_plots.md)
 13. [Plotten: Beispiele und Variationen](wiki/402_plot_examples.md)
+
+Nebst den Wiki's habe ich auch noch das unten verlinkte Buch in [Kapiteln](wiki/notes/) (im Ordner notes) zusammengefasst. Dort sind noch mehr Beispiele zu finden. Zudem habe ich teilweise in den Wikis auf ein spezifisches Kapitel hinverwiesen.
 
 ## Literatur / Referenzen
 
