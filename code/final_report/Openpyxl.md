@@ -267,11 +267,11 @@ workbook.save("neue_datei.xlsx")
 
 ## Übungsaufgaben
 
-Der Schweizerische Fussballverband (SFV) hat bei ausgewählten Vereinen eine Mitgliederumfrage durchgeführt und erwartet nun von dir eine professionelle Datenaufbereitung. Deine Aufgabe ist es, die Ergebnisse so zu strukturieren, dass sie leicht ausgewertet werden können. Dabei kommt es besonders darauf an, die Daten nachvollziehbar und übersichtlich in einer bearbeiteten Excel-Datei darzustellen. Die Vereinsfunktionäre zählen auf deine Unterstützung – also los geht’s! Als H
+Der Schweizerische Fussballverband (SFV) hat bei ausgewählten Vereinen eine Mitgliederumfrage durchgeführt und erwartet nun von dir eine professionelle Datenaufbereitung. Deine Aufgabe ist es, die Ergebnisse so zu strukturieren, dass sie leicht ausgewertet werden können. Dabei kommt es besonders darauf an, die Daten nachvollziehbar und übersichtlich in einer bearbeiteten Excel-Datei darzustellen. Die Vereinsfunktionäre zählen auf deine Unterstützung – also los geht’s! 
 
 ### Aufgabe 1
 
-Schreibe ein Python-Skript, das die Excel-Datei **"Beispieldaten_Tutorial"** verarbeitet und die Daten nach Vereinsnamen sortiert. Lies zunächst die Datei ein und benenne das Haupt-Arbeitsblatt in **"Gesamtdaten"** um. Erstelle dann für jeden Verein ein eigenes Arbeitsblatt mit den dazugehörigen Daten. Zum Schluss speicherst du die Datei unter dem Namen **"Beispieldaten_Ergebnis"** ab.
+Schreibe ein Python-Skript, das die Excel-Datei **"Beispieldaten_Tutorial.xlsx"** verarbeitet und die Daten nach Vereinsnamen sortiert. Lies zunächst die Datei ein und benenne das Haupt-Arbeitsblatt in **"Gesamtdaten"** um. Erstelle dann für jeden Verein ein eigenes Arbeitsblatt mit den dazugehörigen Daten. Zum Schluss speicherst du die Datei unter dem Namen **"Beispieldaten_Ergebnis"** als neue Excel-Datei ab.
 
 Ergänze im Template die entsprechenden Schritte. Sei kreativ bei der Umsetzung und sorge dafür, dass das Ergebnis klar und nachvollziehbar ist – der SFV wird es dir danken!
 
@@ -332,7 +332,7 @@ print(f"Ergebnisdatei gespeichert unter: {output_path}")
 ### Aufgabe 2
 Nachdem die Daten erfolgreich nach Vereinen sortiert und in separate Arbeitsblätter aufgeteilt wurden, möchte der SFV die Ergebnisse weiter verfeinern und visuell aufbereiten.
 
-Deine Aufgabe ist es, in jedem Arbeitsblatt die Durchschnittswerte für alle Spalten zu berechnen, die mit "Zufriedenheit_" oder "Wichtigkeit_" beginnen. Diese Werte sollen am Ende jeder Spalte eingetragen werden, damit die Auswertung klar und strukturiert bleibt. Ausserdem erwartet der SFV, dass du die Ergebnisse anschaulich visualisierst. Erstelle dazu pro Arbeitsblatt zwei Balkendiagramme: eines für die Durchschnittswerte der Zufriedenheit-Spalten und eines für die Wichtigkeit-Spalten. Platziere die Diagramme direkt unter den Daten, sodass sie die wichtigsten Erkenntnisse auf einen Blick vermitteln. Speichere die fertige Datei unter dem Namen "Beispieldaten_Ergebnis_mit_Durchschnitt und Balkendiagrammen" ab. 
+Deine Aufgabe ist es, in jedem Arbeitsblatt die Durchschnittswerte für alle Spalten zu berechnen, die mit "Zufriedenheit_" oder "Wichtigkeit_" beginnen. Diese Werte sollen am Ende jeder Spalte eingetragen werden, damit die Auswertung klar und strukturiert bleibt. Ausserdem erwartet der SFV, dass du die Ergebnisse anschaulich visualisierst. Erstelle dazu pro Arbeitsblatt zwei Balkendiagramme: eines für die Durchschnittswerte der Zufriedenheit-Spalten und eines für die Wichtigkeit-Spalten. Platziere die Diagramme direkt unter den Daten, sodass sie die wichtigsten Erkenntnisse auf einen Blick vermitteln. Speichere die fertige Datei unter dem Namen "Beispieldaten_Ergebnis_mit_Durchschnitt und Balkendiagrammen" als neue Excel-Datei ab. 
 
 ```python
 # Step 1: Import the necessary libraries
