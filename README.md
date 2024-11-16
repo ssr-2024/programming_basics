@@ -21,6 +21,10 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 * [Square](code/square.py)
 * [Rectangle](code/rectangle.py)
 
+### Woche 3
+
+* [Jump](code/jump.py)
+
 ## Wiki
 
 1. [Datentypen](wiki/001_datatypes.md)
