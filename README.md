@@ -1,5 +1,7 @@
 ![programming](pictues/programming.jpg)
 
+---
+
 # Python Package
 
 [Dokumentation](Eyetracking/docu_.md) für das Python-Paket. Eine allgemeine Information: Da diese Paketfamilie verschiedene Einschränkungen aufweist, sind die Möglichkeiten für eigenen Code begrenzt. Die Dokumentation der weiteren Pakete aus dieser Familie würde den Rahmen dieser Arbeit sprengen.
@@ -7,6 +9,15 @@
 Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Daten zurückgreifen ([Ältere Daten können hier abgerufen werden](Eyetracking/data/Guest_2024-11-04_184549)) oder eigene Daten aufnehmen. Falls du daran interessiert bist, einen Eyetracker auszuleihen, um eigene Daten zu sammeln, kontaktiere mich gerne – aktuell habe ich noch ein Gerät ausgeliehen (Stand: 14.11.2024).
 
 [Für die Kontrolle des Python File hier klicken.](Eyetracking/glassesTL.py)
+
+---
+
+## Review von `shutil`
+
+Meine Review der Dokumentation zu `shutil` findest du [hier](Documentations/peerreview_shutil.md).  
+Meine Lösung zur Aufgabe steht [hier](<code/Aufgaben zur Verwendung von shutil.py>)zur Verfügung.
+
+---
 
 ## Summary from the book
 
@@ -17,6 +28,7 @@ Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Da
 5. [chapter 5](wiki/chapter5.md)
 6. [chapter 6](wiki/chapter6.md)
 
+---
 
 ## PPT-Folien
 
@@ -25,6 +37,8 @@ Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Da
 * [Lecture 3 KISS](docs/slides/003_Kiss.pptx)
 * [Lecture 4 Sammeldatentypen](docs/slides/004_Testing_Sammeldatentypen.pptx)
 * [Lecture 5 NumPy and PanDas](docs/slides/005_NumPy_pandas.pptx)
+
+---
 
 ## Code Beispiele
 
@@ -40,6 +54,8 @@ Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Da
 ### Woche 3
 
 * [Jump](code/jump.py)
+
+---
 
 ## Wiki
 
@@ -57,9 +73,13 @@ Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Da
 12. [Plots](wiki/401_plots.md)
 13. [Plotten: Beispiele und Variationen](wiki/402_plot_examples.md)
 
+---
+
 ## Literatur / Referenzen
 
 * [Link to the formatted text book](docs/lecture-book-sections/index.html)
+
+---
 
 ## Bewertung
 
