@@ -6,7 +6,8 @@
 
 [Dokumentation](Eyetracking/docu_.md) für das Python-Paket. Eine allgemeine Information: Da diese Paketfamilie verschiedene Einschränkungen aufweist, sind die Möglichkeiten für eigenen Code begrenzt. Die Dokumentation der weiteren Pakete aus dieser Familie würde den Rahmen dieser Arbeit sprengen.
 
-Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Daten zurückgreifen ([Ältere Daten können hier abgerufen werden](Eyetracking/data/Guest_2024-11-04_184549)) oder eigene Daten aufnehmen. Falls du daran interessiert bist, einen Eyetracker auszuleihen, um eigene Daten zu sammeln, kontaktiere mich gerne – aktuell habe ich noch ein Gerät ausgeliehen (Stand: 14.11.2024).
+Für die Datenaufnahme gibt es zwei Optionen: Entweder auf bereits vorhandene Daten zurückgreifen ([Ältere Daten können hier abgerufen werden](Eyetracking/data/Guest_2024-11-04_184549)) oder eigene Daten aufnehmen. Falls du daran interessiert bist, einen Eyetracker auszuleihen, um eigene Daten zu sammeln, kontaktiere mich gerne – aktuell habe ich noch ein Gerät ausgeliehen (Stand: 14.11.2024). 
+> **Aufgabe: Verarbeite die Daten mit *glassesTools*.**
 
 [Für die Kontrolle des Python File hier klicken.](Eyetracking/glassesTL.py)
 
