@@ -38,7 +38,10 @@ def vpns_exp01(path: Union[str, Path]) -> Dict[str, Path]:
     }
     ```
     """
-    
+    path = Path(path)
+    csv_files = path.glob('*.csv')
+    exp_setup = {file.stem: file for file in csv_files}
+    return exp_setup
 
 
 def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
@@ -94,9 +97,32 @@ def vpns_exp02(path: Union[str, Path]) -> Dict[str, Dict[int, Path]]:
     }
     ```
     """
+    # Konvertiere den Pfad in ein Path-Objekt
+    path = Path(path)
+    # Initialisiere das Wörterbuch für das Experiment-Setup
+    exp_setup = {}
+
+    # Iteriere über alle Elemente im angegebenen Pfad
+    for vpn_folder in path.iterdir():
+        # Überprüfe, ob das Element ein Verzeichnis ist
+        if vpn_folder.is_dir():
+            # Der Name des VPNs ist der Name des Verzeichnisses
+            vpn_name = vpn_folder.name
+            # Initialisiere das Wörterbuch für die CSV-Dateien in diesem VPN-Verzeichnis
+            exp_setup[vpn_name] = {}
+            # Iteriere über alle CSV-Dateien im VPN-Verzeichnis
+            for csv_file in vpn_folder.glob('*.csv'):
+                # Extrahiere die MZP-Nummer aus dem Dateinamen (letzte 2 Zeichen)
+                mzp_number = int(csv_file.stem.split('_')[-1])
+                # Füge die CSV-Datei zum Wörterbuch hinzu
+                exp_setup[vpn_name][mzp_number] = csv_file
+
+    # Gib das Experiment-Setup-Wörterbuch zurück
+    return exp_setup
     
 
 
 if __name__ == '__main__':
     vpns_exp01('labs/lab/data/exp01')
     vpns_exp02('labs/lab/data/exp02')
+
