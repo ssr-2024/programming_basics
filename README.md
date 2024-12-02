@@ -1,6 +1,23 @@
 ![A course logo](logo.png)
 
-# Programming Basics
+# Programming Basics - Johanna
+
+### Python Pakete: Bericht und Review
+- Das aufbereitete Python-Package `pyemgpipeline` befindet sich hier: [pyemgpipeline](<EMG Processing>)
+- Das Peer-Review inkl. gelöste Aufgaben zu `pyRserve` ist hier aufzufinden: [pyRserve](pyRserve)
+
+
+### Dokumentationen
+Die Nachbereitung der einzelnen Einheiten ist in Teilen noch nicht abgeschlossen und auf die Zeit nach den Klausuren vertagt.
+
+Aktuelle Dokumentationen finden sich hier: [Notizen](notes/helpful_links.md)  
+
+&rarr; Die Idee ist algemein, dass das Markdown-Dokument [helpful_links](notes/helpful_links.md) schlussendlich alle Links sowie auch Zusammenfassungen der einzelnen Einheiten enthält.  
+&rarr; [py_beginner](notes/py_beginner.md) hält Erkenntnisse aus dem Microsoft-Learn-Path zum Einstieg in Python fest, genauso macht es [howto_github](notes/howto_github.md) mit dem Path zum Vertrautmachen und Erlernen mit und von GitHub. 
+&rarr; [py_book](notes/py_book.md) beschreibt alle Erkenntnisse und Übungen aus dem Buch *Automate the boring stuff*
+
+---
+
 
 Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
