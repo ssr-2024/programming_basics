@@ -63,7 +63,7 @@ Q: *Aren't pandas those cute, cuddly animals?*:
 </div>
 
 
-A: As much as I'd love that, unfortunately, no. But:
+A: As much as I'd love that, unfortunately, no. "Pandas" is short for "panel data". Below is a short overview of what PandasCSV can do:
 
     1. Function Description: This function is used to load CSV (comma-separated values) files into a DataFrame format, which is a central data structure in pandas.
     2. Parameter Overview: These include, among others, filepath_or_buffer (path to the file), delimiter (separator between values), header (defines whether a header row is used), and many others. Each parameter comes with a description and possible values.
