@@ -273,12 +273,12 @@ Der Schweizerische Fussballverband (SFV) hat bei ausgewählten Vereinen eine Mit
 
 Schreibe ein Python-Skript, das die Excel-Datei **"Beispieldaten_Tutorial.xlsx"** verarbeitet und die Daten nach Vereinsnamen sortiert. Lies zunächst die Datei ein und benenne das Haupt-Arbeitsblatt in **"Gesamtdaten"** um. Erstelle dann für jeden Verein ein eigenes Arbeitsblatt mit den dazugehörigen Daten. Zum Schluss speicherst du die Datei unter dem Namen **"Beispieldaten_Ergebnis"** als neue Excel-Datei ab.
 
-Ergänze im Template die entsprechenden Schritte. Sei kreativ bei der Umsetzung und sorge dafür, dass das Ergebnis klar und nachvollziehbar ist – der SFV wird es dir danken!
+Du kannst das nachfolgende Template ergänzen oder ein neues .py File mit den entsprechenden Schritten erstellen. Sei kreativ bei der Umsetzung und sorge dafür, dass das Ergebnis klar und nachvollziehbar ist – der SFV wird es dir danken!
 
 ```python
 # Step 1: Import the necessary libraries
-
-
+import openpyxl as px
+from pathlib import Path
 
 # Step 2: Define the paths to the input and output files
 input_path = 
@@ -332,11 +332,15 @@ print(f"Ergebnisdatei gespeichert unter: {output_path}")
 ### Aufgabe 2
 Nachdem die Daten erfolgreich nach Vereinen sortiert und in separate Arbeitsblätter aufgeteilt wurden, möchte der SFV die Ergebnisse weiter verfeinern und visuell aufbereiten.
 
-Deine Aufgabe ist es, in jedem Arbeitsblatt die Durchschnittswerte für alle Spalten zu berechnen, die mit "Zufriedenheit_" oder "Wichtigkeit_" beginnen. Diese Werte sollen am Ende jeder Spalte eingetragen werden, damit die Auswertung klar und strukturiert bleibt. Ausserdem erwartet der SFV, dass du die Ergebnisse anschaulich visualisierst. Erstelle dazu pro Arbeitsblatt zwei Balkendiagramme: eines für die Durchschnittswerte der Zufriedenheit-Spalten und eines für die Wichtigkeit-Spalten. Platziere die Diagramme direkt unter den Daten, sodass sie die wichtigsten Erkenntnisse auf einen Blick vermitteln. Speichere die fertige Datei unter dem Namen "Beispieldaten_Ergebnis_mit_Durchschnitt und Balkendiagrammen" als neue Excel-Datei ab. 
+Deine Aufgabe ist es, in jedem Arbeitsblatt die Durchschnittswerte für alle Spalten zu berechnen, die mit "Zufriedenheit_" oder "Wichtigkeit_" beginnen. Diese Werte sollen am Ende jeder Spalte eingetragen werden, damit die Auswertung klar und strukturiert bleibt. Ausserdem erwartet der SFV, dass du die Ergebnisse anschaulich visualisierst. Erstelle dazu pro Arbeitsblatt zwei Balkendiagramme: eines für die Durchschnittswerte der Zufriedenheit-Spalten und eines für die Wichtigkeit-Spalten. Platziere die Diagramme direkt unter den Daten, sodass sie die wichtigsten Erkenntnisse auf einen Blick vermitteln. Speichere die fertige Datei unter dem Namen "**Beispieldaten_Ergebnis_mit_Durchschnitt und Balkendiagrammen**" als neue Excel-Datei ab. 
+
+Du kannst wiederum das nachfolgende Template ergänzen oder ein neues .py File mit den entsprechenden Schritten erstellen.
 
 ```python
 # Step 1: Import the necessary libraries
-
+import openpyxl as px
+from openpyxl.chart import BarChart, Reference, Series
+from pathlib import Path
 
 # Step 2: Define the path to the input file
 input_path = 
@@ -364,11 +368,16 @@ for sheet_name in workbook.sheetnames:
     
 
     # Iterate through the specified columns to calculate averages
-    
-
-
-
-
+    for col_name, col_letter in zufriedenheit_columns + wichtigkeit_columns:
+        col_index = px.utils.column_index_from_string(col_letter)
+        values = []
+        for row in range(2, max_row + 1):
+            cell_value = sheet.cell(row=row, column=col_index).value
+            if cell_value is not None:
+                try:
+                    values.append(float(cell_value))
+                except ValueError:
+                    continue
 
         # Step 5: Calculate the average if there are values
        
@@ -382,15 +391,16 @@ for sheet_name in workbook.sheetnames:
 
 
 
-        
+        for col_name, col_letter in columns:
             # Use the last value in each column for the chart
-           
+            data = Reference(sheet, min_col=px.utils.column_index_from_strin (col_letter), min_row=max_row + 1, max_row=max_row + 1)
+            series = Series(data, title=col_name)  
             # Use column names as legend titles
-            
-
-
+            chart.series.append(series)
+            chart.set_categories(Reference(sheet, min_col=px.utils.column_index_from_string(col_letter), min_row=1, max_row=1))
+           
         # Place the chart on the sheet
-    
+        sheet.add_chart(chart, position)
 
     # Step 7: Create charts for "Zufriedenheit" and "Wichtigkeit"
     
