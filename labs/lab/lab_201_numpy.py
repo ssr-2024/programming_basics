@@ -3,24 +3,22 @@ import numpy as np
 # @exercise_1
 array = np.arange(10)
 print(array)
-"""
-Erstellt einn numpy-array ohne explizite Angabe zu den Elementen
-"""
 
 # @exercise_2
+import numpy as np
+
 array = np.full((4, 3), 4)
 print(array)
-"""
-Erstellt ein numpy-array mit Angabe auf die Zahl, die Anzahl Zahlen in der Zeile und die Anzahl Zeilen
-"""
+
 
 # @exercise_3
-array = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-array = array[1::2]
-print(array)
-"""
-Erstellt ein numpy-array und eleminiert dabei die Zahlen, welche durch 2 teilbar sind
-"""
+import numpy as np
+
+array = np.arange(10)
+
+# Extrahiere die ungeraden Zahlen
+odd_numbers = array[array % 2 == 1]
+print(odd_numbers)
 
 # @exercise_4
 array = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
