@@ -50,3 +50,16 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 ## Bewertung
 
 [Infos zur Bewertung](docs/bewertung.md)
+
+## Abschlussprojekte und Reviews
+|          | Päckli                     | Review   | Projekt                            |
+| -------- | -------------------------- | -------- | ---------------------------------- |
+| Matthieu | shutils                    | Nicolas  | \-------                           |
+| Janis    | rpy2                       | Johanna  | ucm / fda / aktuelle Forschung BuT |
+| Elias    | pandasplus                 | Eliane   | Feldforschung                      |
+| Eliane   | openpyxl                   | Elias    | Feldforschung                      |
+| Johanna  | pyemgpipeline              | Nicola   | Whisper                            |
+| Nicolas  | glassestools (eyetracking) | Janis    | Lab-Setup Verhaltenslabor I        |
+| Jonathan | polars                     | Robin    | Lab-Setup Verhaltenslabor II       |
+| Nicola   | regex (re)                 | Matthieu | Unreal Engine / Sleeplab           |
+| Robin    | plotly                     | Jonathan | Labor (evtl. emg projekt)          |
