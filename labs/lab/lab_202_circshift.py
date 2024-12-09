@@ -1,4 +1,5 @@
 
+
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -50,12 +51,11 @@ def reset():
 
 def circshift_left_to_right():
     global heart
-    # do the circshift left to the heart
-
+    heart = np.roll(heart, shift=1, axis=1)
 
 def circshift_top_to_bottom():
     global heart
-    # do the circshift top_bottom to the heart
+    heart = np.roll(heart, shift=1, axis=0)
 
 
 if __name__ == '__main__':

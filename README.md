@@ -8,7 +8,9 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 
 * [Lecture 1 Introduction](docs/slides/001_Intro.pptx)
 * [Lecture 2 Markdown and Git](docs/slides/002_Markdown_Git.pptx)
-* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)
+* [Lecture 3 KISS](docs/slides/003_Kiss.pptx)¨
+* [Lecture 4 Sammeldatentypen](docs/slides/004_Testing_Sammeldatentypen.pptx)
+* [Lecture 5 NumPy and PanDas](docs/slides/005_NumPy_pandas.pptx)
 
 ## Code Beispiele
 
@@ -48,3 +50,16 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 ## Bewertung
 
 [Infos zur Bewertung](docs/bewertung.md)
+
+## Abschlussprojekte und Reviews
+|          | Päckli                     | Review   | Projekt                            |
+| -------- | -------------------------- | -------- | ---------------------------------- |
+| Matthieu | shutils                    | Nicolas  | \-------                           |
+| Janis    | rpy2                       | Johanna  | ucm / fda / aktuelle Forschung BuT |
+| Elias    | pandasplus                 | Eliane   | Feldforschung                      |
+| Eliane   | openpyxl                   | Elias    | Feldforschung                      |
+| Johanna  | pyemgpipeline              | Nicola   | Whisper                            |
+| Nicolas  | glassestools (eyetracking) | Janis    | Lab-Setup Verhaltenslabor I        |
+| Jonathan | polars                     | Robin    | Lab-Setup Verhaltenslabor II       |
+| Nicola   | regex (re)                 | Matthieu | Unreal Engine / Sleeplab           |
+| Robin    | plotly                     | Jonathan | Labor (evtl. emg projekt)          |
