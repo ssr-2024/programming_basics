@@ -9,10 +9,11 @@ import os
 from pathlib import Path
 import shutil
 import sys
+
 sys.path.insert(0, os.path.abspath(
     os.path.join(os.path.dirname(__file__), '..')))
-from lab.lab_302_pathlib import *
 
+from lab.lab_302_pathlib import *
 
 tmp_dir = Path(os.path.join(os.path.dirname(__file__), 'tmp_dir'))
 exp1_dir = tmp_dir.joinpath('experiment_01')
