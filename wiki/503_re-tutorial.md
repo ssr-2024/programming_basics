@@ -1,4 +1,7 @@
-# Tutorial für Regex - `re`
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img src="regex_logo_simple.png" alt="Regex Logo" style="width: 120px; margin-right: 20px;">
+    <h1 style="margin: 0;">Tutorial für Regex - `re`</h1>
+</div>
 
 In diesem Tutorial werden die grundlegende Funktionsweise, einfache Funktionen und wichtige Expressionen  von Regex näher erläutert.
 

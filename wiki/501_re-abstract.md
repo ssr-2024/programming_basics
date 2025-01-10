@@ -1,4 +1,8 @@
+
 # Einführung in Reguläre Ausdrücke (Regex) in Python
+
+![Regex Logo](regex_logo.jpg)
+
 
 ## Abstract
 

@@ -1,6 +1,16 @@
-# Übung 3: Validierung und Ersetzung in einem Traumbericht
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img src="regex_logo_simple.png" alt="Regex Logo" style="width: 120px; margin-right: 20px;">
+    <h1 style="margin: 0;">Übung 2: Validierung und Ersetzung in einem Traumbericht</h1>
+</div>
+
+
 
 In dieser Übung wirst du die Funktionen `re.match()` und `re.sub()` verwenden, um den Inhalt eines Traumberichts zu validieren und bestimmte Begriffe zu ersetzen.
+
+<details>
+  <summary>Relevanz der Aufgabe</summary>
+  Diese Funktion ist in vielerlei Hinsicht sehr nützlich in grossen Datensätzen, um schnell und effizient Daten-Anonymisierung umzusetzen.
+</details>
 
 ## Aufgabe
 

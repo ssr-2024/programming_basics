@@ -1,6 +1,14 @@
-# Übung 1: Analyse eines Traumberichts
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img src="regex_logo_simple.png" alt="Regex Logo" style="width: 120px; margin-right: 20px;">
+    <h1 style="margin: 0;">Übung 1: Analyse eines Traumberichts</h1>
+</div>
 
 In dieser Übung wirst du mithilfe von regulären Ausdrücken wichtige Informationen aus einem Traumbericht extrahieren. Verwende die Kenntnisse über das `re`-Modul und die grundlegenden Regex-Funktionen, um die Aufgabe zu lösen.
+
+<details>
+  <summary>Relevanz der Aufgabe</summary>
+  Die relevanz dieser Aufgabe ist nicht zu unterschätzen. Im "Lucid Lab" der Universität Bern wurde dieser Code genutzt, um Rückschlüsse zu ziehen über das Vorkommen von "Lab Dreams", also Träumen über das Schlaflabor selber. Durch die Nutzung des Tools konnten die Angaben der Studenbetreuer überprüft und validiert werden.
+</details>
 
 ## Aufgabe
 
@@ -30,6 +38,7 @@ Orte: Altes Haus, Flur, Feld, Tal
 - Die erstellung von Dictionaries mit Regex-Mustern benötigt  viel Erfahrung. Bei zu viel Frustration nutze Hilfsmittel wie ChatGTP oder die Musterlösung im Lösungs Abschnitt. 
 - Verwende die Funktionen `re.search()`, `re.findall()` oder ähnliche, um gezielt nach den einzelnen Informationen zu suchen.
 - Denke daran, die Ergebnisse strukturiert auszugeben.
+
 
 ## Beispiel für die Ausgabe
 
@@ -87,3 +96,5 @@ for key, value in data.items():
     # key.capitalize() formatiert die Ausgabe, um den Schlüssel groß zu schreiben (z. B. "Date" statt "date")
     print(f"{key.capitalize()}: {value}")
 ```
+
+
