@@ -5,4 +5,3 @@ for i in range(360):
     t.right(1)
 
 t.exitonclick()
-
