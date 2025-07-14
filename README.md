@@ -58,8 +58,8 @@ Hier befindet sich sämtliches Kursmaterial für den Programming Basics Kurs.
 | Janis    | rpy2                       | Johanna  | ucm / fda / aktuelle Forschung BuT |
 | Elias    | pandasplus                 | Eliane   | Feldforschung                      |
 | Eliane   | openpyxl                   | Elias    | Feldforschung                      |
-| Johanna  | pyemgpipeline              | Nicola   | Whisper                            |
+| Johanna  | pyemgpipeline              | Nicola   | Whisper / noScribe                 |
 | Nicolas  | glassestools (eyetracking) | Janis    | Lab-Setup Verhaltenslabor I        |
 | Jonathan | polars                     | Robin    | Lab-Setup Verhaltenslabor II       |
 | Nicola   | regex (re)                 | Matthieu | Unreal Engine / Sleeplab           |
-| Robin    | plotly                     | Jonathan | Labor (evtl. emg projekt)          |
+| Robin    | plotly                     | Jonathan | Feldforschung                      |
